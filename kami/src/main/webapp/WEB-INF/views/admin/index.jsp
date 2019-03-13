@@ -1,6 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 
 <html>
 <head>
@@ -15,7 +15,7 @@
 
   <!-- Custom fonts for this template-->
   <link href="${pageContext.request.contextPath}/resources/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href="${pageContext.request.contextPath}/resources/https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
   <!-- Custom styles for this template-->
   <link href="${pageContext.request.contextPath}/resources/css/sb-admin-2.min.css" rel="stylesheet">
@@ -258,7 +258,7 @@
                   </div>
                   <div class="font-weight-bold">
                     <div class="text-truncate">Hi there! I am wondering if you can help me with a problem I've been having.</div>
-                    <div class="small text-gray-500">Emily Fowler · 58m</div>
+                    <div class="small text-gray-500">Emily Fowler 路 58m</div>
                   </div>
                 </a>
                 <a class="dropdown-item d-flex align-items-center" href="#">
@@ -268,7 +268,7 @@
                   </div>
                   <div>
                     <div class="text-truncate">I have the photos that you ordered last month, how would you like them sent to you?</div>
-                    <div class="small text-gray-500">Jae Chun · 1d</div>
+                    <div class="small text-gray-500">Jae Chun 路 1d</div>
                   </div>
                 </a>
                 <a class="dropdown-item d-flex align-items-center" href="#">
@@ -278,7 +278,7 @@
                   </div>
                   <div>
                     <div class="text-truncate">Last month's report looks great, I am very happy with the progress so far, keep up the good work!</div>
-                    <div class="small text-gray-500">Morgan Alvarez · 2d</div>
+                    <div class="small text-gray-500">Morgan Alvarez 路 2d</div>
                   </div>
                 </a>
                 <a class="dropdown-item d-flex align-items-center" href="#">
@@ -288,7 +288,7 @@
                   </div>
                   <div>
                     <div class="text-truncate">Am I a good boy? The reason I ask is because someone told me that people say this to all dogs, even if they aren't good...</div>
-                    <div class="small text-gray-500">Chicken the Dog · 2w</div>
+                    <div class="small text-gray-500">Chicken the Dog 路 2w</div>
                   </div>
                 </a>
                 <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
@@ -425,7 +425,7 @@
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
           <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">】</span>
+            <span aria-hidden="true">脳</span>
           </button>
         </div>
         <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
@@ -438,24 +438,23 @@
   </div>
 
   <!-- Bootstrap core JavaScript-->
-  <script src="<c:url value="/resources/js/raphael.min.js" />"></script>
-	<script src="<c:url value="/resources/js/morris.min.js" />"></script>
-	<script src="<c:url value="/resources/js/morris-data.js" />"></script>
+ <script src="<c:url value = "/resources/vendor/jquery/jquery.min.js"/>"></script>
+  <script src="<c:url value = "/resources/vendor/bootstrap/js/bootstrap.bundle.min.js"/>"></script>
 
   <!-- Core plugin JavaScript-->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src=" <c:url value = "/resources/js/sb-admin-2.min.js"/>"></script>
 
   <!-- Custom scripts for all pages-->
-  <script src="/resources/js/sb-admin-2.min.js"></script>
+  <script src=" <c:url value = "/resources/js/sb-admin-2.min.js"/>"></script>
 
   <!-- Page level plugins -->
-  <script src="vendor/chart.js/Chart.min.js"></script>
+  <script src=" <c:url value = "/resources/vendor/chart.js/Chart.min.js"/>"></script>
 
   <!-- Page level custom scripts -->
-  <script src="/resources/js/demo/chart-area-demo.js"></script>
-  <script src="/resources/js/demo/chart-pie-demo.js"></script>
-  <script src="/resources/js/demo/chart-bar-demo.js"></script>
-
+  <script src="<c:url value = "/resources/js/demo/chart-area-demo.js"/>"></script>
+  <script src=" <c:url value = "/resources/js/demo/chart-pie-demo.js"/>"></script>
+  <script src="<c:url value = "/resources/js/demo/chart-bar-demo.js"/>"></script>
+	 <%--  <c:url value = "/resources/vendor/bootstrap/js/bootstrap.bundle.min.js"/>   --%>
 </body>
 
 </html>

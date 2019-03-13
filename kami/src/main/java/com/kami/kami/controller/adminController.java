@@ -18,7 +18,7 @@ public class adminController {
 	AdminDAO dao;
 	
 	//직원 로그인
-	@RequestMapping(value = "/selectEmployee", method = RequestMethod.GET)
+	@RequestMapping(value = "/selectEmployee", method = RequestMethod.POST)
 	public String selectEmployee(Employee employee ,HttpSession session) {
 		System.out.println(employee);
 		

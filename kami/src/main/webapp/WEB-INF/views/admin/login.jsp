@@ -43,7 +43,7 @@
                   <div class="text-center">
                     <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                   </div>
-                  <form action="selectEmployee" method="get" class="user">
+                  <form action="selectEmployee" method="post" class="user">
                     <div class="form-group">
                       <input type="email" class="form-control form-control-user" name="employeeId" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address...">
                     </div>
@@ -56,8 +56,8 @@
                         <label class="custom-control-label" for="customCheck">Remember Me</label>
                       </div>
                     </div>
-                    <button class="btn btn-primary btn-user btn-block">login</button>
-               
+  
+               		<input type="submit" value="login" class="btn btn-primary btn-user btn-block">
                   </form>
                   <hr>
                   <div class="text-center">
