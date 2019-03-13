@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="EUC-KR">
-	<!-- test -ㅇㄴㅁㅇ->
+	<!-- test -->
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,7 +13,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin 2 - Loginㅇㄷㅂ3333</title>
+  <title>SB Admin 2 - Login</title>
 
   <!-- Custom fonts for this template-->
   <link href="${pageContext.request.contextPath}/resources/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
