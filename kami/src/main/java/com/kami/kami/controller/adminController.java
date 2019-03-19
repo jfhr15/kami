@@ -17,7 +17,7 @@ public class adminController {
 	@Autowired
 	AdminDAO dao;
 	
-	//Á÷¿ø ·Î±×ÀÎ
+	//ï¿½ï¿½ï¿½ï¿½ ï¿½Î±ï¿½ï¿½ï¿½
 	@RequestMapping(value = "/selectEmployee", method = RequestMethod.POST)
 	public String selectEmployee(Employee employee ,HttpSession session) {
 		System.out.println(employee);
@@ -27,13 +27,13 @@ public class adminController {
 		if (result == null) {
 			return "admin/login";
 		} else {
-			session.setAttribute("loginId", result.getEmployeeId());
+			session.setAttribute("loginId", result.getEmp_id());
 		}
 	
 		return "admin/index";
 	}
 	
-	//Á÷¿ø È¸¿ø°¡ÀÔ ÆäÀÌÁö·Î ÀÌµ¿
+	//ï¿½ï¿½ï¿½ï¿½ È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
 	@RequestMapping(value = "/goSignUp", method = RequestMethod.GET)
 	public String goSignUp() {
 		return "admin/register";

@@ -30,6 +30,7 @@
 		)
 	</insert>
 	
+	
 	<select id="selectEmployee" parameterType="Employee" resultType="Employee">
 		SELECT
 			EMPLOYEEID,
