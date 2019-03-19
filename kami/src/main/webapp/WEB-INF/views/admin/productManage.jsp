@@ -8,9 +8,6 @@
 </head>
 <body>
 
-<form action="goProductManage">
-<input type="button" value="상품관리">
-</form>
-
+상품관리
 </body>
 </html>
