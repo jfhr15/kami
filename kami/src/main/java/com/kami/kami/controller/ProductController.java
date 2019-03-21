@@ -25,6 +25,9 @@ public class ProductController {
 	//상품종류 전체목록 출력
 	
 	
+	
+	
+	
 		
 	//상품종류 등록
 	
