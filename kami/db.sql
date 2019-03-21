@@ -1,6 +1,5 @@
 --db 변경후 같이 변경 부탁!
 
-
 DROP TABLE employee;
 DROP TABLE position;
 DROP TABLE career;
