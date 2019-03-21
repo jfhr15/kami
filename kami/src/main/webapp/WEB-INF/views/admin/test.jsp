@@ -9,7 +9,7 @@
 <body>
 
 <form action="goProductManage">
-<input type="button" value="상품관리">
+<input type="submit" value="상품관리">
 </form>
 
 </body>

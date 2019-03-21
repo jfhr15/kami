@@ -21,7 +21,7 @@
 		, productkind)
 	values
 		(kindseq.nextval
-		, #{productkind});
+		, #{productkind})
 </insert>
 
 
