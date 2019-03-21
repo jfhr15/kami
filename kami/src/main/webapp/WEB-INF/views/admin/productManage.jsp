@@ -9,5 +9,16 @@
 <body>
 
 상품관리
+
+
+<form action="insertkind" method="post">
+상품 종류 : <input type="text" name="productkind">
+<input type="submit" value="등록">
+</form>
+
+<br><br>
+
+
+
 </body>
 </html>
