@@ -1,21 +1,24 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%@page import="java.util.*"%>
+<%
+    request.setCharacterEncoding("UTF-8");
+%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
-<title>register</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>íšŒì›ê°€ì…</title>
 <head>
-
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin 2 - Register</title>
-
+  <title>íšŒì›ê°€ì…</title>
+	<script src="./resources/vendor/jquery/jquery.js"></script>
   <!-- Custom fonts for this template-->
   <link href="${pageContext.request.contextPath}/resources/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
@@ -23,6 +26,7 @@
   <!-- Custom styles for this template-->
   <link href="${pageContext.request.contextPath}/resources/css/sb-admin-2.min.css" rel="stylesheet">
 
+  <link href="${pageContext.request.contextPath}/resources/css/signup.css" rel="stylesheet">
 </head>
 
 <body class="bg-gradient-primary">
@@ -33,55 +37,56 @@
       <div class="card-body p-0">
         <!-- Nested Row within Card Body -->
         <div class="row">
-          <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
+     	
           <div class="col-lg-7">
             <div class="p-5">
-              <div class="text-center">
-                <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
+              <div class="center">
+                <h1 class="h4 text-gray-900 mb-4">íšŒì› ê°€ì…</h1>
               </div>
-              <form action="insertEmployee" method="post" class="user">
+              <form action="insertEmployee" method="get" class="user">
+                <div class="bolder">
+                <div class="form-group">
+                  	ì´ë©”ì¼<input type="email" class="form-control form-control-user" name="emp_id" id="exampleInputEmail">
+                </div>
+                <div class="form-group">
+                  	ë¹„ë°€ë²ˆí˜¸<input type="password" class="form-control form-control-user" name="pw">
+                </div>
+                <div class="form-group">
+                  	ë¹„ë°€ë²ˆí˜¸ í™•ì¸<input type="password" class="form-control form-control-user" name="pw_check">
+                </div>
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="text" class="form-control form-control-user" name="name" id="exampleFirstName" placeholder="ÀÌ¸§ ÀÔ·Â">
+                     ì´ë¦„<input type="text" class="form-control form-control-user" name="emp_name" id="exampleFirstName">
                   </div>
                   <div class="col-sm-6">
-                   <input type="date" class="form-control form-control-user" name="birthDate" id="exampleLastName" placeholder="»ıÀÏ ÀÔ·Â">
+                   	ìƒë…„ì›”ì¼<input type="date" class="form-control form-control-user" name="emp_birthdate" id="exampleLastName">
                   </div>
                 </div>
-                 <div class="form-group">
-                  <input type="text" class="form-control form-control-user" name="address"  placeholder="ÁÖ¼Ò ÀÔ·Â">
-                </div>
-                 <div class="form-group">
-                  <input type="text" class="form-control form-control-user" name="phone" id="phone" placeholder="ÀüÈ­¹øÈ£ ÀÔ·Â">
-                </div>
-                <div class="form-group">
-                  <input type="email" class="form-control form-control-user" name="employeeId" id="exampleInputEmail" placeholder="¾ÆÀÌµğÀÔ·Â">
-                </div>
-                <div class="form-group">
-                  <input type="password" class="form-control form-control-user" name="password"  placeholder="ÆĞ½º¿öµå ÀÔ·Â">
-                </div>
                   <div class="form-group">
-                  	³²ÀÚ<input type="radio" class="form-control form-control-user" name="gender"  value="m">
-                	¿©ÀÚ<input type="radio" class="form-control form-control-user" name="gender"  value="w">
+                  	ì„±ë³„<br>
+                  	<table class="table1">
+						<tr>
+							<td>ë‚¨ì</td>
+							<td class="td1"><input type="radio" name="emp_gender" value="m" checked="checked" class="radio1"></td>
+							<td>ì—¬ì</td>
+							<td class="td1"><input type="radio" name="emp_gender" value="w" class="radio1"></td>
+						</tr>
+					</table>
                 </div>
-              
-                  <button class="btn btn-primary btn-user btn-block">Register Account</button>
+                 <div class="form-group">
+                  	ì£¼ì†Œ<input type="text" class="form-control form-control-user" name="emp_address">
+                </div>
+                 <div class="form-group">
+                  	ì „í™”ë²ˆí˜¸<input type="text" class="form-control form-control-user" name="emp_phone" id="phone">
+                </div>
+              </div>
+                  <button class="btn btn-primary btn-user btn-block">íšŒì› ë“±ë¡</button>
                
                 <hr>
-                <a href="index.html" class="btn btn-google btn-user btn-block">
-                  <i class="fab fa-google fa-fw"></i> Register with Google
-                </a>
-                <a href="index.html" class="btn btn-facebook btn-user btn-block">
-                  <i class="fab fa-facebook-f fa-fw"></i> Register with Facebook
-                </a>
               </form>
-              <hr>
-              <div class="text-center">
-                <a class="small" href="forgot-password.html">Forgot Password?</a>
-              </div>
-              <div class="text-center">
-                <a class="small" href="login.html">Already have an account? Login!</a>
-              </div>
+<!--               <div class="text-center"> -->
+<!--                 <a class="small" href="login.html">Already have an account? Login!</a> -->
+<!--               </div> -->
             </div>
           </div>
         </div>
@@ -90,16 +95,11 @@
 
   </div>
 
-  <!-- Bootstrap core JavaScript-->
-   <script src="<c:url value="/resources/js/raphael.min.js" />"></script>
-	<script src="<c:url value="/resources/js/morris.min.js" />"></script>
-	<script src="<c:url value="/resources/js/morris-data.js" />"></script>
-
   <!-- Core plugin JavaScript-->
-  <script src="/resources/vendor/jquery-easing/jquery.easing.min.js"></script>
-
+  <script src="./resources/vendor/jquery-easing/jquery.easing.min.js"></script>
+	
   <!-- Custom scripts for all pages-->
-  <script src="/resources/js/sb-admin-2.min.js"></script>
+  <script src="./resources/js/sb-admin-2.min.js"></script>
 
 </body>
 </html>

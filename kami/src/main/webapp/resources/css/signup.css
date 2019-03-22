@@ -1,0 +1,17 @@
+@charset "UTF-8";
+.bolder{
+	font-weight: bolder;
+}
+.table1{
+	margin-left: 6%;
+}
+.td1{
+	padding-left: 10%;
+	padding-right: 10%;
+}
+.radio1{
+	font-size: 17px;
+    width: 17px;
+    height: 17px;
+    margin-top: 10px;
+}

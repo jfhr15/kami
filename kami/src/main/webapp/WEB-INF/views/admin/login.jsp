@@ -1,10 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+
 	<!-- test -->
 
   <meta charset="utf-8">
@@ -13,8 +13,10 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin 2 - Login</title>
-
+  <title>로그인</title>
+	
+  <script src="./resources/vendor/jquery/jquery.js"></script>
+  
   <!-- Custom fonts for this template-->
   <link href="${pageContext.request.contextPath}/resources/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
@@ -41,34 +43,28 @@
               <div class="col-lg-6">
                 <div class="p-5">
                   <div class="text-center">
-                    <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
+                    <h1 class="h4 text-gray-900 mb-4">환영합니다</h1>
                   </div>
-                  <form action="selectEmployee" method="post" class="user">
+                  <form action="login" method="post" class="user">
                     <div class="form-group">
-                      <input type="email" class="form-control form-control-user" name="employeeId" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address...">
+                      <input type="email" class="form-control form-control-user" name="id" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="이메일 주소">
                     </div>
                     <div class="form-group">
-                      <input type="password" class="form-control form-control-user" name="password"  id="exampleInputPassword" placeholder="Password">
+                      <input type="password" class="form-control form-control-user" name="pw"  id="exampleInputPassword" placeholder="비밀번호">
                     </div>
                     <div class="form-group">
-                      <div class="custom-control custom-checkbox small">
-                        <input type="checkbox" class="custom-control-input" id="customCheck">
-                        <label class="custom-control-label" for="customCheck">Remember Me</label>
-                      </div>
                     </div>
   
-               		<input type="submit" value="login" class="btn btn-primary btn-user btn-block">
+               		<input type="submit" value="로그인" class="btn btn-primary btn-user btn-block">
                   </form>
                   <hr>
-                  <div class="text-center">
-                    <a class="small" href="forgot-password.html">Forgot Password?</a>
-                  </div>
-             
-                  <div class="text-center">
-				<a class="small" href="goSignUp">Create an Account!</a>                  	
-
-                 </div>
-              
+	                  <div class="text-center">
+	                    <a class="small" href="forgot-email.html" target="_blank">아이디 찾기</a>
+	                    <span class="bar" aria-hidden="true">|</span>
+	                    <a class="small" href="forgot-password.html">비밀번호 찾기</a>
+	             	    <span class="bar" aria-hidden="true">|</span>
+						<a class="small" href="goSignUp">회원가입</a>                  	
+	                 </div>
                  
                 </div>
               </div>
@@ -82,16 +78,11 @@
 
   </div>
 
-  <!-- Bootstrap core JavaScript-->
-    <script src="<c:url value="/resources/js/raphael.min.js" />"></script>
-	<script src="<c:url value="/resources/js/morris.min.js" />"></script>
-	<script src="<c:url value="/resources/js/morris-data.js" />"></script>
-
   <!-- Core plugin JavaScript-->
-  <script src="/resources/vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="./resources/vendor/jquery-easing/jquery.easing.min.js"></script>
 
   <!-- Custom scripts for all pages-->
-  <script src="/resources/js/sb-admin-2.min.js"></script>
+  <script src="./resources/js/sb-admin-2.min.js"></script>
 
 </body>
 </html>
