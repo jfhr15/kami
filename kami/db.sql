@@ -1,7 +1,5 @@
 --db 변경후 같이 변경 부탁!
 
-
-
 DROP TABLE  hair;
 DROP TABLE reservation;
 DROP TABLE  procedureInformation;
