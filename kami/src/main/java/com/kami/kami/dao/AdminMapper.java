@@ -1,10 +1,18 @@
 package com.kami.kami.dao;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 import com.kami.kami.vo.Employee;
+import com.kami.kami.vo.Idinfo;
+import com.kami.kami.vo.Member;
 
 public interface AdminMapper {
-	//직원 회원가입
+
 	public int insertEmployee(Employee employee);
-	//직원 로그인
-	public Employee selectEmployee(Employee employee);
+	public int insertMember(Member member);
+	public int insertIdinfo(Idinfo idinfo);
+	public Idinfo login(Idinfo idinfo);
+	public HashMap<Object,Object> selectEmployee(HashMap<Object,Object> map);
+	public ArrayList<Idinfo> selectId();
 }

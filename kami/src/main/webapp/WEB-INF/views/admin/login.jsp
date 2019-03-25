@@ -47,7 +47,7 @@
                   </div>
                   <form action="login" method="post" class="user">
                     <div class="form-group">
-                      <input type="email" class="form-control form-control-user" name="id" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="이메일 주소">
+                      <input type="text" class="form-control form-control-user" name="id" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="아이디">
                     </div>
                     <div class="form-group">
                       <input type="password" class="form-control form-control-user" name="pw"  id="exampleInputPassword" placeholder="비밀번호">

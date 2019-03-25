@@ -2,8 +2,9 @@
 .bolder{
 	font-weight: bolder;
 }
-.table1{
+.selectGenderTable{
 	margin-left: 6%;
+	text-align: auto;
 }
 .td1{
 	padding-left: 10%;
@@ -14,4 +15,22 @@
     width: 17px;
     height: 17px;
     margin-top: 10px;
+}
+.btnTable{
+	width: -webkit-fill-available;
+}
+.check{
+	color:red;
+}
+#name_check{
+	color:red;
+}
+#birth_check{
+	color:red;
+}
+#addbtn{
+	margin-top:20px;
+}
+.addresstable{
+	width:100%;
 }

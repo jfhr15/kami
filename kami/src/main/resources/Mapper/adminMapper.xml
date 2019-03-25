@@ -8,48 +8,97 @@
 	<insert id="insertEmployee" parameterType="Employee">
 		INSERT INTO EMPLOYEE
 		(
-			EMPLOYEEID
-			,POSITIONSEQ
-			,PASSWORD
-			,NAME
-			,BIRTHDATE
-			,PHONE
-			,ADDRESS
-			,GENDER
+			POSITIONSEQ
+			,EMP_ID
+			,EMP_HIREDATE
+			,emp_flag
 		)
 		VALUES
 		(
-			#{employeeId}
-			,positionSeq.nextval
-			,#{password}
-			,#{name}
-			,#{birthDate}
-			,#{phone}
-			,#{address}
-			,#{gender}
+			(select POSITIONSEQ from position where POSITIONSEQ='26')
+			,(select id from idinfo where id=#{emp_id})
+			,sysdate
+			,1
 		)
 	</insert>
 	
+	<insert id="insertMember" parameterType="Member">
+		INSERT INTO MEMBER
+		(
+			mem_id
+			,mem_money
+			,mem_registDate
+			,mem_flag
+		)
+		VALUES
+		(
+			(select id from idinfo where id=#{mem_id})
+			,0
+			,sysdate
+			,1
+		)
+	</insert>
 	
-	<select id="selectEmployee" parameterType="Employee" resultType="Employee">
+	<insert id="insertIdinfo" parameterType="Idinfo">
+		INSERT INTO IDINFO
+		(
+			ID
+			,PW
+			, name
+     		,phone
+     		,address
+     		,birthday
+    		,gender
+			,TYPE
+		)
+		VALUES
+		(
+			#{id}
+			,#{pw}
+			,#{name}
+			,#{phone}
+			,#{address}
+			,#{birthday}
+			,#{gender}
+			,#{type}
+		)
+	</insert>
+	
+	<select id="selectId" resultType="Idinfo">
 		SELECT
-			EMPLOYEEID,
-			POSITIONSEQ,
-			PASSWORD,
-			NAME,
-			HIREDATE,
-			BIRTHDATE,
-			PHONE,
-			ADDRESS,
-			FIREDATE,
-			GENDER
-		FROM 
-			EMPLOYEE
-		WHERE
-			EMPLOYEEID=#{employeeId}
-			AND
-			PASSWORD=#{password}
+			ID
+		FROM
+			IDINFO
 	</select>
 	
+	<select id="selectEmployee" parameterType="HashMap" resultType="HashMap">
+		SELECT
+			EMPLOYEE.EMPLOYEEID,
+			EMPLOYEE.POSITIONSEQ,
+			EMPLOYEE.HIREDATE,
+			EMPLOYEE.FIREDATE,
+			EMPLOYEE.flag
+		FROM 
+			EMPLOYEE,idinfo
+		WHERE
+			EMPLOYEE.EMPLOYEEID=#{employeeId}
+		AND
+			idinfo.PASSWORD=#{password}
+	</select>
+	
+	
+		
+	<select id="login" parameterType="Idinfo" resultType="Idinfo">
+		SELECT
+			ID
+			,PW
+			,TYPE
+		FROM 
+			IDINFO
+		WHERE
+			ID=#{id}
+		AND
+			PW=#{pw}
+	</select>
 
 </mapper>

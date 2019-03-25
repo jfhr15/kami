@@ -1,10 +1,15 @@
 package com.kami.kami.dao;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.kami.kami.vo.Employee;
+import com.kami.kami.vo.Idinfo;
+import com.kami.kami.vo.Member;
 
 @Repository
 public class AdminDAO {
@@ -12,29 +17,76 @@ public class AdminDAO {
 	@Autowired
 	SqlSession session;
 	
-	//직원 회원가입
-	public int insertEmployee(Employee employee) {
-		int result = 0;
-		AdminMapper mapper = session.getMapper(AdminMapper.class);
-		try {
-			result = mapper.insertEmployee(employee);
-		} catch (Exception e) {
-			e.printStackTrace();
-			return result;
-		}
-		return result;
-	};
 	
-	//직원 로그인
-	public Employee selectEmployee(Employee employee) {
-		Employee result = null;
+	public int insertIdinfo(Idinfo idinfo) {
+		int iResult = 0;
 		AdminMapper mapper = session.getMapper(AdminMapper.class);
 		try {
-			result = mapper.selectEmployee(employee);
+			iResult = mapper.insertIdinfo(idinfo);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return 0;
+		}
+		return iResult;
+	}
+	
+	public int insertEmployee(Employee employee) {
+		int eResult = 0;
+		AdminMapper mapper = session.getMapper(AdminMapper.class);
+		try {
+			eResult = mapper.insertEmployee(employee);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return 0;
+		}
+		return eResult;
+	}
+	
+	public int insertMember(Member member) {
+		int mResult = 0;
+		AdminMapper mapper = session.getMapper(AdminMapper.class);
+		try {
+			mResult = mapper.insertMember(member);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return 0;
+		}
+		return mResult;
+	}
+	
+	public HashMap<Object,Object> selectEmployee(HashMap<Object,Object> map) {
+		HashMap<Object,Object> result = null;
+		AdminMapper mapper = session.getMapper(AdminMapper.class);
+		try {
+			result = mapper.selectEmployee(map);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+		return result;
+	}
+	
+	public Idinfo login(Idinfo idinfo) {
+		Idinfo result= null;
+		AdminMapper mapper = session.getMapper(AdminMapper.class);
+		try {
+			result = mapper.login(idinfo);
 		} catch (Exception e) {
 			e.printStackTrace();
 			return result;
 		}
 		return result;
-	};
+	}
+	
+	public ArrayList<Idinfo> selectId(){
+		ArrayList<Idinfo> iList= null;
+		try {
+			AdminMapper mapper = session.getMapper(AdminMapper.class);
+			iList = mapper.selectId();
+		} catch (Exception e) {
+			e.printStackTrace();
+			return iList;
+		}
+		return iList;
+	}
 }
