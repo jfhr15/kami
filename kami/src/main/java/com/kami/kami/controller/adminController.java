@@ -42,6 +42,7 @@ public class adminController {
 	
 	@RequestMapping(value = "/insertHuman", method = RequestMethod.POST)
 	public String insertHuman(Idinfo idinfo, int division) {
+		idinfo.setType(division);
 		int result = dao.insertIdinfo(idinfo);
 		if (result == 0) {
 			return "redirect:/goSignUp";

@@ -15,7 +15,7 @@
 		)
 		VALUES
 		(
-			(select POSITIONSEQ from position where POSITIONSEQ='26')
+			1
 			,(select id from idinfo where id=#{emp_id})
 			,sysdate
 			,1
@@ -49,6 +49,7 @@
      		,address
      		,birthday
     		,gender
+    		,email
 			,TYPE
 		)
 		VALUES
@@ -60,6 +61,7 @@
 			,#{address}
 			,#{birthday}
 			,#{gender}
+			,#{email}
 			,#{type}
 		)
 	</insert>
