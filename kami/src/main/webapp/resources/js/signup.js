@@ -10,15 +10,18 @@ $(function(){
 	$("#memberBtn").on('click', goInsertMember);
 	$("#addbtn").on('click', execDaumPostcode);
 	
-	function goInsertEmployee(){
-		addresscheck();
-		phonecheck();
-		
+	function address() {
 		var add1 = $("#sample6_address").val();
 		var add2 = $("#sample6_detailAddress").val();
 		var add3 = $("#sample6_extraAddress").val();
 		var add4 = $("#sample6_postcode").val();
 		$("#address").val(add1 + add2 + add3 + add4);
+	}
+	
+	function goInsertEmployee(){
+		addresscheck();
+		phonecheck();
+		address();
 		
 		$("#division").val(0);
 		$("#user").submit();
@@ -27,6 +30,7 @@ $(function(){
 	function goInsertMember(){
 		addresscheck();
 		phonecheck();
+		address();
 		
 		$("#division").val(1);
 		$("#user").submit();
@@ -108,8 +112,8 @@ $(function(){
 	
 	function phonecheck(){
 		var phone = $("#phone").val();
-		if(phone==null){
-			$("#phone_check").html("전화번호를 형식에 맞게 입력해주세요");
+		if(phone.length!=11 && phone.length!=10){
+			$("#phone_check").html("형식에 맞지 않는 번호입니다.");
 			return false;
 		} else{
 			$("#phone_check").html("");
@@ -120,7 +124,6 @@ $(function(){
         new daum.Postcode({
             oncomplete: function(data) {
                 // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
-            	alert("!");
                 // 각 주소의 노출 규칙에 따라 주소를 조합한다.
                 // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
                 var addr = ''; // 주소 변수
