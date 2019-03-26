@@ -1,5 +1,3 @@
---db 변경후 같이 변경 부탁!
-
 DROP TABLE  hair;
 DROP TABLE reservation;
 DROP TABLE  procedureInformation;
@@ -26,14 +24,9 @@ DROP TABLE IDinfo;
 CREATE TABLE  employee  (
 	 positionseq 	number		NOT NULL,
 	 emp_id 	varchar2(30)		NOT NULL,
-	 emp_name 	varchar2(50)		NULL,
 	 emp_hiredate 	date		NULL,
-	 emp_birthdate 	date		NULL,
-	 emp_phone 	varchar2(100)		NULL,
-	 emp_address 	varchar2(200)		NULL,
 	 emp_firedate 	date		NULL,
-	 emp_gender 	varchar2(10)		NULL,
-	 emp_flag 	VARCHAR(255)		NULL
+	 emp_flag 	VARCHAR(255)		not null
 );
 
 CREATE TABLE  position  (
@@ -78,12 +71,7 @@ CREATE TABLE  board  (
 CREATE TABLE  member  (
 	 mem_id 	varchar2(30)		NOT NULL,
 	 mem_money 	number		NULL,
-	 mem_phone 	varchar2(50)		NULL,
-	 mem_birthday 	date		NULL,
-	 mem_name 	varchar2(50)		NULL,
-	 mem_registDate 	date		NULL,
-	 mem_gender 	varchar2(10)		NULL,
-	 mem_address 	varchar2(200)		NULL,
+	 mem_registDate 	date	not NULL,
 	 mem_flag 	number		NULL
 );
 
@@ -212,8 +200,14 @@ CREATE TABLE  productkind  (
 
 CREATE TABLE  IDinfo  (
 	 id 	varchar2(30)		NOT NULL,
-	 pw 	varchar2(30)		NULL,
-	 type 	number		NULL
+	 pw 	varchar2(30)	not NULL,
+     name   varchar2(50)    not null,
+     birthday date  not null,
+     gender varchar2(10) not null,
+     email varchar2(200) null,
+     phone  varchar2(100)  not null,
+     address varchar2(200)  not null,
+	 type 	number	not NULL
 );
 
 ALTER TABLE  employee  ADD CONSTRAINT  PK_EMPLOYEE  PRIMARY KEY (
