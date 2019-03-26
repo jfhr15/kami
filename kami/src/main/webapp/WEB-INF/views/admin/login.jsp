@@ -15,7 +15,13 @@
 
   <title>로그인</title>
 	
+  
   <script src="./resources/vendor/jquery/jquery.js"></script>
+  <!-- Core plugin JavaScript-->
+  <script src="./resources/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="./resources/js/sb-admin-2.min.js"></script>
   
   <!-- Custom fonts for this template-->
   <link href="${pageContext.request.contextPath}/resources/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -78,11 +84,7 @@
 
   </div>
 
-  <!-- Core plugin JavaScript-->
-  <script src="./resources/vendor/jquery-easing/jquery.easing.min.js"></script>
-
-  <!-- Custom scripts for all pages-->
-  <script src="./resources/js/sb-admin-2.min.js"></script>
+  
 
 </body>
 </html>
