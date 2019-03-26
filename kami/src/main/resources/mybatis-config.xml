@@ -29,5 +29,6 @@
 	<mappers>
 		<mapper resource="Mapper/adminMapper.xml" />
 		<mapper resource="Mapper/productMapper.xml" />
+		<mapper resource="Mapper/chartMapper.xml" />
 	</mappers> 
 </configuration>
