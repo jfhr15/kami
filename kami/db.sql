@@ -147,7 +147,9 @@ CREATE TABLE  review  (
 CREATE TABLE  procedureInformation  (
 	 proinfoseq 	number		NOT NULL,
 	 procedureseq 	number		NOT NULL,
-	 sale 	varchar2(300)		NULL,
+    procedureseq2	number		NULL,
+	procedureseq3	number		NULL,
+	procedureseq4	number		NULL,
 	 proinfo_price 	number		NULL
 );
 
