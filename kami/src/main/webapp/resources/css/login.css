@@ -1,0 +1,38 @@
+@charset "UTF-8";
+#popupTable{
+	width:100%;
+	margin-top: 28%;
+}
+.popup_text{
+	width:40%;
+	text-align: end;
+}
+.popup_btn{
+	margin-left: 45%;
+}
+.tableForm{
+    margin-top: 20%;;
+}
+#popupHeader{
+	margin-left: auto;
+    margin-right: auto;
+    display: table;
+}
+a{ 
+	display: block;
+	text-decoration:none;
+}
+.headerA{
+	display: inline-block;
+}
+.headerLi{
+	list-style-type : none;
+	border : 0;
+	float: left;
+}
+#idSearchPage{
+	
+}
+#pwSearchPage{
+	
+}

@@ -89,4 +89,16 @@ public class AdminDAO {
 		}
 		return iList;
 	}
+	
+	public Idinfo idSearch(HashMap<Object,Object> map) {
+		Idinfo result= null;
+		try {
+			AdminMapper mapper = session.getMapper(AdminMapper.class);
+			result = mapper.idSearch(map);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return result;
+		}
+		return result;
+	}
 }

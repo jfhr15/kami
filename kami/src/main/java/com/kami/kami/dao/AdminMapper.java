@@ -15,4 +15,5 @@ public interface AdminMapper {
 	public Idinfo login(Idinfo idinfo);
 	public HashMap<Object,Object> selectEmployee(HashMap<Object,Object> map);
 	public ArrayList<Idinfo> selectId();
+	public Idinfo idSearch(HashMap<Object,Object> map);
 }

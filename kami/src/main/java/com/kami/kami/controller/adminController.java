@@ -1,6 +1,7 @@
 package com.kami.kami.controller;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import javax.servlet.http.HttpSession;
 
@@ -75,5 +76,22 @@ public class adminController {
 			}
 		}
 		return "success";
+	}
+	
+	@RequestMapping(value = "/goSearchPopup", method = RequestMethod.GET)
+	public String goSearchPopup() {
+		return "admin/searchPopup";
+	}
+	
+	@RequestMapping(value = "/search", method = RequestMethod.POST)
+	public @ResponseBody Idinfo search(String is_name, String is_phone, String is_email) {
+		HashMap<Object, Object> map = new HashMap<Object, Object>();
+		map.put("name", is_name);
+		map.put("phone", is_phone);
+		map.put("email", is_email);
+		
+		Idinfo idinfo = dao.idSearch(map);
+		
+		return idinfo;
 	}
 }
