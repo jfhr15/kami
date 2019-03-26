@@ -461,4 +461,10 @@ REFERENCES  payment  (
 	 paymentNum 
 );
 
+insert into position(positionSeq,position,salary)values('1','사원','140');
+insert into position(positionSeq,position,salary)values('2','선임','190');
+insert into position(positionSeq,position,salary)values('3','책임','230');
+insert into position(positionSeq,position,salary)values('4','수석보','280');
+insert into position(positionSeq,position,salary)values('5','수석','340');
+
 commit;
