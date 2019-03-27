@@ -68,11 +68,11 @@
 	                  <div class="text-center">
 	                    <a class="small" href="javascript:void(0);" target="_blank" id="is">아이디 찾기</a>
 	                    <span class="bar" aria-hidden="true">|</span>
-	                    <a class="small" href="forgot-password.html">비밀번호 찾기</a>
+	                    <a class="small" href="javascript:void(0);" target="_blank" id="ip">비밀번호 찾기</a>
 	             	    <span class="bar" aria-hidden="true">|</span>
 						<a class="small" href="goSignUp">회원가입</a>                  	
 	                 </div>
-                 
+                 <input type="hidden" id="idPwSel">
                 </div>
               </div>
             </div>

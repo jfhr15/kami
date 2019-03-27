@@ -83,14 +83,26 @@ public class adminController {
 		return "admin/searchPopup";
 	}
 	
-	@RequestMapping(value = "/search", method = RequestMethod.POST)
-	public @ResponseBody Idinfo search(String is_name, String is_phone, String is_email) {
+	@RequestMapping(value = "/idSearch", method = RequestMethod.POST)
+	public @ResponseBody Idinfo idSearch(String is_name, String is_phone, String is_email) {
 		HashMap<Object, Object> map = new HashMap<Object, Object>();
 		map.put("name", is_name);
 		map.put("phone", is_phone);
 		map.put("email", is_email);
 		
 		Idinfo idinfo = dao.idSearch(map);
+		
+		return idinfo;
+	}
+	
+	@RequestMapping(value = "/pwSearch", method = RequestMethod.POST)
+	public @ResponseBody Idinfo pwSearch(String is_id, String is_phone, String is_email) {
+		HashMap<Object, Object> map = new HashMap<Object, Object>();
+		map.put("id", is_id);
+		map.put("phone", is_phone);
+		map.put("email", is_email);
+		
+		Idinfo idinfo = dao.pwSearch(map);
 		
 		return idinfo;
 	}

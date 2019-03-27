@@ -116,16 +116,16 @@
 			email=#{email}
 	</select>
 	
-<!-- 	<select id="idSearch" parameterType="HashMap" resultType="Idinfo"> -->
-<!-- 		select -->
-<!-- 			pw -->
-<!-- 		from -->
-<!-- 			idinfo -->
-<!-- 		where -->
-<!-- 			id=#{id} -->
-<!-- 		and -->
-<!-- 			phone=#{phone} -->
-<!-- 		and -->
-<!-- 			email=#{email} -->
-<!-- 	</select> -->
+	<select id="pwSearch" parameterType="HashMap" resultType="Idinfo">
+		select
+			pw
+		from
+			idinfo
+		where
+			id=#{id}
+		and
+			phone=#{phone}
+		and
+			email=#{email}
+	</select>
 </mapper>

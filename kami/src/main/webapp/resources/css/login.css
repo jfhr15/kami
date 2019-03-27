@@ -1,7 +1,9 @@
 @charset "UTF-8";
-#popupTable{
+#idPopupTable{
 	width:100%;
-	margin-top: 28%;
+}
+#pwPopupTable{
+	width:100%;
 }
 .popup_text{
 	width:40%;
@@ -10,8 +12,11 @@
 .popup_btn{
 	margin-left: 45%;
 }
-.tableForm{
-    margin-top: 20%;;
+#idTableForm{
+    margin-top: 20%;
+}
+#pwTableForm{
+	margin-top: 20%;
 }
 #popupHeader{
 	margin-left: auto;
@@ -30,9 +35,21 @@ a{
 	border : 0;
 	float: left;
 }
-#idSearchPage{
-	
+#clBtnId{
+	margin-left: 30%;
+	margin-right:1%;
 }
-#pwSearchPage{
-	
+#clBtnPw{
+	margin-left: 30%;
+	margin-right:1%;
+}
+#searchResult{
+	margin-left: 40%;
+}
+#head{
+	font-weight: bold;
+}
+#searchText{
+	margin-left: 10%;
+    margin-top: 8%;
 }
