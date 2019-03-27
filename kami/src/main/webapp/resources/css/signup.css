@@ -7,8 +7,8 @@
 	text-align: auto;
 }
 .td1{
-	padding-left: 10%;
-	padding-right: 10%;
+/* 	padding-left: 10%; */
+/* 	padding-right: 10%; */
 }
 .radio1{
 	font-size: 17px;
@@ -16,7 +16,7 @@
     height: 17px;
     margin-top: 10px;
 }
-.btnTable{
+.btns{
 	width: -webkit-fill-available;
 }
 .check{
@@ -29,8 +29,18 @@
 	color:red;
 }
 #addbtn{
-	margin-top:20px;
+	margin-top:5px;
 }
 .addresstable{
 	width:100%;
+}
+.container{
+	background: #ddd;
+	margin-left: 30%;
+	margin-right: 22%;
+	padding-left: 5%;
+	padding-right: 5%;
+	padding-top: 2%;
+	padding-bottom: 3%;
+	line-height: 1.8em;
 }

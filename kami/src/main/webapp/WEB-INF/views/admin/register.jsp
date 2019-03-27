@@ -11,30 +11,67 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>회원가입</title>
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
   <title>회원가입</title>
-  <script type="text/javascript" src="./resources/vendor/jquery/jquery.js"></script>
-  
-  <!-- Custom fonts for this template-->
-  <link href="${pageContext.request.contextPath}/resources/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
-  <!-- Custom styles for this template-->
-  <link href="${pageContext.request.contextPath}/resources/css/sb-admin-2.min.css" rel="stylesheet">
+  <script src="resources/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 
   <link href="${pageContext.request.contextPath}/resources/css/signup.css" rel="stylesheet">
+  <script src="./resources/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <script src="./resources/js/login.js"></script>
+  <link href="resources/styles/reset.css" rel="stylesheet" />
+  <link href="resources/css/signup.css" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" media="all" href="resources/styles/styles.css">
+  <meta name="author" content="Jake Rocheleau">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+<!--   <link rel="shortcut icon" href="http://www.templatemonster.com/favicon.ico">
+  <link rel="icon" href="http://www.templatemonster.com/favicon.ico"> -->
+  <script type="text/javascript" src="resources/js/jquery-1.10.2.min.js"></script>
+  <script type="text/javascript" src="resources/js/swipe.js"></script>
+  <script type="text/javascript" src="resources/js/jquery.bxslider.min.js"></script>  <!-- bxSlider 플러그인 연동 -->
+  <script type="text/javascript" src="resources/js/main.js"></script>
   
   <script type="text/javascript" src="./resources/js/signup.js"></script>
   <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 </head>
 
 <body class="bg-gradient-primary">
+	<header>
+		<div class="header_wrap">
+			<div class="header_inner">
+				<div id="skipNavi"><a href="#container">본문바로가기</a></div>
+				<dl class="topMenu">
+				<dt class="blind">탑메뉴</dt>
+				<dd><a href="goLogin"id="loginForm">로그인</a></dd>
+				<dd class="signup"> <a href="goSignup" id="signForm">회원가입</a></dd>
+				</dl>
+			</div>
 
+ 			<h1><a href="goHome" id="mainForm"><img src="resources/logo.png" alt="kamikami"/></a></h1>
+
+ 			<nav class="gnb">
+ 			<h2 class="blind">주메뉴</h2>
+ 			<ul>
+				<li><a href="#"><h3 class="gnbtit">About</h3></a></li>
+				<li><a href="#"><h3 class="gnbtit">Hair</h3></a>
+			<ul>
+				<li><a href="#">New Arrival</a>
+			<ul>
+				<li><a href="#">Cut</a></li>
+				<li><a href="#">Perm</a></li>
+				<li><a href="#">Color</a></li>
+			</ul>
+			</li>
+			</ul>
+ 			</li>
+				<li><a href="#"><h3 class="gnbtit">Reservation</h3></a></li>
+				<li><a href="#"><h3 class="gnbtit">Community</h3></a></li>
+			</ul>
+			</nav>
+		</div>
+	</header>
+
+	<!--header 끝-->
   <div class="container">
 
     <div class="card o-hidden border-0 shadow-lg my-5">
@@ -101,11 +138,6 @@
                 		<td><input type="text" class="form-control form-control-user" id="sample6_extraAddress" placeholder="참고항목"></td></tr>
                 	</table>
                 </div>
-                
-                
-                
-                
-                
                 <div id="address_check" class="check"></div>
                 <div class="form-group">
                   	전화번호<input type="text" class="form-control form-control-user" name="phone" id="phone" placeholder="-를 제외하고 입력해주세요.">
@@ -113,16 +145,16 @@
                 <div id="phone_check" class="check"></div>
               </div>
               	<input type="hidden" id="division" name="division" value="2">
-              	<table class="btnTable">
-              		<tr>
-              			<td>
-                  			<button id="employeeBtn" value="0" class="btn btn-primary btn-user btn-block" onclick="goInsertEmployee();">직원 등록</button>
-                  		</td>
-                  		<td>
-                  			<button id="memberBtn" value="1" class="btn btn-primary btn-user btn-block" onclick="goInsertMember();">회원 등록</button>
-                  		</td>
-                  	</tr>
-               	</table>
+<!--               	<table class="btnTable"> -->
+<!--               		<tr> -->
+<!--               			<td> -->
+                  			<button id="employeeBtn" value="0" class="btns" onclick="goInsertEmployee();">직원 등록</button>
+<!--                   		</td> -->
+<!--                   		<td> -->
+                  			<button id="memberBtn" value="1" class="btns" onclick="goInsertMember();">회원 등록</button>
+<!--                   		</td> -->
+<!--                   	</tr> -->
+<!--                	</table> -->
               <hr>
               </form>
             </div>
@@ -132,9 +164,6 @@
     </div>
 
   </div>
-	<div id="test1">
-		a
-	</div>
   <!-- Core plugin JavaScript-->
   <script src="./resources/vendor/jquery-easing/jquery.easing.min.js"></script>
 	

@@ -23,6 +23,17 @@ public class adminController {
 	@Autowired
 	AdminDAO dao;
 	
+	@RequestMapping(value = "/goLogin", method = RequestMethod.GET)
+	public String goLogin() {
+		
+		return "admin/login";
+	}
+	
+	@RequestMapping(value = "/goSignup", method = RequestMethod.GET)
+	public String goSignup() {
+		
+		return "admin/register";
+	}
 	
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String login(Idinfo idinfo ,HttpSession session, Model model) {

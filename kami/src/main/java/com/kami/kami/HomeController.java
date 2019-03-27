@@ -36,9 +36,12 @@ public class HomeController {
 		
 		model.addAttribute("serverTime", formattedDate );
 		
-		return "admin/login";
+		return "home";
 	}
 	
-	
+	@RequestMapping(value = "/goHome", method = RequestMethod.GET)
+	public String goHome(Locale locale, Model model) {
+		return "redirect:/";
+	}
 	
 }
