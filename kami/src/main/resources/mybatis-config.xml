@@ -25,6 +25,9 @@
 		<typeAlias type="com.kami.kami.vo.Review" alias="Review" />
 		<typeAlias type="com.kami.kami.vo.Schedule" alias="Schedule" />
 		<typeAlias type="com.kami.kami.vo.Supply" alias="Supply" />
+		<typeAlias type="com.kami.kami.vo.Chartbar" alias="Chartbar" />
+		<typeAlias type="com.kami.kami.vo.Chartpie" alias="Chartpie" />
+		<typeAlias type="com.kami.kami.vo.Chartarea" alias="Chartarea" />
 	</typeAliases>
 	<mappers>
 		<mapper resource="Mapper/adminMapper.xml" />
