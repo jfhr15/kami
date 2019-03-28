@@ -6,23 +6,22 @@
 <head>
   <title>로그인</title>
   
-  <script src="resources/jquery-3.3.1.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-  <!-- Core plugin JavaScript-->
-  <script src="./resources/vendor/jquery-easing/jquery.easing.min.js"></script>
+	<script src="resources/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+	<script src="./resources/vendor/jquery-easing/jquery.easing.min.js"></script>
 
-  <script src="./resources/js/login.js"></script>
-  <link href="resources/styles/reset.css" rel="stylesheet" /> 
-  <link href="resources/css/login.css" rel="stylesheet" /> 
-  <link rel="stylesheet" type="text/css" media="all" href="resources/styles/styles.css">
-  <meta name="author" content="Jake Rocheleau">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
-<!--   <link rel="shortcut icon" href="http://www.templatemonster.com/favicon.ico">
-  <link rel="icon" href="http://www.templatemonster.com/favicon.ico"> -->
-  <script type="text/javascript" src="resources/js/jquery-1.10.2.min.js"></script>
-  <script type="text/javascript" src="resources/js/swipe.js"></script>
-  <script type="text/javascript" src="resources/js/jquery.bxslider.min.js"></script>  <!-- bxSlider 플러그인 연동 -->
-  <script type="text/javascript" src="resources/js/main.js"></script>
+	<script src="./resources/js/login.js"></script>
+	<link href="resources/styles/reset.css" rel="stylesheet" /> 
+	<link href="resources/css/login.css" rel="stylesheet" /> 
+	<link rel="stylesheet" type="text/css" media="all" href="resources/styles/styles.css">
+	<meta name="author" content="Jake Rocheleau">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+	<link rel="shortcut icon" href="http://www.templatemonster.com/favicon.ico">
+	<link rel="icon" href="http://www.templatemonster.com/favicon.ico">
+	<script type="text/javascript" src="resources/js/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="resources/js/swipe.js"></script>
+	<script type="text/javascript" src="resources/js/jquery.bxslider.min.js"></script>
+    <script type="text/javascript" src="resources/js/main.js"></script>
 </head>
 <body class="bg-gradient-primary">
 	<header>
@@ -31,8 +30,14 @@
 				<div id="skipNavi"><a href="#container">본문바로가기</a></div>
 				<dl class="topMenu">
 				<dt class="blind">탑메뉴</dt>
-				<dd><a href="goLogin"id="loginForm">로그인</a></dd>
-				<dd class="signup"> <a href="goSignup" id="signForm">회원가입</a></dd>
+				<c:if test="${sessionScope.loginId != null}">
+ 					<dd><a href="logout"id="loginForm">Logout</a></dd>
+					<dd><a href="goIndex"id="loginForm">MyPage</a></dd>
+				</c:if>
+				<c:if test="${sessionScope.loginId == null}">
+					<dd><a href="goLogin"id="loginForm">Login</a></dd>
+					<dd class="signup"> <a href="goSignup" id="signForm">SignUp</a></dd>
+				</c:if>
 				</dl>
 			</div>
 
@@ -53,7 +58,7 @@
 			</li>
 			</ul>
  			</li>
-				<li><a href="#"><h3 class="gnbtit">Reservation</h3></a></li>
+				<li><a href="goReservation"><h3 class="gnbtit">Reservation</h3></a></li>
 				<li><a href="#"><h3 class="gnbtit">Community</h3></a></li>
 			</ul>
 			</nav>

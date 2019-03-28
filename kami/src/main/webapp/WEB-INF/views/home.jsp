@@ -1,5 +1,4 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <html>
@@ -8,7 +7,7 @@
 	
 	<script src="resources/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-	<!-- <link href="resources/css/sign.css" rel="stylesheet" />  -->
+	<link href="resources/css/sign.css" rel="stylesheet" />
 	
 	<script>
 	$(function() {
@@ -21,30 +20,36 @@
 	</script>
 	
 	<link href="resources/styles/reset.css" rel="stylesheet" /> 
-  <link rel="stylesheet" type="text/css" media="all" href="resources/styles/styles.css">
-  <meta name="author" content="Jake Rocheleau">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
-<!--   <link rel="shortcut icon" href="http://www.templatemonster.com/favicon.ico">
-  <link rel="icon" href="http://www.templatemonster.com/favicon.ico"> -->
-  <script type="text/javascript" src="resources/js/jquery-1.10.2.min.js"></script>
-  <script type="text/javascript" src="resources/js/swipe.js"></script>
-  <script type="text/javascript" src="resources/js/jquery.bxslider.min.js"></script>  <!-- bxSlider 플러그인 연동 -->
+	<link rel="stylesheet" type="text/css" media="all" href="resources/styles/styles.css">
+	<meta name="author" content="Jake Rocheleau">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+	<link rel="shortcut icon" href="http://www.templatemonster.com/favicon.ico">
+	<link rel="icon" href="http://www.templatemonster.com/favicon.ico">
+	<script type="text/javascript" src="resources/js/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="resources/js/swipe.js"></script>
+	<script type="text/javascript" src="resources/js/jquery.bxslider.min.js"></script>
     <script type="text/javascript" src="resources/js/main.js"></script>
 </head>
 
 <body>
- <header>
+	<header>
 	<div class="header_wrap">
 		<div class="header_inner">
- <div id="skipNavi"><a href="#container">본문바로가기</a></div>
- <dl class="topMenu">
- <dt class="blind">탑메뉴</dt>
- <dd><a href="goLogin"id="loginForm">로그인</a></dd>
- <dd class="signup"> <a href="goSignup" id="signForm">회원가입</a></dd>
- </dl>
-	</div>
+			<div id="skipNavi"><a href="#container">본문바로가기</a></div>
+			<dl class="topMenu">
+				<dt class="blind">탑메뉴</dt>
+ 				<c:if test="${sessionScope.loginId != null}">
+ 					<dd><a href="logout"id="loginForm">Logout</a></dd>
+					<dd><a href="goIndex"id="loginForm">MyPage</a></dd>
+				</c:if>
+				<c:if test="${sessionScope.loginId == null}">
+					<dd><a href="goLogin"id="loginForm">Login</a></dd>
+					<dd class="signup"> <a href="goSignup" id="signForm">SignUp</a></dd>
+				</c:if>
+			</dl>
+		</div>
 
- <h1><a href="#" id="mainForm"><img src="resources/logo.png" alt="kamikami"/></a></h1>
+ 		<h1><a href="#" id="mainForm"><img src="resources/logo.png" alt="kamikami"/></a></h1>
 
  <nav class="gnb">
  <h2 class="blind">주메뉴</h2>
@@ -61,7 +66,7 @@
 	 </li>
 	 </ul>
  </li>
- <li><a href="#"><h3 class="gnbtit">Reservation</h3></a></li>
+ <li><a href="goReservation"><h3 class="gnbtit">Reservation</h3></a></li>
  <li><a href="#"><h3 class="gnbtit">Community</h3></a></li>
 </ul>
 </nav>

@@ -35,6 +35,12 @@ public class adminController {
 		return "admin/register";
 	}
 	
+	@RequestMapping(value = "/goIndex", method = RequestMethod.GET)
+	public String goIndex() {
+		
+		return "admin/index";
+	}
+	
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String login(Idinfo idinfo ,HttpSession session, Model model) {
 		Idinfo result = dao.login(idinfo);
@@ -43,7 +49,14 @@ public class adminController {
 		} else {
 			session.setAttribute("loginId", result.getId());
 		}
-		return "admin/index";
+		return "redirect:/";
+	}
+	
+	@RequestMapping(value = "/logout", method = RequestMethod.GET)
+	public String logout(HttpSession session) {
+		session.setAttribute("loginId", null);
+		
+		return "redirect:/";
 	}
 	
 	@RequestMapping(value = "/goSignUp", method = RequestMethod.GET)
