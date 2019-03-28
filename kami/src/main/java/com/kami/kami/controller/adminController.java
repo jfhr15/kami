@@ -48,6 +48,7 @@ public class adminController {
 			return "admin/login";
 		} else {
 			session.setAttribute("loginId", result.getId());
+			session.setAttribute("type", result.getType());
 		}
 		return "redirect:/";
 	}

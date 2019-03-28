@@ -51,9 +51,9 @@
 			<ul>
 				<li><a href="#">New Arrival</a>
 			<ul>
-				<li><a href="#">Cut</a></li>
-				<li><a href="#">Perm</a></li>
-				<li><a href="#">Color</a></li>
+				<li><a href="goCut">Cut</a></li>
+				<li><a href="goPerm">Perm</a></li>
+				<li><a href="goColor">Color</a></li>
 			</ul>
 			</li>
 			</ul>
