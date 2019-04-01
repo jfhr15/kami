@@ -74,4 +74,16 @@ public class ReservationDAO {
 		}
 		return result;
 	}
+	
+	public ArrayList<Reservation> selectResEmp(HashMap<Object,Object> map){
+		ArrayList<Reservation> result = null;
+		ReservationMapper mapper = session.getMapper(ReservationMapper.class);
+		try {
+			result = mapper.selectResEmp(map);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+		return result;
+	}
 }

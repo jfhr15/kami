@@ -57,7 +57,6 @@ public class adminController {
 			session.setAttribute("type", result.getType());
 			if(result.getType() == 0) {
 				Employee employee = dao.employeeTypeCheck(result.getId());
-				System.out.println(employee.getEmp_flag());
 				session.setAttribute("empType", employee.getPositionseq());
 			} else if(result.getType() == 1) {
 				Member member = dao.memberTypeCheck(result.getId());

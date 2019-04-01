@@ -30,6 +30,11 @@ $(function() {
 								$("#loading").toggle(bool);
 							},
 							dayClick : function(date, jsEvent, view) {
+// 								var qwe = "";
+// 								qwe += "<div class='input-group-addon'>";
+// 								qwe += "<span class='glyphicon glyphicon glyphicon-pencil' aria-hidden='true'></span>";
+// 								qwe += "</div>";
+// 								qwe += "<input type='text' class='form-control' id='content' placeholder='content' value=''>";
 								$('#start').val(date.format('YYYY-MM-DD'))
 								$('#shour').val(date.format('HH'))
 								$('#smin').val(date.format('mm'))
@@ -116,7 +121,7 @@ $(function() {
 	}
 	function schedule() {
 		$.ajax({
-			url : 'selectRes',
+			url : 'selectResEmp',
 			data : {
 			},
 			type : 'get',
@@ -132,7 +137,7 @@ $(function() {
 		$.each(cList, function(index, item) {
 			$('#calendar').fullCalendar('renderEvent', {
 				title : item.emp_Id,
-				content : "예약",
+				content : item.mem_id + " 님 예약",
 				start : item.rsv_date,
 				end : item.rsv_date + item.rsv_time,
 				allDay : false,

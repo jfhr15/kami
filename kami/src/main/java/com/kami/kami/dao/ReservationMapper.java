@@ -11,4 +11,5 @@ public interface ReservationMapper {
 	public int deleteRes(HashMap<Object,Object> map);
 	public Reservation selectResOne(String reservationseq);
 	public int updateRes(Reservation res);
+	public ArrayList<Reservation> selectResEmp(HashMap<Object,Object> map);
 }

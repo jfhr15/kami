@@ -32,7 +32,14 @@
 				<dt class="blind">탑메뉴</dt>
 				<c:if test="${sessionScope.loginId != null}">
  					<dd><a href="logout"id="loginForm">Logout</a></dd>
-					<dd><a href="goIndex"id="loginForm">MyPage</a></dd>
+ 					<c:if test="${sessionScope.empType != null}">
+	 					<c:if test="${sessionScope.empType == 0}">
+	 						<dd><a href="goManagement" id="loginForm">Management</a></dd>
+	 					</c:if>
+	 					<c:if test="${sessionScope.empType != 0}">
+							<dd><a href="goIndex" id="loginForm">MyPage</a></dd>
+						</c:if>
+					</c:if>
 				</c:if>
 				<c:if test="${sessionScope.loginId == null}">
 					<dd><a href="goLogin"id="loginForm">Login</a></dd>
@@ -58,7 +65,17 @@
 			</li>
 			</ul>
  			</li>
-				<li><a href="goReservation"><h3 class="gnbtit">Reservation</h3></a></li>
+ 				<c:choose>
+ 					<c:when test="${sessionScope.memType != null}">
+ 						<li><a href="goReservation"><h3 class="gnbtit">Reservation</h3></a></li>
+ 					</c:when>
+ 					<c:when test="${sessionScope.empType != null}">
+ 						<li><a href="goReservationList"><h3 class="gnbtit">Reservation</h3></a></li>
+ 					</c:when>
+ 					<c:otherwise>
+ 						<li><a href="goReservation"><h3 class="gnbtit">Reservation</h3></a></li>
+ 					</c:otherwise>
+ 				</c:choose>
 				<li><a href="#"><h3 class="gnbtit">Community</h3></a></li>
 			</ul>
 			</nav>

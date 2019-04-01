@@ -26,6 +26,12 @@ public class reservationController {
 		return "reservation/reservation";
 	}
 	
+	@RequestMapping(value = "/goReservationList", method = RequestMethod.GET)
+	public String goReservationList() {
+		
+		return "reservation/viewReservation";
+	}
+	
 	@RequestMapping(value = "/insertRes", method = RequestMethod.POST)
 	public @ResponseBody String insertRes(Reservation res, HttpSession session) {
 		res.setMem_id((String)session.getAttribute("loginId"));
@@ -75,5 +81,18 @@ public class reservationController {
 		Reservation res = rDao.selectResOne(reservationseq);
 		
 		return res;
+	}
+	
+	@RequestMapping(value = "/selectResEmp", method = RequestMethod.GET)
+	public @ResponseBody List<Reservation> selectResEmp(HttpSession session) {
+		String loginId = (String)session.getAttribute("loginId");
+		
+		HashMap<Object, Object> map = new HashMap<Object, Object>();
+		
+		map.put("emp_id", loginId);
+		
+		List<Reservation> cList = rDao.selectResEmp(map);
+		
+		return cList;
 	}
 }

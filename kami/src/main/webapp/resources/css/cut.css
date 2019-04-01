@@ -138,7 +138,6 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite
 dl, dt, dd, ol, ul, li, fieldset, form, label, legend {
  vertical-align: baseline;
  font-family: inherit;
- font-weight: inherit;
  font-style: inherit;
  font-size: 100%;
  outline: 0;
@@ -274,4 +273,7 @@ body {
 	.sub #contents{width: 100%;padding-right: 0;}
 	.entryhide #sidebar,
 	.sub #sidebar{width: 100%;overflow: hidden}
+}
+.gnbtit{
+	font-weight:bold;
 }

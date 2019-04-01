@@ -1,27 +1,34 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Management</title>
+<title>예약 목록</title>
 	<script src="resources/jquery-3.3.1.min.js"></script>
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-	<script src="./resources/vendor/jquery-easing/jquery.easing.min.js"></script>
-
-	<script src="./resources/js/management.js"></script>
-	<link href="resources/styles/reset.css" rel="stylesheet" /> 
-	<link href="resources/css/management.css" rel="stylesheet" /> 
+	<link href="resources/css/reservationList.css" rel="stylesheet" />
+	
 	<link rel="stylesheet" type="text/css" media="all" href="resources/styles/styles.css">
 	<meta name="author" content="Jake Rocheleau">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
 	<link rel="shortcut icon" href="http://www.templatemonster.com/favicon.ico">
 	<link rel="icon" href="http://www.templatemonster.com/favicon.ico">
-	<script type="text/javascript" src="resources/js/jquery-1.10.2.min.js"></script>
+	<link href="./resources/fullcalendar-3.10.0/fullcalendar.css" rel="stylesheet" />
+	<link href="./resources/fullcalendar-3.10.0/fullcalendar.print.css" rel="stylesheet" media="print" />
+	<link rel='stylesheet'href='./resources/bootstrap/dist/css/bootstrap.min2.css' />
+	
 	<script type="text/javascript" src="resources/js/swipe.js"></script>
 	<script type="text/javascript" src="resources/js/jquery.bxslider.min.js"></script>
     <script type="text/javascript" src="resources/js/main.js"></script>
+    <script type="text/javascript" src="resources/js/reservationList.js"></script>
+	<script type="text/javascript" src="./resources/fullcalendar-3.10.0/lib/moment.min.js"></script>
+	<script type="text/javascript" src="./resources/fullcalendar-3.10.0/lib/jquery.min.js"></script>
+	<script type="text/javascript" src="./resources/fullcalendar-3.10.0/fullcalendar.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./resources/fullcalendar-3.10.0/gcal.js"></script>
+	<script src='./resources/bootstrap/dist/js/bootstrap.min.js'></script>
+	<script type="text/javascript" src="./resources/fullcalendar-3.10.0/locale/ko.js"></script>
+
 </head>
 <body>
 	<header>
@@ -83,6 +90,38 @@
 	</header>
 
 	<!--header 끝-->
-	
+
+	<div id="viewCal">
+	<div id="loading"></div>
+	<div id="calendar"></div>
+
+	<!-- Event View Modal -->
+	<div class="modal fade" id="viewModal" tabindex="-1" role="dialog"
+		aria-labelledby="viewModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-content" id="viewModalLabel">
+						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+						<span id="eventDate"></span><br>
+					</h4>
+				</div>
+				<input type="hidden" id="id" name="id">
+				<div class="modal-body" id="viewModalBody"></div>
+				<div class="modal-footer">
+<!-- 					<button type="button" class="btn btn-warning" id="deleteBtn" -->
+<!-- 						name="deleteBtn">삭제</button> -->
+<!-- 					<button type="button" class="btn btn-warning" id="updateBtn" -->
+<!-- 						name="updateBtn">수정</button> -->
+					<button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
 </body>
 </html>

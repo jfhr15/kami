@@ -40,6 +40,21 @@
 	 		mem_id=#{mem_id}
 	</select>
 	
+	<select id="selectResEmp" resultType="Res" parameterType="map">
+		select
+			reservationseq
+			,emp_id
+			,mem_id
+			,paymentNum
+			,rsv_date
+			,rsv_time
+			,rsv_totalPrice
+	 	from 
+	 		reservation 
+	 	where
+	 		emp_id=#{emp_id}
+	</select>
+	
 	<delete id="deleteRes" parameterType="map"> 
 		delete from
 			reservation
