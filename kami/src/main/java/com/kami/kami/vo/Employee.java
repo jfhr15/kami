@@ -5,7 +5,7 @@ public class Employee {
 	private int positionseq; //직원의 직책 정보
 	private String  emp_hiredate; //직원 입사일
 	private String  emp_firedate; //직원 퇴사일
-	private String  emp_flag; //직원 퇴직 여부, 1: 재직 / 2: 퇴직
+	private String  emp_flag; //직원 퇴직 여부, 0: 관리자 / 1: 재직 / 2: 퇴직
 	public Employee(String emp_id, int positionseq, String emp_hiredate, String emp_firedate, String emp_flag) {
 		super();
 		this.emp_id = emp_id;

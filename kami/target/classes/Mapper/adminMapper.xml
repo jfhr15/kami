@@ -128,4 +128,22 @@
 		and
 			email=#{email}
 	</select>
+	
+	<select id="memberTypeCheck" resultType="Member" parameterType="String">
+		select
+			mem_flag
+		from
+			member
+		where
+			mem_id=#{id}
+	</select>
+	
+	<select id="employeeTypeCheck" resultType="Employee" parameterType="String">
+		select
+			positionseq
+		from
+			employee
+		where
+			emp_id=#{id}
+	</select>
 </mapper>

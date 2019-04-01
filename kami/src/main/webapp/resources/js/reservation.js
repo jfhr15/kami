@@ -74,6 +74,7 @@ $(function() {
 		$(".fc-agendaweek-button").on('click', sch);
 		$(".fc-listweek-button").on('click', sch);
 		$(".fc-month-button").on('click', sch);
+		$("#moveBtn").on('click', move);
 		$("#saveBtn").on('click', insert);
 		$("#deleteBtn").on('click', del);
 		$("#updateBtn").on('click', update);
@@ -98,8 +99,7 @@ $(function() {
 	
 	function sch() {
 		$('#calendar').fullCalendar( 'removeEvents');
-		schedule(0);
-		schedule(1);
+		schedule();
 	}
 	
 	function approval() {
@@ -108,47 +108,41 @@ $(function() {
 				sch();
 			} else {
 				$('#calendar').fullCalendar( 'removeEvents');
-				schedule(0);
+				schedule();
 			}
 		} else {
 			if($(".sBar3").eq(0).is(":checked")) {
 				$('#calendar').fullCalendar( 'removeEvents');
-				schedule(1);
+				schedule();
 			} else {
 				$('#calendar').fullCalendar( 'removeEvents');
 			}
 		}
 	}
-	function schedule(num) {
+	function schedule() {
 		$.ajax({
-			url : 'selectOff',
+			url : 'selectRes',
 			data : {
-				num : num
 			},
 			type : 'get',
 			success : function(cList) {
-				output(num, cList);
+				output(cList);
 			}
 		});
 	}
 
-	function output(num, cList) {
-		var c = '';
-		if(num == 0){
-			c = '#5fd14b';
-		} else if(num == 1) {
-			c = '#4b68d1';
-		}
+	function output(cList) {
+		var c = '#5fd14b';
 		
 		$.each(cList, function(index, item) {
 			$('#calendar').fullCalendar('renderEvent', {
-				title : item.empId,
-				content : item.empId+"휴무",
-				start : item.offStartDate,
-				end : item.offEndDate,
+				title : item.emp_Id,
+				content : "예약",
+				start : item.rsv_date,
+				end : item.rsv_date + item.rsv_time,
 				allDay : false,
-				id : item.offScheduleSeq,
-				groupId : item.empId,
+				id : item.reservationseq,
+				groupId : item.mem_Id,
 				backgroundColor : c
 			});
 		})
@@ -161,72 +155,49 @@ $(function() {
 		var id = $('#id').val();
 		$('#viewModal').modal('hide');
 		$.ajax({
-			url : 'selectOffOne',
+			url : 'selectResOne',
 			data : {
-				offScheduleSeq : id
+				reservationseq : id
 			},
 			type : 'post',
 			success : function(result) {
-				var off = result;
-				var s = off.offStartDate;
+				var res = result;
+				var s = res.rsv_date;
 				var start = s.split(" ");
 				var stime = start[1].split(":");
-				var e = off.offEndDate;
-				var end = e.split(" ");
-				var etime = end[1].split(":");
+				var t = res.rsv_time;
+				var time = t.split(":");
 				$(".modal-header").html("일정 수정");
 				$("#division").html("");
 				$('#writeModal').modal('show');
 				$("#start").val(start[0]);
 				$("#shour").val(stime[0]);
 				$("#smin").val(stime[1]);
-				$("#end").val(end[0]);
-				$("#ehour").val(etime[0]);
-				$("#emin").val(etime[1]);
-				//$("#content").val(cal.content);
 			}
 		});
 	}
 
 	function insert() {
-
-		// 		var content = $('#content').val();
-		// 		if (content == '') {
-		// 			alert('내용을 입력하세요');
-		// 			return;
-		// 		}
-		var start = $('#start').val();
-		var end = $('#end').val();
-
-		if (!$('#allDay').is(":checked")) {
-			start += " " + $('#shour').val() + ":" + $('#smin').val();
-			end += " " + $('#ehour').val() + ":" + $('#emin').val();
-		} else {
-			end = moment($('#end').val()).add(1, 'days').format('YYYY-MM-DD');
-		}
+		var start = $("#hStart").val();
 		if (flag == 0) {
 			$.ajax({
-				url : 'insertOff',
+				url : 'insertRes',
 				data : {
-					offStartDate : start,
-					offEndDate : end,
-				// 	content : content
+					rsv_date : start
 				},
 				type : 'post',
 				success : function() {
-					$('#writeModal').modal('hide');
+					alert("!!");
 					window.location.reload();
 				}
 			});
-		} else if (flag == 1) {
+		}else if (flag == 1) {
 			var id = $("#id").val();
 			$.ajax({
-				url : 'updateOff',
+				url : 'updateRes',
 				data : {
-					offStartDate : start,
-					offEndDate : end,
-// 					content : content,
-					offScheduleSeq : id
+					rsv_date : start,
+					reservationseq : id
 				},
 				type : 'post',
 				success : function() {
@@ -237,14 +208,15 @@ $(function() {
 			});
 		}
 	}
+	
 	function del() {
-		var offScheduleSeq = $('#id').val();
+		var reservationseq = $('#id').val();
 
 		if (confirm("삭제하시겠습니까?")) {
 			$.ajax({
-				url : 'deleteOff',
+				url : 'deleteRes',
 				data : {
-					offScheduleSeq : offScheduleSeq
+					reservationseq : reservationseq
 				},
 				type : 'post',
 				success : function() {
@@ -253,4 +225,12 @@ $(function() {
 				}
 			});
 		}
+	}
+	
+	function move(){
+		var start = $('#start').val();
+		start += " " + $('#shour').val() + ":" + $('#smin').val();
+		$("#hStart").val(start);
+		$("#sDate").html("예약 시간 : " + start);
+		$('#writeModal').modal('hide');
 	}

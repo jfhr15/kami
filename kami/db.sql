@@ -44,13 +44,12 @@ CREATE TABLE  career  (
 
 CREATE TABLE  reservation  (
     reservationseq    number      NOT NULL,
-    proinfoseq    number      NOT NULL,
     emp_id    varchar2(30)      NOT NULL,
     mem_id    varchar2(30)      NOT NULL,
     paymentNum    varchar2(100)      NOT NULL,
     rsv_date    date      not NULL,
     rsv_time    varchar2(10)      not NULL,
-     rsv_totalprice number  null
+    rsv_totalPrice number  null
 );
 
 CREATE TABLE  chat  (
@@ -153,7 +152,7 @@ CREATE TABLE  review  (
 CREATE TABLE  procedureInformation  (
     proinfoseq    number      NOT NULL,
     procedureseq    number      NOT NULL,
-     reservationseq number  not null
+    reservationseq number  not null
 );
 
 CREATE TABLE  payment  (
@@ -322,13 +321,6 @@ ALTER TABLE  career  ADD CONSTRAINT  FK_employee_TO_career_1  FOREIGN KEY (
 )
 REFERENCES  employee  (
     emp_id 
-);
-
-ALTER TABLE  reservation  ADD CONSTRAINT  FK_PI_TO_reservation_1  FOREIGN KEY (
-    proinfoseq 
-)
-REFERENCES  procedureInformation  (
-    proinfoseq 
 );
 
 ALTER TABLE  reservation  ADD CONSTRAINT  FK_employee_TO_reservation_1  FOREIGN KEY (

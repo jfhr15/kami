@@ -40,7 +40,14 @@
 				<dt class="blind">탑메뉴</dt>
 				<c:if test="${sessionScope.loginId != null}">
  					<dd><a href="logout"id="loginForm">Logout</a></dd>
-					<dd><a href="goIndex"id="loginForm">MyPage</a></dd>
+ 					<c:if test="${sessionScope.empType2 != null}">
+	 					<c:if test="${sessionScope.empType2 == 0}">
+	 						<dd><a href="goManagement" id="loginForm">Management</a></dd>
+	 					</c:if>
+	 					<c:if test="${sessionScope.empType2 != 0}">
+							<dd><a href="goIndex" id="loginForm">MyPage</a></dd>
+						</c:if>
+					</c:if>
 				</c:if>
 				<c:if test="${sessionScope.loginId == null}">
 					<dd><a href="goLogin"id="loginForm">Login</a></dd>

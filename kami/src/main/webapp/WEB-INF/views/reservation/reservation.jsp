@@ -1,15 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Resevation</title>
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-<!-- 	<link href="resources/css/sign.css" rel="stylesheet" /> -->
+	<script src="resources/jquery-3.3.1.min.js"></script>
 	<link href="resources/css/reservation.css" rel="stylesheet" />
 	
-	<link href="resources/styles/reset.css" rel="stylesheet" /> 
 	<link rel="stylesheet" type="text/css" media="all" href="resources/styles/styles.css">
 	<meta name="author" content="Jake Rocheleau">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
@@ -19,7 +18,6 @@
 	<link href="./resources/fullcalendar-3.10.0/fullcalendar.print.css" rel="stylesheet" media="print" />
 	<link rel='stylesheet'href='./resources/bootstrap/dist/css/bootstrap.min.css' />
 	
-	<script src="resources/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="resources/js/swipe.js"></script>
 	<script type="text/javascript" src="resources/js/jquery.bxslider.min.js"></script>
     <script type="text/javascript" src="resources/js/main.js"></script>
@@ -38,8 +36,21 @@
 				<div id="skipNavi"><a href="#container">본문바로가기</a></div>
 				<dl class="topMenu">
 				<dt class="blind">탑메뉴</dt>
-				<dd><a href="goLogin"id="loginForm">로그인</a></dd>
-				<dd class="signup"> <a href="goSignup" id="signForm">회원가입</a></dd>
+				<c:if test="${sessionScope.loginId != null}">
+ 					<dd><a href="logout"id="loginForm">Logout</a></dd>
+ 					<c:if test="${sessionScope.empType2 != null}">
+	 					<c:if test="${sessionScope.empType2 == 0}">
+	 						<dd><a href="goManagement" id="loginForm">Management</a></dd>
+	 					</c:if>
+	 					<c:if test="${sessionScope.empType2 != 0}">
+							<dd><a href="goIndex" id="loginForm">MyPage</a></dd>
+						</c:if>
+					</c:if>
+				</c:if>
+				<c:if test="${sessionScope.loginId == null}">
+					<dd><a href="goLogin"id="loginForm">Login</a></dd>
+					<dd class="signup"> <a href="goSignup" id="signForm">SignUp</a></dd>
+				</c:if>
 				</dl>
 			</div>
 
@@ -53,9 +64,9 @@
 			<ul>
 				<li><a href="#">New Arrival</a>
 			<ul>
-				<li><a href="#">Cut</a></li>
-				<li><a href="#">Perm</a></li>
-				<li><a href="#">Color</a></li>
+				<li><a href="goCut">Cut</a></li>
+				<li><a href="goPerm">Perm</a></li>
+				<li><a href="goColor">Color</a></li>
 			</ul>
 			</li>
 			</ul>
@@ -140,16 +151,6 @@
 								<label class="sr-only" for="shour">shour</label>
 								<div class="input-group">
 									<select id="shour" class="form-control">
-										<option value="00">00
-										<option value="01">01
-										<option value="02">02
-										<option value="03">03
-										<option value="04">04
-										<option value="05">05
-										<option value="06">06
-										<option value="07">07
-										<option value="08">08
-										<option value="09">09
 										<option value="10">10
 										<option value="11">11
 										<option value="12">12
@@ -161,9 +162,6 @@
 										<option value="18">18
 										<option value="19">19
 										<option value="20">20
-										<option value="21">21
-										<option value="22">22
-										<option value="23">23
 									</select>
 								</div>
 								<label class="sr-only" for="smin">smin</label>
@@ -176,60 +174,47 @@
 									</select>
 								</div>
 							</div>
-							<br>
-							<div class="form-inline">
-								<label class="sr-only" for="end">end</label>
-								<div class="input-group">
-									<div class="input-group-addon">
-										<span class="glyphicon glyphicon glyphicon-calendar"
-											aria-hidden="true"></span>
-									</div>
-									<input type="text" class="form-control" id="end"
-										placeholder="end">
-								</div>
-								<label class="sr-only" for="ehour">ehour</label>
-								<div class="input-group">
-									<select id="ehour" class="form-control">
-										<option value="00">00
-										<option value="01">01
-										<option value="02">02
-										<option value="03">03
-										<option value="04">04
-										<option value="05">05
-										<option value="06">06
-										<option value="07">07
-										<option value="08">08
-										<option value="09">09
-										<option value="10">10
-										<option value="11">11
-										<option value="12">12
-										<option value="13">13
-										<option value="14">14
-										<option value="15">15
-										<option value="16">16
-										<option value="17">17
-										<option value="18">18
-										<option value="19">19
-										<option value="20">20
-										<option value="21">21
-										<option value="22">22
-										<option value="23">23
-									</select>
-								</div>
-								<label class="sr-only" for="emin">emin</label>
-								<div class="input-group">
-									<select id="emin" class="form-control">
-										<option value="00">00
-										<option value="15">15
-										<option value="30">30
-										<option value="45">45
-									</select>
-								</div>
-							</div>
+<!-- 							<br> -->
+<!-- 							<div class="form-inline"> -->
+<!-- 								<label class="sr-only" for="end">end</label> -->
+<!-- 								<div class="input-group"> -->
+<!-- 									<div class="input-group-addon"> -->
+<!-- 										<span class="glyphicon glyphicon glyphicon-calendar" -->
+<!-- 											aria-hidden="true"></span> -->
+<!-- 									</div> -->
+<!-- 									<input type="text" class="form-control" id="end" -->
+<!-- 										placeholder="end"> -->
+<!-- 								</div> -->
+<!-- 								<label class="sr-only" for="ehour">ehour</label> -->
+<!-- 								<div class="input-group"> -->
+<!-- 									<select id="ehour" class="form-control"> -->
+<!-- 										<option value="10">10 -->
+<!-- 										<option value="11">11 -->
+<!-- 										<option value="12">12 -->
+<!-- 										<option value="13">13 -->
+<!-- 										<option value="14">14 -->
+<!-- 										<option value="15">15 -->
+<!-- 										<option value="16">16 -->
+<!-- 										<option value="17">17 -->
+<!-- 										<option value="18">18 -->
+<!-- 										<option value="19">19 -->
+<!-- 										<option value="20">20 -->
+<!-- 									</select> -->
+<!-- 								</div> -->
+<!-- 								<label class="sr-only" for="emin">emin</label> -->
+<!-- 								<div class="input-group"> -->
+<!-- 									<select id="emin" class="form-control"> -->
+<!-- 										<option value="00">00 -->
+<!-- 										<option value="15">15 -->
+<!-- 										<option value="30">30 -->
+<!-- 										<option value="45">45 -->
+<!-- 									</select> -->
+<!-- 								</div> -->
+<!-- 							</div> -->
 							<br>
 							<div class="modal-footer">
-								<button type="button" class="btn btn-warning" id="saveBtn"
-									name="saveBtn">저장</button>
+								<button type="button" class="btn btn-warning" id="moveBtn"
+									name="moveBtn">선택</button>
 								<button type="button" class="btn btn-default"
 									data-dismiss="modal">닫기</button>
 							</div>
@@ -239,6 +224,23 @@
 			</div>
 		</div>
 	</div>
+	</div>
+	
+	<div id="viewReservation">
+		<div id="sDate">예약 시간 : 시간을 선택해주세요.</div>
+		<input type="hidden" id="hStart">
+		<table id="dTable">
+			<tr>
+				<td class="dTableTd"><img class="tableImg" src="./resources/img/beautiful.jpg">디자이너 OOO</td>
+				<td class="dTableTd"><img class="tableImg" src="./resources/img/beautiful2.jpg">디자이너 OOO</td>
+			</tr>
+			<tr>
+				<td class="dTableTd"><img class="tableImg" src="./resources/img/beautiful3.jpg">디자이너 OOO</td>
+				<td class="dTableTd"><img class="tableImg" src="./resources/img/beautiful4.jpg">디자이너 OOO</td>
+			</tr>
+		</table>
+		<button type="button" id="saveBtn"
+		name="saveBtn">예약 하기</button>
 	</div>
 </body>
 </html>

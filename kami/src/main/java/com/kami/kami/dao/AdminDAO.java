@@ -113,4 +113,28 @@ public class AdminDAO {
 		}
 		return result;
 	}
+	
+	public Member memberTypeCheck(String id) {
+		Member member = new Member();
+		try {
+			AdminMapper mapper = session.getMapper(AdminMapper.class);
+			member = mapper.memberTypeCheck(id);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return member;
+		}
+		return member;
+	}
+	
+	public Employee employeeTypeCheck(String id) {
+		Employee employee = new Employee();
+		try {
+			AdminMapper mapper = session.getMapper(AdminMapper.class);
+			employee = mapper.employeeTypeCheck(id);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return employee;
+		}
+		return employee;
+	}
 }

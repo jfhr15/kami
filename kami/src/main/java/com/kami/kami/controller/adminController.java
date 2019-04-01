@@ -41,6 +41,12 @@ public class adminController {
 		return "admin/index";
 	}
 	
+	@RequestMapping(value = "/goManagement", method = RequestMethod.GET)
+	public String goManagement() {
+		
+		return "admin/management";
+	}
+	
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String login(Idinfo idinfo ,HttpSession session, Model model) {
 		Idinfo result = dao.login(idinfo);
@@ -49,6 +55,14 @@ public class adminController {
 		} else {
 			session.setAttribute("loginId", result.getId());
 			session.setAttribute("type", result.getType());
+			if(result.getType() == 0) {
+				Employee employee = dao.employeeTypeCheck(result.getId());
+				System.out.println(employee.getEmp_flag());
+				session.setAttribute("empType", employee.getPositionseq());
+			} else if(result.getType() == 1) {
+				Member member = dao.memberTypeCheck(result.getId());
+				session.setAttribute("memType", member.getMem_flag());
+			}
 		}
 		return "redirect:/";
 	}
@@ -56,6 +70,8 @@ public class adminController {
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public String logout(HttpSession session) {
 		session.setAttribute("loginId", null);
+		session.setAttribute("empType", null);
+		session.setAttribute("memType", null);
 		
 		return "redirect:/";
 	}
