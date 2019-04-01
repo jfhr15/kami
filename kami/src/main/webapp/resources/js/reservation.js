@@ -187,7 +187,6 @@ $(function() {
 				},
 				type : 'post',
 				success : function() {
-					alert("!!");
 					window.location.reload();
 				}
 			});
