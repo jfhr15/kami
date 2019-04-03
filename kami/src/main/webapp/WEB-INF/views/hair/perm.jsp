@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" class="sub entryhide js no-touch csstransforms csstransforms3d csstransitions">
 <head>
 <meta charset="UTF-8">
-<title>cut</title>
+<title>perm</title>
 	<link href="resources/css/cut.css" rel="stylesheet" />
 	<link href="resources/styles/reset.css" rel="stylesheet" /> 
 	<link rel="stylesheet" type="text/css" media="all" href="resources/styles/styles.css">

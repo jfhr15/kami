@@ -16,7 +16,7 @@
 	<link rel="icon" href="http://www.templatemonster.com/favicon.ico">
 	<link href="./resources/fullcalendar-3.10.0/fullcalendar.css" rel="stylesheet" />
 	<link href="./resources/fullcalendar-3.10.0/fullcalendar.print.css" rel="stylesheet" media="print" />
-	<link rel='stylesheet'href='./resources/bootstrap/dist/css/bootstrap.min.css' />
+	<link rel='stylesheet'href='./resources/bootstrap/dist/css/bootstrap.min2.css' />
 	
 	<script type="text/javascript" src="resources/js/swipe.js"></script>
 	<script type="text/javascript" src="resources/js/jquery.bxslider.min.js"></script>

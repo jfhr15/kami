@@ -117,7 +117,9 @@ CREATE TABLE  hairColor  (
     colorseq    number      NOT NULL,
     color    varchar2(50)      NULL,
     colorcode    varchar2(50)      NULL,
-    colorcontent    varchar2(300)      NULL
+    colorcontent    varchar2(300)      NULL,
+    hc_savfile  date null,
+    hc_orgfile  varchar2(2000) null
 );
 
 CREATE TABLE  procedure  (
