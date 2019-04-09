@@ -1,5 +1,6 @@
 package com.kami.kami.controller;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -7,11 +8,13 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.kami.kami.dao.ReservationDAO;
+import com.kami.kami.vo.Idinfo;
 import com.kami.kami.vo.Reservation;
 
 @Controller
@@ -21,7 +24,9 @@ public class reservationController {
 	ReservationDAO rDao;
 	
 	@RequestMapping(value = "/goReservation", method = RequestMethod.GET)
-	public String goReservation() {
+	public String goReservation(Model model) {
+		ArrayList<Idinfo> eList = rDao.employeeList("");
+		model.addAttribute("eList", eList);
 		
 		return "reservation/reservation";
 	}
@@ -35,8 +40,7 @@ public class reservationController {
 	@RequestMapping(value = "/insertRes", method = RequestMethod.POST)
 	public @ResponseBody String insertRes(Reservation res, HttpSession session) {
 		res.setMem_id((String)session.getAttribute("loginId"));
-		res.setEmp_id("bbb");
-		res.setRsv_time("3:00");
+		res.setRsv_time("2:00");
 		rDao.insertRes(res);
 		
 		return "success";
@@ -94,5 +98,16 @@ public class reservationController {
 		List<Reservation> cList = rDao.selectResEmp(map);
 		
 		return cList;
+	}
+	
+	@RequestMapping(value = "/dList", method = RequestMethod.POST)
+	public @ResponseBody List<Idinfo> dList(Model model, String rsv_date) {
+		String[] date1 = rsv_date.split("-");
+		String date2 = date1[0].substring(date1[0].length() -2, date1[0].length());
+		String date = date2+"/"+date1[1]+"/"+date1[2];
+		
+		List<Idinfo> dList = rDao.employeeList(date);
+		
+		return dList;
 	}
 }

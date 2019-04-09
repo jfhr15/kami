@@ -10,7 +10,7 @@ public class Idinfo { //전체 id 정보
 	private String email;
 	private String address;
 	private String phone;
-	private int type; //직원, 회원 여부. 직원:1 / 회원:2
+	private int type; //직원, 회원 여부. 직원:0 / 회원:1
 	public Idinfo(String id, String pw, String name, String birthday, String gender, String email, String address,
 			String phone, int type) {
 		super();

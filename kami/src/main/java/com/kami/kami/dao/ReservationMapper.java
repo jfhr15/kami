@@ -3,6 +3,7 @@ package com.kami.kami.dao;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import com.kami.kami.vo.Idinfo;
 import com.kami.kami.vo.Reservation;
 
 public interface ReservationMapper {
@@ -12,4 +13,5 @@ public interface ReservationMapper {
 	public Reservation selectResOne(String reservationseq);
 	public int updateRes(Reservation res);
 	public ArrayList<Reservation> selectResEmp(HashMap<Object,Object> map);
+	public ArrayList<Idinfo> employeeList(String rsv_date);
 }

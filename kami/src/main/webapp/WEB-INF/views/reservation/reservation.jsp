@@ -240,16 +240,24 @@
 	<div id="viewReservation">
 		<div id="sDate">예약 시간 : 시간을 선택해주세요.</div>
 		<input type="hidden" id="hStart">
-		<table id="dTable">
-			<tr>
-				<td class="dTableTd"><img class="tableImg" src="./resources/img/beautiful.jpg">디자이너 OOO</td>
-				<td class="dTableTd"><img class="tableImg" src="./resources/img/beautiful2.jpg">디자이너 OOO</td>
-			</tr>
-			<tr>
-				<td class="dTableTd"><img class="tableImg" src="./resources/img/beautiful3.jpg">디자이너 OOO</td>
-				<td class="dTableTd"><img class="tableImg" src="./resources/img/beautiful4.jpg">디자이너 OOO</td>
-			</tr>
-		</table>
+		<input type="hidden" id="emp_id">
+<!-- 		<table id="dTable"> -->
+<!-- 			<tr> -->
+<!-- 				<td class="dTableTd"><img class="tableImg" src="./resources/img/beautiful.jpg" onclick="inputEmp_id()">디자이너 OOO</td> -->
+<!-- 				<td class="dTableTd"><img class="tableImg" src="./resources/img/beautiful2.jpg">디자이너 OOO</td> -->
+<!-- 			</tr> -->
+<!-- 			<tr> -->
+<!-- 				<td class="dTableTd"><img class="tableImg" src="./resources/img/beautiful3.jpg">디자이너 OOO</td> -->
+<!-- 				<td class="dTableTd"><img class="tableImg" src="./resources/img/beautiful4.jpg">디자이너 OOO</td> -->
+<!-- 			</tr> -->
+<!-- 		</table> -->
+			<div id="dList">
+			<table id="dTable">
+				<c:forEach var="idinfo" items="${eList}">
+					<a id="${idinfo.id}" onclick="inputEmp_id(this.id)">디자이너 ${idinfo.name}</a><br>
+				</c:forEach>
+			</table>
+			</div>
 		<button type="button" id="saveBtn"
 		name="saveBtn">예약 하기</button>
 	</div>

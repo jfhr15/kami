@@ -65,7 +65,10 @@ public class ProductController {
 		return result;
 	}
 	
-	
+	@RequestMapping(value = "/goTest", method = RequestMethod.GET)
+	public String goTest() {
+		return "admin/test";
+	}
 	
 	
 }

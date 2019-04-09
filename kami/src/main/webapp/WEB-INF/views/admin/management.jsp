@@ -83,6 +83,51 @@
 	</header>
 
 	<!--header 끝-->
+	<div id="testDiv">
+		<button class="btn" id="colorListBtn">머리색 목록</button>
+		<button class="btn" id="colorBtn">머리색 추가</button>
+		
+		<button class="btn" id="procedureListBtn">시술 목록</button>
+		<button class="btn" id="procedureBtn">시술종류 추가</button>
+	</div>
 	
+	<div id="insertColorModal" class="modals">
+		<div id="insertColorModal-content" class="modal-contents">
+	    	<h3>머리색 추가</h3>
+	    	컬러 : <input type="text" id="color"><br>
+	    	컬러 코드 : <input type="text" id="colorCode"><br>
+	    	<button id="confirmBtn">확인</button>
+	    	<button id="closeBtn">닫기</button>
+	    </div>
+	</div>
+	
+	<div id="selectColorModal" class="modals">
+		<div id="selectColorModal-content" class="modal-contents">
+	    	<h3>머리색 목록</h3>
+	    	<div id="selectColorContent"></div>
+	    	<button id="confirmBtn2">확인</button>
+	    	<button id="closeBtn2">닫기</button>
+	    </div>
+	</div>
+	
+	<div id="insertProcedureModal" class="modals">
+		<div id="insertProcedureModal-content" class="modal-contents">
+	    	<h3>시술 추가</h3>
+	    	시술명 : <input type="text" id="pcd_name"><br>
+	    	소요시간 : <input type="text" id="pcd_time"><br>
+	    	금액 : <input type="text" id="pcd_price"><br>
+	    	<button id="confirmBtn3">확인</button>
+	    	<button id="closeBtn3">닫기</button>
+	    </div>
+	</div>
+	
+	<div id="selectProcedureModal" class="modals">
+		<div id="selectProcedureModal-content" class="modal-contents">
+	    	<h3>시술 목록</h3>
+	    	<div id="selectProcedureContent"></div>
+	    	<button id="confirmBtn4">확인</button>
+	    	<button id="closeBtn4">닫기</button>
+	    </div>
+	</div>
 </body>
 </html>

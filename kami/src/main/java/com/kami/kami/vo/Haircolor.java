@@ -4,8 +4,16 @@ public class Haircolor {
 
 	private String colorseq; 
 	private String color; //색깔 이름
-	private String colorcode; //색깔번호
-	private String colorcontent; //색깔 설명
+	private String colorCode; //색깔번호
+	public Haircolor(String colorseq, String color, String colorCode) {
+		super();
+		this.colorseq = colorseq;
+		this.color = color;
+		this.colorCode = colorCode;
+	}
+	public Haircolor() {
+		super();
+	}
 	public String getColorseq() {
 		return colorseq;
 	}
@@ -18,35 +26,14 @@ public class Haircolor {
 	public void setColor(String color) {
 		this.color = color;
 	}
-	public String getColorcode() {
-		return colorcode;
+	public String getColorCode() {
+		return colorCode;
 	}
-	public void setColorcode(String colorcode) {
-		this.colorcode = colorcode;
-	}
-	public String getColorcontent() {
-		return colorcontent;
-	}
-	public void setColorcontent(String colorcontent) {
-		this.colorcontent = colorcontent;
-	}
-	public Haircolor(String colorseq, String color, String colorcode, String colorcontent) {
-		super();
-		this.colorseq = colorseq;
-		this.color = color;
-		this.colorcode = colorcode;
-		this.colorcontent = colorcontent;
-	}
-	public Haircolor() {
-		super();
-		// TODO Auto-generated constructor stub
+	public void setColorCode(String colorCode) {
+		this.colorCode = colorCode;
 	}
 	@Override
 	public String toString() {
-		return "Haircolor [colorseq=" + colorseq + ", color=" + color + ", colorcode=" + colorcode + ", colorcontent="
-				+ colorcontent + "]";
+		return "Haircolor [colorseq=" + colorseq + ", color=" + color + ", colorCode=" + colorCode + "]";
 	}
-	
-	
-	
 }

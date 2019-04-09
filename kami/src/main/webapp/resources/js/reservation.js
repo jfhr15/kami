@@ -174,11 +174,13 @@ $(function() {
 
 	function insert() {
 		var start = $("#hStart").val();
+		var emp_id = $("#emp_id").val();
 		if (flag == 0) {
 			$.ajax({
 				url : 'insertRes',
 				data : {
-					rsv_date : start
+					rsv_date : start,
+					emp_id : emp_id
 				},
 				type : 'post',
 				success : function() {
@@ -191,7 +193,8 @@ $(function() {
 				url : 'updateRes',
 				data : {
 					rsv_date : start,
-					reservationseq : id
+					reservationseq : id,
+					emp_id : emp_id
 				},
 				type : 'post',
 				success : function() {
@@ -226,5 +229,25 @@ $(function() {
 		start += " " + $('#shour').val() + ":" + $('#smin').val();
 		$("#hStart").val(start);
 		$("#sDate").html("예약 시간 : " + start);
+		$.ajax({
+			url: "dList",
+			data:{
+				rsv_date : start
+			} ,
+			type: "post",
+			success: function(dList){
+				var cont = "";
+				cont += "<table id='dTable'>";
+				$.each(dList,function(index,item){
+					cont += "<a id='item.id'>디자이너 "+ item.name + "</a><br>";
+				});
+				cont += "</table>";
+				$("#dList").html(cont);
+			}
+		});
 		$('#writeModal').modal('hide');
+	}
+	
+	function inputEmp_id(id){
+		$("#emp_id").val(id);
 	}

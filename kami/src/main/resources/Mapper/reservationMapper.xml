@@ -87,4 +87,17 @@
 		where
 			reservationseq=#{reservationseq}
 	</update>
+	
+	<select id="employeeList" resultType="Idinfo" parameterType="String">
+		select 
+			employee.emp_id as id
+			,idinfo.name as name
+		from 
+			employee
+			,idinfo 
+		where 
+			emp_id not in(select emp_id from reservation where to_char(rsv_date,'yy/mm/dd hh24:mi') = #{rsv_date})
+		and 
+			employee.emp_id=idinfo.id
+	</select>
 </mapper>
