@@ -84,30 +84,8 @@
 
 	<!--header 끝-->
 	<div id="testDiv">
-		<button class="btn" id="colorListBtn">머리색 목록</button>
-		<button class="btn" id="colorBtn">머리색 추가</button>
-		
 		<button class="btn" id="procedureListBtn">시술 목록</button>
 		<button class="btn" id="procedureBtn">시술종류 추가</button>
-	</div>
-	
-	<div id="insertColorModal" class="modals">
-		<div id="insertColorModal-content" class="modal-contents">
-	    	<h3>머리색 추가</h3>
-	    	컬러 : <input type="text" id="color"><br>
-	    	컬러 코드 : <input type="text" id="colorCode"><br>
-	    	<button id="confirmBtn">확인</button>
-	    	<button id="closeBtn">닫기</button>
-	    </div>
-	</div>
-	
-	<div id="selectColorModal" class="modals">
-		<div id="selectColorModal-content" class="modal-contents">
-	    	<h3>머리색 목록</h3>
-	    	<div id="selectColorContent"></div>
-	    	<button id="confirmBtn2">확인</button>
-	    	<button id="closeBtn2">닫기</button>
-	    </div>
 	</div>
 	
 	<div id="insertProcedureModal" class="modals">

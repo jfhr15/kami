@@ -5,27 +5,6 @@
 
 <mapper namespace="com.kami.kami.dao.ManagementMapper">
 	
-	<insert id="insertColor" parameterType="Haircolor">
-		insert into haircolor(
-			colorseq
-		    ,color
-		    ,colorcode
-		) values(
-			haircolorseq.nextval
-			,#{color}
-			,#{colorCode}
-		)
-	</insert>
-	
-	<select id="selectColor" resultType="Haircolor">
-		select
-			colorseq
-		    ,color
-		    ,colorcode
-		from
-			haircolor
-	</select>
-	
 	<insert id="insertProcedure" parameterType="Procedure">
 		insert into Procedure(
 			procedureseq

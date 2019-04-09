@@ -171,8 +171,14 @@
                     </ul>
                 </div>
             </section>
-            
             </div>
- 
+ 	<div class="footer">
+ 		<div class="inner">
+ 			<strong><img src="resources/logo.png" alt="kamikami"></strong>
+ 			<p class="address">서울 강남구 영동대로 513 삼성동 159 코엑스 4층 kamikami
+ 			<br>
+ 			대표자 : aaa &emsp;&emsp;&emsp; phone : 010-1234-5678</p>
+ 		</div>
+ 	</div>
 </body>
 </html>

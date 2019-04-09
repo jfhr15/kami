@@ -18,20 +18,6 @@ public class managementController {
 	@Autowired
 	ManagementDAO mDao;
 	
-	@RequestMapping(value = "/insertColor", method = RequestMethod.POST)
-	public @ResponseBody String insertColor(Haircolor hairColor) {
-		mDao.insertColor(hairColor);
-		
-		return "SUCCESS";
-	}
-	
-	@RequestMapping(value = "/selectColor", method = RequestMethod.GET)
-	public @ResponseBody ArrayList<Haircolor> selectColor() {
-		ArrayList<Haircolor> cList = mDao.selectColor();
-		
-		return cList;
-	}
-	
 	@RequestMapping(value = "/insertProcedure", method = RequestMethod.POST)
 	public @ResponseBody String insertProcedure(Procedure procedure) {
 		mDao.insertProcedure(procedure);

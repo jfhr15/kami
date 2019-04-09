@@ -106,3 +106,17 @@ nav{position:absolute; right:40px; top:80px;}
 .promo-list{ position:absolute; width:78%; left:10%;}
 .promo-list li{width: 30%; background: #000; float: left; margin-left: 3.33%;}
 .promo-list li:hover{transform:scale(1.05); transition:all 0.5s linear 0s;}
+
+.inner{
+	overflow: hidden;
+	margin:5% 10%;
+}
+strong{
+	float: left;
+	margin-right: 4%;
+}
+.address{
+	font-weight:200;
+	line-height: 17px;
+	margin-top:5px;
+}
