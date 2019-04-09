@@ -69,7 +69,7 @@ function init(H) {
 				success: function(List){
 					 pieV = List;
 				
-					alert(pieN);
+					
 					 Piechart();
 				}
 			});
