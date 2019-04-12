@@ -99,5 +99,7 @@
 			emp_id not in(select emp_id from reservation where to_char(rsv_date,'yy/mm/dd hh24:mi') = #{rsv_date})
 		and 
 			employee.emp_id=idinfo.id
+		and
+			emp_id not in(select emp_id from offschedule where off_check='승인' and (to_date(#{rsv_date},'yy/mm/dd hh24:mi') between off_startdate and off_enddate))
 	</select>
 </mapper>

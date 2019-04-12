@@ -36,15 +36,27 @@ public class adminController {
 	}
 	
 	@RequestMapping(value = "/goIndex", method = RequestMethod.GET)
-	public String goIndex() {
+	public String goIndex(Model model) {
 		
 		return "admin/index";
+	}
+	
+	@RequestMapping(value = "/goIndex2", method = RequestMethod.GET)
+	public String goIndex2(Model model) {
+		
+		return "admin/index2";
 	}
 	
 	@RequestMapping(value = "/goManagement", method = RequestMethod.GET)
 	public String goManagement() {
 		
-		return "admin/management";
+		return "admin/index3";
+	}
+	
+	@RequestMapping(value = "/goIndex4", method = RequestMethod.GET)
+	public String goIndex4() {
+		
+		return "admin/index4";
 	}
 	
 	@RequestMapping(value = "/login", method = RequestMethod.POST)

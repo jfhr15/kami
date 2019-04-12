@@ -2,7 +2,6 @@ DROP TABLE  hair;
 DROP TABLE reservation;
 DROP TABLE  procedureInformation;
 DROP TABLE  procedure;
-DROP TABLE  hairColor;
 DROP TABLE  Refund;
 DROP TABLE  payment;
 DROP TABLE  Orders;
@@ -113,18 +112,9 @@ CREATE TABLE  hair  (
     Field2    varchar2(50)      NULL
 );
 
-CREATE TABLE  hairColor  (
-    colorseq    number      NOT NULL,
-    color    varchar2(50)      NULL,
-    colorcode    varchar2(50)      NULL,
-    colorcontent    varchar2(300)      NULL,
-    hc_savfile  date null,
-    hc_orgfile  varchar2(2000) null
-);
-
 CREATE TABLE  procedure  (
     procedureseq    number      NOT NULL,
-    colorseq    number      NOT NULL,
+    colorseq    number      NULL,
     pcd_name    varchar2(200)      NULL,
     pcd_time    varchar2(10)      NULL,
     pcd_price    varchar2(30)      NULL,
@@ -260,10 +250,6 @@ ALTER TABLE  hair  ADD CONSTRAINT  PK_HAIR  PRIMARY KEY (
     Key 
 );
 
-ALTER TABLE  hairColor  ADD CONSTRAINT  PK_HAIRCOLOR  PRIMARY KEY (
-    colorseq 
-);
-
 ALTER TABLE  procedure  ADD CONSTRAINT  PK_PROCEDURE  PRIMARY KEY (
     procedureseq
 );
@@ -395,13 +381,6 @@ REFERENCES  member  (
     mem_id 
 );
 
-ALTER TABLE  procedure  ADD CONSTRAINT  FK_hairColor_TO_procedure_1  FOREIGN KEY (
-    colorseq 
-)
-REFERENCES  hairColor  (
-    colorseq 
-);
-
 ALTER TABLE  notice  ADD CONSTRAINT  FK_employee_TO_notice_1  FOREIGN KEY (
     emp_id 
 )
@@ -458,11 +437,16 @@ REFERENCES  payment  (
     paymentNum 
 );
 
-insert into position(positionSeq,position,salary)values('1','사원','140');
-insert into position(positionSeq,position,salary)values('2','선임','190');
-insert into position(positionSeq,position,salary)values('3','책임','230');
-insert into position(positionSeq,position,salary)values('4','수석보','280');
-insert into position(positionSeq,position,salary)values('5','수석','340');
+insert into position(positionSeq,position,salary)values(1,'인턴',140);
+insert into position(positionSeq,position,salary)values(2,'초임 디자이너',230);
+insert into position(positionSeq,position,salary)values(3,'디자이너',330);
+insert into position(positionSeq,position,salary)values(4,'수석 디자이너',480);
+insert into position(positionSeq,position,salary)values(5,'원장',550);
+insert into position(positionSeq,position,salary)values(6,'매니저',350);
+insert into position(positionSeq,position,salary)values(7,'실장',400);
+insert into position(positionSeq,position,salary)values(8,'팀장',440);
+insert into position(positionSeq,position,salary)values(9,'점장',580);
+insert into position(positionSeq,position,salary)values(10,'이사',600);
 
 
 alter table reservation drop CONSTRAINT FK_payment_TO_reservation_1;

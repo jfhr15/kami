@@ -140,16 +140,28 @@
 
       <!-- Nav Item - Charts -->
       <li class="nav-item active">
-        <a class="nav-link" href="goIndex">
+        <a class="nav-link" href="goManagement">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Charts</span></a>
       </li>
 
       <!-- Nav Item - Tables -->
       <li class="nav-item">
-        <a class="nav-link" href="goIndex2">
+        <a class="nav-link" href="goIndex4">
           <i class="fas fa-fw fa-table"></i>
           <span>Calendar</span></a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link" href="#">
+          <i class="fas fa-fw fa-table"></i>
+          <span>예비1</span></a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link" href="#">
+          <i class="fas fa-fw fa-table"></i>
+          <span>예비2</span></a>
       </li>
 
     </ul>

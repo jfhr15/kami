@@ -113,7 +113,7 @@
 				<div class="modal-body" id="viewModalBody"></div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-warning" id="deleteBtn"
-						name="deleteBtn">삭제</button>
+						name="deleteBtn">취소</button>
 					<button type="button" class="btn btn-warning" id="updateBtn"
 						name="updateBtn">수정</button>
 					<button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>

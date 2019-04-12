@@ -6,9 +6,17 @@ public class Offschedule {
 	private String off_startdate; //휴무시작일
 	private String off_enddate; //휴무 종료일
 	private String off_check; //뭐지 이건
-	private String off_dayofweek; //휴무 요일
-	
-	
+	public Offschedule() {
+		super();
+	}
+	public Offschedule(int off_scheduleseq, String emp_id, String off_startdate, String off_enddate, String off_check) {
+		super();
+		this.off_scheduleseq = off_scheduleseq;
+		this.emp_id = emp_id;
+		this.off_startdate = off_startdate;
+		this.off_enddate = off_enddate;
+		this.off_check = off_check;
+	}
 	public int getOff_scheduleseq() {
 		return off_scheduleseq;
 	}
@@ -39,35 +47,9 @@ public class Offschedule {
 	public void setOff_check(String off_check) {
 		this.off_check = off_check;
 	}
-	public String getOff_dayofweek() {
-		return off_dayofweek;
-	}
-	public void setOff_dayofweek(String off_dayofweek) {
-		this.off_dayofweek = off_dayofweek;
-	}
-	public Offschedule(int off_scheduleseq, String emp_id, String off_startdate, String off_enddate, String off_check,
-			String off_dayofweek) {
-		super();
-		this.off_scheduleseq = off_scheduleseq;
-		this.emp_id = emp_id;
-		this.off_startdate = off_startdate;
-		this.off_enddate = off_enddate;
-		this.off_check = off_check;
-		this.off_dayofweek = off_dayofweek;
-	}
-	public Offschedule() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
 	@Override
 	public String toString() {
 		return "Offschedule [off_scheduleseq=" + off_scheduleseq + ", emp_id=" + emp_id + ", off_startdate="
-				+ off_startdate + ", off_enddate=" + off_enddate + ", off_check=" + off_check + ", off_dayofweek="
-				+ off_dayofweek + "]";
+				+ off_startdate + ", off_enddate=" + off_enddate + ", off_check=" + off_check + "]";
 	}
-	
-	
-	
-	
-	
 }

@@ -12,7 +12,7 @@
 		<typeAlias type="com.kami.kami.vo.Idinfo" alias="Idinfo" />
 		<typeAlias type="com.kami.kami.vo.Member" alias="Member" />
 		<typeAlias type="com.kami.kami.vo.Notice" alias="Notice" />
-		<typeAlias type="com.kami.kami.vo.Offschedule" alias="Offschedule" />
+		<typeAlias type="com.kami.kami.vo.Offschedule" alias="off" />
 		<typeAlias type="com.kami.kami.vo.Orders" alias="Orders" />
 		<typeAlias type="com.kami.kami.vo.Payment" alias="Payment" />
 		<typeAlias type="com.kami.kami.vo.Position" alias="Position" />
@@ -35,5 +35,6 @@
 		<mapper resource="Mapper/chartMapper.xml" />
 		<mapper resource="Mapper/reservationMapper.xml" />
 		<mapper resource="Mapper/managementMapper.xml" />
+		<mapper resource="Mapper/offscheduleMapper.xml" />
 	</mappers> 
 </configuration>
