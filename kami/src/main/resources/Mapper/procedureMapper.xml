@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.kami.kami.dao.ProcedureMapper">
+
+
+
+<!-- 시술등록 -->
+<insert id="insertProcedure" parameterType="Procedure">
+	insert into procedure
+		(
+		PROCEDURESEQ
+		,PCD_NAME
+		,PCD_TIME
+		,PCD_PRICE
+		,PCD_ORGFILE
+		,PCD_SAVFILE
+		)
+	values
+		(
+		PROCEDURESEQ.nextval
+		, #{pcd_name}
+		, #{pcd_time}
+		, #{pcd_price}
+		, #{pcd_orgfile}
+		, #{pcd_savfile}
+		)
+</insert>
+
+<!-- 사진등록 -->
+<insert id="insertPicture" parameterType="Picture">
+	insert into picture
+		(
+		PICTURESEQ
+		,NAME
+		,SETTING
+		,HASHTAG
+		,CONDITION
+		,SAVFILE
+		,ORGFILE
+		)
+	values
+		(
+		PICTURESEQ.nextval
+		, #{name}
+		, #{hashtag}
+		, #{setting}
+		, #{condition}
+		, #{savfile}
+		, #{orgfile}
+		)
+</insert>
+
+
+
+
+</mapper>
+

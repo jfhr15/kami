@@ -28,6 +28,7 @@
 		<typeAlias type="com.kami.kami.vo.Chartbar" alias="Chartbar" />
 		<typeAlias type="com.kami.kami.vo.Chartpie" alias="Chartpie" />
 		<typeAlias type="com.kami.kami.vo.Chartarea" alias="Chartarea" />
+		<typeAlias type="com.kami.kami.vo.Picture" alias="Picture" />
 	</typeAliases>
 	<mappers>
 		<mapper resource="Mapper/adminMapper.xml" />
@@ -36,5 +37,6 @@
 		<mapper resource="Mapper/reservationMapper.xml" />
 		<mapper resource="Mapper/managementMapper.xml" />
 		<mapper resource="Mapper/offscheduleMapper.xml" />
+		<mapper resource="Mapper/procedureMapper.xml" />
 	</mappers> 
 </configuration>

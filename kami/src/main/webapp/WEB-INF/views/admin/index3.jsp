@@ -153,7 +153,7 @@
       </li>
       
       <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="goProcedureManage">
           <i class="fas fa-fw fa-table"></i>
           <span>예비1</span></a>
       </li>
