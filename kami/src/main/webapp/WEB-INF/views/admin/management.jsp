@@ -53,7 +53,7 @@
  			<nav class="gnb">
  			<h2 class="blind">주메뉴</h2>
  			<ul>
-				<li><a href="#"><h3 class="gnbtit">About</h3></a></li>
+				<li><a href="goAbout"><h3 class="gnbtit">About</h3></a></li>
 				<li><a href="#"><h3 class="gnbtit">Hair</h3></a>
 			<ul>
 				<li><a href="#">New Arrival</a>

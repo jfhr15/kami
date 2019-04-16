@@ -16,8 +16,17 @@
     height: 17px;
     margin-top: 10px;
 }
+table{
+	width: 100%;
+}
+.btnTable{
+	margin-left: 5%;
+}
+.tdtd{
+	width: 45%;
+}
 .btns{
-	width: -webkit-fill-available;
+	width: 75%;
 }
 .check{
 	color:red;
@@ -38,9 +47,25 @@
 	background: #ddd;
 	margin-left: 30%;
 	margin-right: 22%;
+	margin-top: 2%;
 	padding-left: 5%;
 	padding-right: 5%;
 	padding-top: 2%;
 	padding-bottom: 3%;
 	line-height: 1.8em;
+	background-color: rgba( 255, 255, 255, 0.85 );
+}
+#cont{
+	width: -webkit-fill-available;
+    height: -webkit-fill-available;
+	background-image: url('../img/hairshop.jpg');
+	background-size: cover;
+	padding-top: 1%;
+}
+.td1{
+	width:30%;
+}
+.td2{
+	margin-left:5%;
+	width:65%;
 }

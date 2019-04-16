@@ -25,7 +25,7 @@ public class reservationController {
 	
 	@RequestMapping(value = "/goReservation", method = RequestMethod.GET)
 	public String goReservation(Model model) {
-		ArrayList<Idinfo> eList = rDao.employeeList("");
+		ArrayList<Idinfo> eList = new ArrayList<Idinfo>();
 		model.addAttribute("eList", eList);
 		
 		return "reservation/reservation";
@@ -106,7 +106,9 @@ public class reservationController {
 		String date2 = date1[0].substring(date1[0].length() -2, date1[0].length());
 		String date = date2+"/"+date1[1]+"/"+date1[2];
 		
-		List<Idinfo> dList = rDao.employeeList(date);
+		ArrayList<Idinfo> dList = rDao.employeeList(date);
+		
+		model.addAttribute("eList", dList);
 		
 		return dList;
 	}

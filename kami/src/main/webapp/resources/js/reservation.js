@@ -229,6 +229,7 @@ $(function() {
 		start += " " + $('#shour').val() + ":" + $('#smin').val();
 		$("#hStart").val(start);
 		$("#sDate").html("예약 시간 : " + start);
+		$("#designer").html("디자이너 : ");
 		$.ajax({
 			url: "dList",
 			data:{
@@ -239,7 +240,7 @@ $(function() {
 				var cont = "";
 				cont += "<table id='dTable'>";
 				$.each(dList,function(index,item){
-					cont += "<a id='item.id'>디자이너 "+ item.name + "</a><br>";
+					cont += "<a id=" + item.id + " name=" + item.name + " onclick='inputEmp_id(id, name)'>디자이너 "+ item.name + "</a><br>";
 				});
 				cont += "</table>";
 				$("#dList").html(cont);
@@ -248,6 +249,9 @@ $(function() {
 		$('#writeModal').modal('hide');
 	}
 	
-	function inputEmp_id(id){
+	function inputEmp_id(id, name){
 		$("#emp_id").val(id);
+		$("#designer").html("디자이너 : " + name);
 	}
+	
+	

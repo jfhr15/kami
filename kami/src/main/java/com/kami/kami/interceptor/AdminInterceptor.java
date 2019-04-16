@@ -14,7 +14,7 @@ public class AdminInterceptor extends HandlerInterceptorAdapter{
 		// TODO Auto-generated method stub
 		
 		HttpSession session=request.getSession();
-		String userId=(String)session.getAttribute("userId");
+		String userId=(String)session.getAttribute("loginId");
 		
 		if(userId!=null) {
 			return true;

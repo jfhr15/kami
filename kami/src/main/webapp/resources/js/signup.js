@@ -19,21 +19,97 @@ $(function(){
 	}
 	
 	function goInsertEmployee(){
-		addresscheck();
-		phonecheck();
-		address();
-		
-		$("#division").val(0);
-		$("#user").submit();
+		alert("!");
+		idcheck();
+		alert("!!");
+		if($("#duplicatemessage").val() == null){
+			length();
+			if($("#pwmessage1").val() == null){
+				pwcheck();
+				if($("#pwmessage2").val() == null){
+					hangl();
+					if($("#name_check").val() == null){
+						birthdaycheck();
+						if($("#birth_check").val() == null){
+							echeck();
+							if($("#email_check").val() == null){
+								addresscheck();
+								address();
+								if($("#address_check").val() == null){
+									phonecheck();
+									if($("#phone_check").val() == null){
+										$("#division").val(0);
+										$("#user").submit();
+									}else{
+										break;
+									}
+								}else{
+									break;
+								}
+							}else{
+								break;
+							}
+						}else{
+							break;
+						}
+					}else{
+						break;
+					}
+				}else{
+					break;
+				}
+			}else{
+				break;
+			}
+		}else{
+			break;
+		}
   	}
   	
 	function goInsertMember(){
-		addresscheck();
-		phonecheck();
-		address();
-		
-		$("#division").val(1);
-		$("#user").submit();
+		idcheck();
+		if($("#duplicatemessage").val() == null){
+			length();
+			if($("#pwmessage1").val() == null){
+				pwcheck();
+				if($("#pwmessage2").val() == null){
+					hangl();
+					if($("#name_check").val() == null){
+						birthdaycheck();
+						if($("#birth_check").val() == null){
+							echeck();
+							if($("#email_check").val() == null){
+								addresscheck();
+								address();
+								if($("#address_check").val() == null){
+									phonecheck();
+									if($("#phone_check").val() == null){
+										$("#division").val(1);
+										$("#user").submit();
+									}else{
+										break;
+									}
+								}else{
+									break;
+								}
+							}else{
+								break;
+							}
+						}else{
+							break;
+						}
+					}else{
+						break;
+					}
+				}else{
+					break;
+				}
+			}else{
+				break;
+			}
+		}else{
+			break;
+		}
   	}
 	
 	function idcheck(){//아이디 유효성검사
@@ -120,6 +196,15 @@ $(function(){
 		}
 	}
 	
+	function birthdaycheck(){
+		var birthday = $("#birthday").val();
+		if(birthday == null){
+			$("#birthday").html("생년월일을 입력해주세요.");
+		} else{
+			$("#birthday").html("");
+		}
+	}
+	
 	function execDaumPostcode() {
         new daum.Postcode({
             oncomplete: function(data) {
@@ -165,71 +250,6 @@ $(function(){
                 document.getElementById("sample6_detailAddress").focus();
             }
         }).open({
-//        	left: 300
-//        	,top: 400
-//        	,popupName: '주소검색'
-//        	,autoClose: false
         });
     }
-//	    function btn(){    //회원가입 버튼을 누를시 널값 이메일형식 전화번호 형식의 유효성을 보여준다. 
-//	    	
-//	    	var id = $("#customer_id").val();
-//	    	var pw = $("#customer_pw").val();
-//	    	var name = $("#customer_name").val();
-//	    	var address = $("#customer_address").val();
-//	    	var birthdate= $("#customer_birthdate").val();
-//	    	var nickname = $("#customer_nickname").val();
-//	    	var phone = $("#customer_phone").val();
-//	    	var gender =$('input[name="customer_gender"]:checked').val();
-//
-//	    	var email = $("#customer_email").val();
-//	        var regEmail = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;//정규식이메일 
-//	        var regPhone = /^(?:(010-\d{4})|(01[1|6|7|8|9]-\d{3,4}))-(\d{4})$/;//정규식 비밀번호
-//
-//	      
-//	        
-//	    	
-//	    	
-//	    	if(id==""){
-//	    		alert("아이디를 입력하세요");
-//	    		
-//	    	}else if(pw==""){
-//	    		alert("비밀번호를 입력하세요");
-//	    		
-//	    	}else if(name==""){
-//	    		alert("이름을 입력하세요");
-//	    		
-//	    	}else if(address==""){
-//	    		alert("주소를 입력하세요");
-//	    		
-//	    	}else if(birthdate==""){
-//	    		alert("생일을 입력하세요");
-//	    		
-//	    	}else if(nickname==""){
-//	    		alert("닉네임을 입력하세요");
-//	    		
-//	    	}else if(phone==""){
-//	    		alert("핸드폰을 입력하세요");
-//	    	
-//	    	}else if(regPhone.test(phone)==false){
-//	    		alert("잘못된 핸드폰 양식입니다");
-//	    		return false;
-//	    			
-//	    	}else if(gender==""){
-//	    		alert("성별을 입력하세요");
-//	    		
-//	    	}else if(email==""){
-//	    		alert("이메일을 입력하세요");
-//	    		
-//	    	}else if(regEmail.test(email)==false){
-//	    		alert("잘못된 이메일 형식입니다");
-//	    		return false;
-//	    		
-//	    	}else{
-//	    		$("#signupForm").submit();
-//	    		
-//	    	}  
-//	    	
-//	    	
-//	    }
 });

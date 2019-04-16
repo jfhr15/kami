@@ -21,13 +21,13 @@
 	<script type="text/javascript" src="resources/js/swipe.js"></script>
 	<script type="text/javascript" src="resources/js/jquery.bxslider.min.js"></script>
     <script type="text/javascript" src="resources/js/main.js"></script>
-    <script type="text/javascript" src="resources/js/reservation.js"></script>
 	<script type="text/javascript" src="./resources/fullcalendar-3.10.0/lib/moment.min.js"></script>
 	<script type="text/javascript" src="./resources/fullcalendar-3.10.0/lib/jquery.min.js"></script>
 	<script type="text/javascript" src="./resources/fullcalendar-3.10.0/fullcalendar.js" charset="UTF-8"></script>
 	<script type="text/javascript" src="./resources/fullcalendar-3.10.0/gcal.js"></script>
 	<script src='./resources/bootstrap/dist/js/bootstrap.min.js'></script>
 	<script type="text/javascript" src="./resources/fullcalendar-3.10.0/locale/ko.js"></script>
+    <script type="text/javascript" src="resources/js/reservation.js"></script>
 </head>
 <body>
 	<header>
@@ -59,7 +59,7 @@
  			<nav class="gnb">
  			<h2 class="blind">주메뉴</h2>
  			<ul>
-				<li><a href="#"><h3 class="gnbtit">About</h3></a></li>
+				<li><a href="goAbout"><h3 class="gnbtit">About</h3></a></li>
 				<li><a href="#"><h3 class="gnbtit">Hair</h3></a>
 			<ul>
 				<li><a href="#">New Arrival</a>
@@ -162,26 +162,27 @@
 								<label class="sr-only" for="shour">shour</label>
 								<div class="input-group">
 									<select id="shour" class="form-control">
-										<option value="10">10
-										<option value="11">11
-										<option value="12">12
-										<option value="13">13
-										<option value="14">14
-										<option value="15">15
-										<option value="16">16
-										<option value="17">17
-										<option value="18">18
-										<option value="19">19
-										<option value="20">20
+										<option value='09' selected=''>09</option>
+										<option value='10'>10</option>
+										<option value='11'>11</option>
+										<option value='12'>12</option>
+										<option value='13'>13</option>
+										<option value='14'>14</option>
+										<option value='15'>15</option>
+										<option value='16'>16</option>
+										<option value='17'>17</option>
+										<option value='18'>18</option>
+										<option value='19'>19</option>
+										<option value='20'>20</option>
 									</select>
 								</div>
 								<label class="sr-only" for="smin">smin</label>
 								<div class="input-group">
 									<select id="smin" class="form-control">
-										<option value="00">00
-										<option value="15">15
-										<option value="30">30
-										<option value="45">45
+										<option value="00">00</option>
+										<option value="15">15</option>
+										<option value="30">30</option>
+										<option value="45">45</option>
 									</select>
 								</div>
 							</div>
@@ -239,6 +240,7 @@
 	
 	<div id="viewReservation">
 		<div id="sDate">예약 시간 : 시간을 선택해주세요.</div>
+		<div id="designer">디자이너 : 디자이너를 선택해주세요.</div>
 		<input type="hidden" id="hStart">
 		<input type="hidden" id="emp_id">
 <!-- 		<table id="dTable"> -->
@@ -252,11 +254,11 @@
 <!-- 			</tr> -->
 <!-- 		</table> -->
 			<div id="dList">
-			<table id="dTable">
-				<c:forEach var="idinfo" items="${eList}">
-					<a id="${idinfo.id}" onclick="inputEmp_id(this.id)">디자이너 ${idinfo.name}</a><br>
-				</c:forEach>
-			</table>
+<!-- 			<table id="dTable"> -->
+<%-- 				<c:forEach var="idinfo" items="${eList}"> --%>
+<%-- 					<a id="${idinfo.id}" onclick="inputEmp_id()">디자이너 ${idinfo.name}</a><br> --%>
+<%-- 				</c:forEach> --%>
+<!-- 			</table> -->
 			</div>
 		<button type="button" id="saveBtn"
 		name="saveBtn">예약 하기</button>

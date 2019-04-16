@@ -40,8 +40,12 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value = "/goHome", method = RequestMethod.GET)
-	public String goHome(Locale locale, Model model) {
+	public String goHome() {
 		return "redirect:/";
 	}
 	
+	@RequestMapping(value = "/goAbout", method = RequestMethod.GET)
+	public String goAbout() {
+		return "about";
+	}
 }

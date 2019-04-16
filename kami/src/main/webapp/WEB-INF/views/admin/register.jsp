@@ -11,11 +11,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>회원가입</title>
 <head>
-	<title>회원가입</title>
 	<script src="resources/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 
-	<link href="${pageContext.request.contextPath}/resources/css/signup.css" rel="stylesheet">
  	<script src="./resources/vendor/jquery-easing/jquery.easing.min.js"></script>
 
 	<script src="./resources/js/login.js"></script>
@@ -65,7 +63,7 @@
  			<nav class="gnb">
  			<h2 class="blind">주메뉴</h2>
  			<ul>
-				<li><a href="#"><h3 class="gnbtit">About</h3></a></li>
+				<li><a href="goAbout"><h3 class="gnbtit">About</h3></a></li>
 				<li><a href="#"><h3 class="gnbtit">Hair</h3></a>
 			<ul>
 				<li><a href="#">New Arrival</a>
@@ -95,7 +93,7 @@
 	</header>
 
 	<!--header 끝-->
-	
+<div id="cont">
   <div class="container">
 
     <div class="card o-hidden border-0 shadow-lg my-5">
@@ -110,44 +108,51 @@
               </div>
               <form action="insertHuman" method="post" id="user" class="user">
                 <div class="bolder">
-                <div class="form-group">
-                  	아이디<input type="text" class="form-control form-control-user" name="id" id="id">
-                </div>
+                <table>
+                	<tr>
+                		<td class="td1">아이디</td><td class="td2"><input type="text" class="form-control form-control-user" name="id" id="id"></td>
+                	</tr>
+                </table>
                 <div id="duplicatemessage" class="check"></div>
-                <div class="form-group">
-                  	비밀번호<input type="password" class="form-control form-control-user" name="pw" id="pw">
-                </div>
+                <table>
+                	<tr>
+                		<td class="td1">비밀번호</td><td class="td2"><input type="password" class="form-control form-control-user" name="pw" id="pw"></td>
+                	</tr>
+                </table>
                 <div id="pwmessage1" class="check"></div>
-                <div class="form-group">
-                  	비밀번호 확인<input type="password" class="form-control form-control-user" name="pw_check" id="pw_check">
-                </div>
+                <table>
+                	<tr>
+                		<td class="td1">비밀번호 확인</td><td class="td2"><input type="password" class="form-control form-control-user" name="pw_check" id="pw_check"></td>
+                	</tr>
+                </table>
                 <div id="pwmessage2" class="check"></div>
-                <div class="form-group row">
-                  <div class="col-sm-6 mb-3 mb-sm-0">
-                          이름<input type="text" class="form-control form-control-user" name="name" id="name">
-                  </div>
-                  <div class="col-sm-6">
-                   	생년월일<input type="date" class="form-control form-control-user" name="birthday" id="exampleLastName">
-                  </div>
-                  <div id="name_check" class="col-sm-6 mb-3 mb-sm-0"></div>
-                  <div id="birth_check" class="col-sm-6"></div>
-                </div>
-                  <div class="form-group">
-                  	성별<br>
-                  	<table class="selectGenderTable">
-						<tr>
-							<td>남자</td>
-							<td class="td1"><input type="radio" name="gender" value="m" checked="checked" class="radio1"></td>
-							<td>여자</td>
-							<td class="td1"><input type="radio" name="gender" value="w" class="radio1"></td>
-						</tr>
-					</table>
-                </div>
-                <div class="form-group">
-                  	이메일<input type="email" class="form-control form-control-user" name="email" id="email">
-                </div>
+                <table>
+                	<tr>
+                		<td class="td1">이름</td><td class="td2"><input type="text" class="form-control form-control-user" name="name" id="name"></td>
+                	</tr>
+                </table>
+                <div id="name_check" class="col-sm-6 mb-3 mb-sm-0"></div>
+                <table>
+                	<tr>
+                		<td class="td1">생년월일</td><td class="td2"><input type="date" class="form-control form-control-user" name="birthday" id="birthday"></td>
+                	</tr>
+                </table>
+                <div id="birth_check" class="col-sm-6"></div>
+                     성별<br>
+                <table class="selectGenderTable">
+					<tr>
+						<td>남자</td>
+						<td class="td1"><input type="radio" name="gender" value="m" checked="checked" class="radio1"></td>
+						<td>여자</td>
+						<td class="td1"><input type="radio" name="gender" value="w" class="radio1"></td>
+					</tr>
+				</table>
+				<table>
+                	<tr>
+                		<td class="td1">이메일</td><td class="td2"><input type="email" class="form-control form-control-user" name="email" id="email"></td>
+                	</tr>
+                </table>
                 <div id="email_check" class="check"></div>
-                <div class="form-group">
                   	주소<input type="hidden" class="form-control form-control-user" name="address" id="address">
                 	<br>
                 	<table>
@@ -161,24 +166,26 @@
                 		<tr><td><input type="text" class="form-control form-control-user" id="sample6_detailAddress" placeholder="상세주소"></td>
                 		<td><input type="text" class="form-control form-control-user" id="sample6_extraAddress" placeholder="참고항목"></td></tr>
                 	</table>
-                </div>
                 <div id="address_check" class="check"></div>
-                <div class="form-group">
-                  	전화번호<input type="text" class="form-control form-control-user" name="phone" id="phone" placeholder="-를 제외하고 입력해주세요.">
-                </div>
+                <table>
+                	<tr>
+                		<td class="td1">전화번호</td><td class="td2"><input type="text" class="form-control form-control-user" name="phone" id="phone" placeholder="-를 제외하고 입력해주세요."></td>
+                	</tr>
+                </table>
                 <div id="phone_check" class="check"></div>
               </div>
+              <br>
               	<input type="hidden" id="division" name="division" value="2">
-<!--               	<table class="btnTable"> -->
-<!--               		<tr> -->
-<!--               			<td> -->
+              	<table class="btnTable">
+              		<tr>
+              			<td class="tdtd">
                   			<button id="employeeBtn" value="0" class="btns" onclick="goInsertEmployee();">직원 등록</button>
-<!--                   		</td> -->
-<!--                   		<td> -->
+                  		</td>
+                  		<td class="tdtd">
                   			<button id="memberBtn" value="1" class="btns" onclick="goInsertMember();">회원 등록</button>
-<!--                   		</td> -->
-<!--                   	</tr> -->
-<!--                	</table> -->
+                  		</td>
+                  	</tr>
+               	</table>
               <hr>
               </form>
             </div>
@@ -188,6 +195,7 @@
     </div>
 
   </div>
+ </div>
   <!-- Core plugin JavaScript-->
   <script src="./resources/vendor/jquery-easing/jquery.easing.min.js"></script>
 	
