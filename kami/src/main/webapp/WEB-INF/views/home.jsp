@@ -84,6 +84,8 @@
  						<li><a href="goReservation"><h3 class="gnbtit">Reservation</h3></a></li>
  					</c:otherwise>
  				</c:choose>
+ 				
+				<li><a href="goProduct"><h3 class="gnbtit">Product</h3></a></li>
 				<li><a href="#"><h3 class="gnbtit">Community</h3></a></li>
 			</ul>
 			</nav>

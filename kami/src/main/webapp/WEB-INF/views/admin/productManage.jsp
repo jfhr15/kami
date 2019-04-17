@@ -11,10 +11,11 @@
 <script>
 $(function(){
 	$("#insertkind").on('click', regist);
-	init();
+	initpk();
+	initProduct();
 });
 
-//상품등록
+//상품종류등록
 function regist(){
 	var pk = $("#productkind").val();
 	$.ajax({
@@ -22,13 +23,14 @@ function regist(){
 		type : "post",
 		data : {pk:pk},
 		success : function(data){
-			init();
+			initpk();
+			$("#productkind").val("");
 		}
 	});
 }
 
-//전체목록출력
-function init() {
+//상품종류전체목록출력
+function initpk() {
 	$.ajax({
 		url : "selectproductlist",
 		type : "post",
@@ -38,7 +40,18 @@ function init() {
 	});
 }
 
-//전체목록출력-text
+//상품전체목록출력
+function initProduct() {
+	$.ajax({
+		url : "selectAllproduct",
+		type : "post",
+		success:function(data){
+			outputProduct(data);
+		}
+	});
+}
+
+//상품종류 전체목록출력-text
 function output(resp) {
 	var data = "";
 	$.each(resp, function(index, item){
@@ -50,6 +63,22 @@ function output(resp) {
 	
 }
 
+
+
+//상품 전체목록출력-text
+function outputProduct(resp) {
+	var data = "";
+	var test = 1;
+	$.each(resp, function(index, item){
+		test +=1;
+		data += '<br><a href="godetailProduct?productseq='+item.productseq+'"><img src="img/' + item.prd_ognfile + '">' ;
+		data += '<br>'+item.prd_name+'</a>';
+	});
+	$(".ProductListDiv").html(data);
+	
+}
+
+
 //상품종류 삭제
 function del() {
 	var seq = $(this).attr('data-sno');
@@ -58,7 +87,7 @@ function del() {
 		type : "get",
 		data : {seq:seq},
 		success:function(data){
-			init();
+			initpk();
 		}
 	});
 }
@@ -79,6 +108,13 @@ function del() {
 <br>
 <div class="kindListDiv"></div>
 
+<br><br>
+<form action="goProductInsert">
+<input type="submit" value="상품등록">
+</form>
+<br><br>
+
+<div class="ProductListDiv"></div>
 
 </body>
 </html>

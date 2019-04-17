@@ -29,7 +29,7 @@ public class ProductController {
 	
 	@Autowired
 	ProductDAO dao;
-	private static final String UPLOADPATH="C:/upload/";
+	private static final String UPLOADPATH= "/resources/img/";
 	
 	//페이지 이동
 	@RequestMapping(value = "/goProductManage", method = RequestMethod.GET)
@@ -37,11 +37,11 @@ public class ProductController {
 		return "admin/productManage";
 	}
 	
-	//페이지 이동
-		@RequestMapping(value = "/goProduct", method = RequestMethod.GET)
-		public String goProduct() {
-			return "product/product";
-		}
+	@RequestMapping(value = "/test", method = RequestMethod.GET)
+	public String test() {
+		return "admin/test";
+	}
+	
 	
 	//상품종류 전체목록 출력
 	@RequestMapping(value = "/selectproductlist", method = RequestMethod.POST)

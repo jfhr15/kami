@@ -12,5 +12,16 @@
 <input type="submit" value="상품관리">
 </form>
 
+
+<form action="goHairColorManage">
+<input type="submit" value="머리색관리">
+</form>
+
+
+<form action="goPaymentPage">
+<input type="submit" value="결제">
+</form>
+
+
 </body>
 </html>
