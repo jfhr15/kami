@@ -55,7 +55,10 @@ body {
 .fc-day-header.fc-widget-header.fc-sun {
 	color: #FF0000;
 } /* 일요일 글자 */
-
+a
+{ 
+	text-decoration:none;
+}
 .bar{
 	width: 100%;
 	display: table;
@@ -114,13 +117,13 @@ body {
 	color: #FFFFFF;
 }
 #viewCal{
-	width:53%;
+/* 	width:53%; */
 	margin-top: 7%;
 	margin-left: 5%;
 	float: left;
 }
 #viewReservation{
-	width:30%;
+/* 	width:30%; */
 	float: left;
 	margin-top: 7%;
 	margin-left: 7%;
@@ -148,4 +151,18 @@ body {
     border-color: transparent;
     margin-left: 2%;
     padding: 3% 37%;
+}
+.vert{
+	vertical-align: top;
+}
+#tab1{
+	border: 2px solid #ccc;
+	margin: 0% 1%;
+}
+#td1{
+	width: 55%;
+	border-right:2px solid #ccc; 
+}
+#td2{
+	width: 30%;
 }

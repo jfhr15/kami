@@ -157,6 +157,8 @@
 							<li><a href="goReservation"><h3 class="gnbtit">Reservation</h3></a></li>
 						</c:otherwise>
 					</c:choose>
+					
+					<li><a href="goProduct"><h3 class="gnbtit">Product</h3></a></li>
 					<li><a href="#"><h3 class="gnbtit">Community</h3></a></li>
 				</ul>
 			</nav>
@@ -186,6 +188,12 @@
         <a class="nav-link" href="goIndex4">
           <i class="fas fa-fw fa-table"></i>
           <span>Calendar</span></a>
+      </li>
+      
+      <li class="nav-item">
+      	<a class="nav-link" href="goIndex5"> 
+      		<i class="fas fa-fw fa-address-book"></i> 
+      		<span>Career</span></a>
       </li>
       
       <li class="nav-item">

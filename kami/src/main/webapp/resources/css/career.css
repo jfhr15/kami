@@ -1,0 +1,13 @@
+@charset "UTF-8";
+#content-wrapper{
+	width: 100%;
+}
+#insertBtn{
+	color: #ffffff;
+    background-color: #a6c4b4;
+    border-color: transparent;
+    margin: 0% 40%;
+}
+#careerList{
+	border: 2px solid #ccc;
+}

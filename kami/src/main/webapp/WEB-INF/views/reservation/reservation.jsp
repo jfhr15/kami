@@ -8,10 +8,9 @@
 <title>Resevation</title>
 	<script src="resources/jquery-3.3.1.min.js"></script>
 	<link href="resources/css/reservation.css" rel="stylesheet" />
-	
+
+	<link href="resources/styles/reset.css" rel="stylesheet" />
 	<link rel="stylesheet" type="text/css" media="all" href="resources/styles/styles.css">
-	<meta name="author" content="Jake Rocheleau">
-	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
 	<link rel="shortcut icon" href="http://www.templatemonster.com/favicon.ico">
 	<link rel="icon" href="http://www.templatemonster.com/favicon.ico">
 	<link href="./resources/fullcalendar-3.10.0/fullcalendar.css" rel="stylesheet" />
@@ -82,6 +81,8 @@
  						<li><a href="goReservation"><h3 class="gnbtit">Reservation</h3></a></li>
  					</c:otherwise>
  				</c:choose>
+ 				
+ 				<li><a href="goProduct"><h3 class="gnbtit">Product</h3></a></li>
 				<li><a href="#"><h3 class="gnbtit">Community</h3></a></li>
 			</ul>
 			</nav>
@@ -89,7 +90,9 @@
 	</header>
 
 	<!--header 끝-->
-	
+	<table id="tab1">
+		<tr class="vert">
+			<td id="td1">
 	<div id="viewCal">
 	<div id="loading"></div>
 	<div id="calendar"></div>
@@ -237,6 +240,8 @@
 		</div>
 	</div>
 	</div>
+	</td>
+			<td id="td2">
 	
 	<div id="viewReservation">
 		<div id="sDate">예약 시간 : 시간을 선택해주세요.</div>
@@ -263,5 +268,19 @@
 		<button type="button" id="saveBtn"
 		name="saveBtn">예약 하기</button>
 	</div>
+	</td>
+		</tr>
+	</table>
+	
+	<!-- footer 시작 -->
+	
+ 	<div class="footer">
+ 		<div class="inner">
+ 			<strong><img src="resources/logo.png" alt="kamikami"></strong>
+ 			<p class="address">서울 강남구 영동대로 513 삼성동 159 코엑스 4층 kamikami
+ 			<br>
+ 			대표자 : aaa &emsp;&emsp;&emsp; phone : 010-1234-5678</p>
+ 		</div>
+ 	</div>
 </body>
 </html>
