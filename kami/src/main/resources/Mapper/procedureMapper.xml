@@ -86,7 +86,19 @@
 
 </select>
 
-
-
+<!-- 비로그인시나 회원일때 사진 불러오기-->
+<select id="PictureSelect" resultType="Picture">
+	SELECT 
+		PICTURESEQ
+		,NAME
+		,SETTING
+		,HASHTAG
+		,CONDITION
+		,SAVFILE
+		,ORGFILE
+	FROM
+		PICTURE
+    order by PICTURESEQ desc
+</select>
 </mapper>
 

@@ -1,7 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@taglib uri="http://www.springframework.org/tags" prefix="spring"%> 
 
     
 <html>
@@ -14,7 +13,6 @@
 	
 	<script>
 	$(function() {
-		init();
 		
 		$("#mainForm").on('click',ViewMain);
 	});
@@ -23,7 +21,7 @@
 		location.reload();
 	}
 	
-	 function init() {
+  /* function init() {
 	    	// Code here 
 	    	$.ajax({
 	    		type : 'POST'
@@ -38,9 +36,12 @@
 	 function output(resp) {
 		 	// Code here
 		 	 var cont = "";
+		 	 
+		 		cont += "<h3>New Arrival</h3>";
+		 		cont += "<div id='best_bg'>";
 		 		cont += "<ul>";
 		 	$.each(resp,function(index,item){
-		 		cont+="<li class='srcSize'>";
+		 		cont+="<li>";
 		 		cont+="<a href='#'><img src='img/"+ item.savfile + "' alt='' /></a>";
 			 	cont+="</li>";
 		
@@ -56,13 +57,12 @@
 		 	 cont +="<img src='resources/img/bestbook_btn_right.png' alt='다음으로 이동' />";
 		 	 cont +="</a>"
 		 	 cont +="</p>"
-		 	alert(cont);
+		 	cont +="</div>"
 		 	 
-		 	$("#best_bg").html(cont);
+		 	$("#arrival_zone").html(cont);
 		 
-		 }
-
-	 
+		 } */
+ 
 	 
 	</script>
 	
@@ -169,11 +169,36 @@
 </div>
 
 <div id="arrival_zone">
+  
+  
+  
+  
    <h3>
       New Arrival
    </h3>
    <div id="best_bg">
+      <ul>
+        <li><a href="#"><img src="resources/img/beautiful.jpg" alt="" /></a></li>
+    	<c:forEach items="${picture}" var="picture">
+    	 <li><a href="#"><img src="img/${picture.savfile}" alt="" /></a></li>
+    	
+    	</c:forEach>
+      </ul>
+      <p class="prev_btn">
+         <a href="#">
+         <img src="resources/img/bestbook_btn_left.png" alt="이전으로 이동" />
+         </a>
+      </p>
+      <p class="next_btn">
+         <a href="#">
+         <img src="resources/img/bestbook_btn_right.png" alt="다음으로 이동" />
+         </a>
+         
+         
+         
+      </p>
    </div>
+  
  </div> <!-- close of arrival_zone -->
  
             <section class="display-section">

@@ -1,17 +1,19 @@
 package com.kami.kami;
 
-import java.text.DateFormat;
-import java.util.Date;
-import java.util.Locale;
+import java.util.ArrayList;
+
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.kami.kami.vo.Employee;
+import com.kami.kami.dao.ProcedureDAO;
+import com.kami.kami.vo.Picture;
 
 
 /**
@@ -20,21 +22,23 @@ import com.kami.kami.vo.Employee;
 @Controller
 public class HomeController {
 	
+	@Autowired
+	ProcedureDAO dao;
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Locale locale, Model model) {
-		logger.info("Welcome home! The client locale is {}.", locale);
+	public String home( Model model,HttpSession session) {
+
+		String id= (String)session.getAttribute("loginId");
+		ArrayList<Picture> list = new ArrayList<Picture>();
+		list = dao.PictureSelect();
 		
-		Date date = new Date();
-		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
-		
-		String formattedDate = dateFormat.format(date);
-		
-		model.addAttribute("serverTime", formattedDate );
+		if(id==null) {
+			model.addAttribute("picture", list);
+		}
 		
 		return "home";
 	}
