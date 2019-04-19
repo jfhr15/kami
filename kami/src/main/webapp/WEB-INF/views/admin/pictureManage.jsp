@@ -59,6 +59,8 @@ $(function(){
 				}
 				
 			}
+			
+			$('#name').val(checkBoxArr[0]);
 			 $('#hashtag').val(result);
 			
 	    });

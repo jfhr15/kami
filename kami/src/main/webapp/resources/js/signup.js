@@ -79,8 +79,8 @@ $(function(){
 						if($("#birth_check").val() == null){
 							echeck();
 							if($("#email_check").val() == null){
-								addresscheck();
 								address();
+								addresscheck();
 								if($("#address_check").val() == null){
 									phonecheck();
 									if($("#phone_check").val() == null){
@@ -178,6 +178,7 @@ $(function(){
 	
 	function addresscheck(){
 		var address = $("#address").val();
+		alert(address);
 		if(address==null){
 			$("#address_check").html("주소를 입력해주세요.");
 			return false;

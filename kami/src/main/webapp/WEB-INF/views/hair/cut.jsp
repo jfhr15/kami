@@ -8,7 +8,12 @@
 <title>cut</title>
 	<script src="resources/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+	
+	
+	
 	<link href="resources/css/sign.css" rel="stylesheet" />
+	<link href="resources/css/menew.css" rel="stylesheet" />
+	<link href="resources/css/style.css" rel="stylesheet" />
 	
 	<link href="resources/css/cut.css" rel="stylesheet" />
 	<link href="resources/styles/reset.css" rel="stylesheet" /> 
@@ -84,91 +89,88 @@
 	</header>
 
 	<!--header 끝-->
-	
+<div id="cont">
+<div id="container0">
+	 <div class="button-1">
+    <div class="eff-1"></div>
+    <a href="#"> Touch me </a>
+  </div>
+  <div class="button-4">
+    <div class="eff-4"></div>
+    <a href="#"> Touch me </a>
+  </div>
+  <div class="button-2">
+    <div class="eff-2"></div>
+    <a href="#"> Touch me </a>
+  </div>
+  <div class="button-3">
+    <div class="eff-3"></div>
+    <a href="#"> Touch me </a>
+  </div>
+  <div class="button-5">
+    <div class="eff-5"></div>
+    <a href="#"> Touch me </a>
+  </div>
+  <div class="button-6">
+    <div class="eff-6"></div>
+    <a href="#"> Touch me </a>
+  </div>
+  <div class="button-7">
+    <div class="eff-7"></div>
+    <a href="#"> Touch me </a>
+  </div>
+  <div class="button-8">
+    <div class="eff-8"></div>
+    <a href="#"> Touch me </a>
+  </div>
+</div>	
+</div>
 	<div id="container">
 		<div id="contents">
 			<div>
 				<div id="searchList" class="nonEntry">
 					<span id="searchList_title"><h2 title="CUT" class="ArticleTitle">CUT</h2></span>
-					<ol>
-						<li>
-							<div class="item">
-								<div id="post_thumb/260?category=662142" class="post_thumb">
-									<span class="thumb">
-										<a class="list_url" href="/260?category=662142" style="background-image:url(https://t1.daumcdn.net/cfile/tistory/995CEA405C7738253A) !important"></a>
-									</span>
-								</div>
-								<div class="post_thumb_content">
-									<div class="list_category">Cut</div>
-									<div class="list_title"><a class="ellipsis" href="/260?category=662142">aaa</a></div>
-									<div class="list_article"><a href="/260?category=662142" class="article_desc">~~~설명~~~</a></div>
-									<div class="list_date">남는거</div>
-								</div>
-							</div>
-						</li>
-						<li>
-							<div class="item">
-								<div id="post_thumb/248?category=662142" class="post_thumb">
-									<span class="thumb">
-										<a class="list_url" href="/248?category=662142" style="background-image:url(https://t1.daumcdn.net/cfile/tistory/99FE623C5BB586EF01) !important"></a>
-									</span>
-								</div>
-								<div class="post_thumb_content">
-									<div class="list_category">Cut</div>
-									<div class="list_title"><a class="ellipsis" href="/260?category=662142">aaa</a></div>
-									<div class="list_article"><a href="/260?category=662142" class="article_desc">~~~설명~~~</a></div>
-									<div class="list_date">남는거</div>
-								</div>
-							</div>
-						</li>
-						<li>
-							<div class="item">
-								<div id="post_thumb/247?category=662142" class="post_thumb">
-									<span class="thumb">
-										<a class="list_url" href="/247?category=662142" style="background-image:url(https://t1.daumcdn.net/cfile/tistory/992AD4355BB5860135) !important"></a>
-									</span>
-								</div>
-								<div class="post_thumb_content">
-									<div class="list_category">Cut</div>
-									<div class="list_title"><a class="ellipsis" href="/260?category=662142">aaa</a></div>
-									<div class="list_article"><a href="/260?category=662142" class="article_desc">~~~설명~~~</a></div>
-									<div class="list_date">남는거</div>
-								</div>
-							</div>
-						</li>
-						<li>
-							<div class="item">
-								<div id="post_thumb/246?category=662142" class="post_thumb">
-									<span class="thumb">
-										<a class="list_url" href="/246?category=662142" style="background-image:url(https://t1.daumcdn.net/cfile/tistory/996FBB3F5BB5857131) !important"></a>
-									</span>
-								</div>
-								<div class="post_thumb_content">
-									<div class="list_category">Cut</div>
-									<div class="list_title"><a class="ellipsis" href="/260?category=662142">aaa</a></div>
-									<div class="list_article"><a href="/260?category=662142" class="article_desc">~~~설명~~~</a></div>
-									<div class="list_date">남는거</div>
-								</div>
-							</div>
-						</li>
-						<li>
-							<div class="item">
-								<div id="post_thumb/245?category=662142" class="post_thumb">
-								<span class="thumb">
-									<a class="list_url" href="/245?category=662142" style="background-image:url(https://t1.daumcdn.net/cfile/tistory/99AF6E385BB5849A2B) !important"></a>
-								</span>
-								</div>
-									<div class="post_thumb_content">
-									<div class="list_category">Cut</div>
-									<div class="list_title"><a class="ellipsis" href="/260?category=662142">aaa</a></div>
-									<div class="list_article"><a href="/260?category=662142" class="article_desc">~~~설명~~~</a></div>
-									<div class="list_date">남는거</div>
-								</div>
-							</div>
-						</li>
-					</ol>
+					
 				</div>
 			</div>
+			<div id="wrapper">
+			<div id="columns">
+				<div class="card">
+					<img src="resources/img/beautiful.jpg">							
+					<p>Roasted chicken breast with sage and spinach </p>
+				</div>
+				<div class="card">
+					<img src="resources/img/beautiful2.jpg">		
+					<p>Colorful Italian cuisine ingredients</p>
+				</div>
+				<div class="card">
+					<img src="resources/img/beautiful3.jpg">				
+					<p>Beef steaks </p>
+				</div>
+				<div class="card">
+					<img src="resources/img/beautiful4.jpg">			
+					<p>Beef burger takeaway</p>
+				</div>	
+				<div class="card">
+					<img src="resources/img/beautiful5.jpg">		
+					<p>Funny quail egg breakfast </p>
+				</div>
+				<div class="card">
+					<img src="images/pic6.jpg">		
+					<p>Fresh oranges</p>
+				</div>
+				<div class="card">
+					<img src="images/pic7.jpg">				
+					<p>Pumpkin soup</p>
+				</div>
+				<div class="card">
+					<img src="images/pic8.jpg">			
+					<p>Homemade chicken broth with vegetables </p>
+				</div>	
+			</div>
+		</div>
+			
+			
 		<!-- 하단 번호 -->
 			<div id="paging">
 				<a class="#" id="prevPage">이전</a>

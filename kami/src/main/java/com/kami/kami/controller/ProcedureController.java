@@ -33,10 +33,9 @@ public class ProcedureController {
 		
 		//상품 등록
 		@RequestMapping(value = "/insertProcedure", method = RequestMethod.POST)
-		public String insertProcedure(Procedure procedure,String pcd_nameKinds,String pcd_nameSex, HttpSession session, MultipartFile uploadFile, Model model) {
+		public String insertProcedure(Procedure procedure,HttpSession session, MultipartFile uploadFile, Model model) {
 			model.addAttribute("procedure", procedure);
-			model.addAttribute("pcd_nameKinds", pcd_nameKinds);
-			model.addAttribute("pcd_nameSex", pcd_nameSex);
+			
 			
 			//기존 파일 명
 			String orgfile = uploadFile.getOriginalFilename();
@@ -46,7 +45,7 @@ public class ProcedureController {
 			procedure.setPcd_savfile(savfile);
 			
 			System.out.println(procedure);
-			int result = dao.insertProcedure(procedure, pcd_nameKinds, pcd_nameSex);
+			int result = dao.insertProcedure(procedure);
 			if(result==1) {
 				System.out.println("db 입력성공");
 			}else {
