@@ -78,4 +78,25 @@ public class ProcedureDAO {
 			
 			return result;
 		}
+		
+		//사진값 다받아버리기
+		public ArrayList<Picture> PictureSelect(){
+			ArrayList<Picture> result = new ArrayList<Picture>();
+			ArrayList<Picture> result2 = new ArrayList<Picture>();
+			ProcedureMapper mapper = session.getMapper(ProcedureMapper.class);
+			result = mapper.PictureSelect();
+			int k =0;
+			if(result.size() < 8) {
+				k=result.size();
+			} else {
+				k=8;
+			}
+			
+			for (int i = 0; i < k; i++) {
+				result2.add(result.get(i));
+			}
+			
+			return result2;	
+		}
+		
 }
