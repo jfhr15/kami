@@ -56,6 +56,7 @@
 <script type="text/javascript" src="resources/js/swipe.js"></script>
 <script type="text/javascript" src="resources/js/jquery.bxslider.min.js"></script>
 <script type="text/javascript" src="resources/js/main.js"></script>
+<script src='./resources/bootstrap/dist/js/bootstrap.min.js'></script>
 <script type="text/javascript" src="resources/js/career.js"></script>
 
 <title>MyPage</title>
@@ -164,11 +165,79 @@
 
 		<!-- Content Wrapper -->
 		<div id="content-wrapper" class="d-flex flex-column">
-			<input type="button" value="test" id="insertBtn">
+			<h4 id="tt">경력</h4>
 			<div id="careerList">
 				
 			</div>
+			<input type="button" value="경력 등록" id="insertBtn">
+			<!-- Event Write Modal1 -->
+	<div class="modal fade" id="writeModal" tabindex="-1" role="dialog"
+		aria-labelledby="writeModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-body">
+					<label class="sr-only" for="content">content</label>
+					<br>
+					<div class="input-group">
+						<div class="input-group-addon" style="vertical-align: super;">
+							<br>
+							<div class="form-inline">
+								<div class="input-group" id="col">
+									<input type="text" class="form-control" id="care_content"
+										placeholder="career">
+									<input type="date" class="form-control" id="care_date"
+										placeholder="date">
+								</div>
+							</div>
+							<br>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-warning" id="saveBtn"
+									name="saveBtn">등록</button>
+								<button type="button" class="btn btn-default"
+									data-dismiss="modal">닫기</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
+	</div>
+	
+			<!-- Event Write Modal2 -->
+	<div class="modal fade" id="writeModal2" tabindex="-1" role="dialog"
+		aria-labelledby="writeModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-body">
+					<label class="sr-only" for="content">content</label>
+					<br>
+					<div class="input-group">
+						<div class="input-group-addon" style="vertical-align: super;">
+							<br>
+							<div class="form-inline">
+								<div class="input-group" id="col">
+									<input type="text" class="form-control" id="care_content2"
+										placeholder="career">
+									<input type="date" class="form-control" id="care_date2"
+										placeholder="date">
+								</div>
+							</div>
+							<br>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-warning" id="updateBtn"
+									name="updateBtn">수정</button>
+								<button type="button" class="btn btn-warning" id="deleteBtn"
+									name="deleteBtn">삭제</button>
+								<button type="button" class="btn btn-default"
+									data-dismiss="modal">닫기</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
 		<!-- End of Content Wrapper -->
 
 	</div>

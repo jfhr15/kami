@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.kami.kami.dao.AdminDAO;
+import com.kami.kami.dao.CareerDAO;
+import com.kami.kami.vo.Career;
 import com.kami.kami.vo.Employee;
 import com.kami.kami.vo.Idinfo;
 import com.kami.kami.vo.Member;
@@ -22,6 +24,8 @@ public class adminController {
 	
 	@Autowired
 	AdminDAO dao;
+	@Autowired
+	CareerDAO cDao;
 	
 	@RequestMapping(value = "/goLogin", method = RequestMethod.GET)
 	public String goLogin() {
@@ -165,5 +169,44 @@ public class adminController {
 		Idinfo idinfo = dao.pwSearch(map);
 		
 		return idinfo;
+	}
+	
+	@RequestMapping(value = "/careerList", method = RequestMethod.GET)
+	public @ResponseBody ArrayList<Career> careerList(HttpSession session) {
+		ArrayList<Career> cList = new ArrayList<Career>();
+		String emp_id = (String)session.getAttribute("loginId");
+		cList = cDao.careerList(emp_id);
+		
+		return cList;
+	}
+	
+	@RequestMapping(value = "/insertCareer", method = RequestMethod.POST)
+	public @ResponseBody String insertCareer(Career career, HttpSession session) {
+		String loginId = (String)session.getAttribute("loginId");
+		career.setEmp_id(loginId);
+		cDao.insertCareer(career);
+		
+		return "SUCCESS";
+	}
+	
+	@RequestMapping(value = "/updateCareer", method = RequestMethod.POST)
+	public @ResponseBody String updateCareer(Career career) {
+		cDao.updateCareer(career);
+		
+		return "SUCCESS";
+	}
+	
+	@RequestMapping(value = "/selectCareer", method = RequestMethod.POST)
+	public @ResponseBody Career selectCareer(int careeaseq) {
+		Career career = cDao.selectCareer(careeaseq);
+		
+		return career;
+	}
+	
+	@RequestMapping(value = "/deleteCareer", method = RequestMethod.POST)
+	public @ResponseBody String deleteCareer(int  careeaseq) {
+		cDao.deleteCareer(careeaseq);
+		
+		return "SUCCESS";
 	}
 }

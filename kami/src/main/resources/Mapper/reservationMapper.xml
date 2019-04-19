@@ -102,4 +102,18 @@
 		and
 			emp_id not in(select emp_id from offschedule where off_check='승인' and (to_date(#{rsv_date},'yy/mm/dd hh24:mi') between off_startdate and off_enddate))
 	</select>
+	
+	<select id="selectProcedure" resultType="Procedure" parameterType="String"> 
+		select
+			procedureseq
+			,pcd_name
+			,pcd_time
+			,pcd_price
+			,pcd_savfile
+			,pcd_orgfile
+		from
+			procedure
+		where
+			
+	</select>
 </mapper>

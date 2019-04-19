@@ -193,10 +193,10 @@
               	<table class="btnTable">
               		<tr>
               			<td class="tdtd">
-                  			<button id="employeeBtn" value="0" class="btns" onclick="goInsertEmployee();">직원 등록</button>
+                  			<button type="button" id="employeeBtn" value="0" class="btns">직원 등록</button>
                   		</td>
                   		<td class="tdtd">
-                  			<button id="memberBtn" value="1" class="btns" onclick="goInsertMember();">회원 등록</button>
+                  			<button type="button" id="memberBtn" value="1" class="btns">회원 등록</button>
                   		</td>
                   	</tr>
                	</table>

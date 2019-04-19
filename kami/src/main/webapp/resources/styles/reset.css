@@ -8,6 +8,7 @@ menu,nav,section,summary,time,mark,audio,video{margin:0; padding:0;}
 
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section{display:block;}
 
+ul{margin-block-start: 0;margin-block-end: 0; margin-inline-start: 0;margin-inline-end: none;}
 li{list-style-type:none;}
 img, fieldset,iframe{border:0;}
 img, fieldset{border:none;}
