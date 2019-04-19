@@ -1,9 +1,13 @@
 package com.kami.kami.dao;
 
+import java.util.ArrayList;
+import java.util.Collections;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.kami.kami.vo.Condition;
 import com.kami.kami.vo.Picture;
 import com.kami.kami.vo.Procedure;
 
@@ -15,16 +19,10 @@ public class ProcedureDAO {
 	SqlSession session;
 	
 	//시술 등록
-		public int insertProcedure(Procedure procedure, String pcd_nameKinds, String pcd_nameSex) {
+		public int insertProcedure(Procedure procedure) {
 			int result =0;
 			
-			String name = procedure.getPcd_name();
-				name += "/";
-				name += pcd_nameKinds;
-				name += "/";
-				name += pcd_nameSex;
-			procedure.setPcd_name(name);
-			System.out.println(procedure);
+		
 			try {
 				ProcedureMapper mapper = session.getMapper(ProcedureMapper.class);
 				result = mapper.insertProcedure(procedure);
@@ -46,6 +44,37 @@ public class ProcedureDAO {
 				e.printStackTrace();
 			}
 		
+			
+			return result;
+		}
+		//추천 사진출력
+		public ArrayList<Picture> pickmeSelect(Condition condition){
+			ArrayList<Picture> result = new ArrayList<Picture>();
+			
+			try {
+				ProcedureMapper mapper = session.getMapper(ProcedureMapper.class);
+				result = mapper.pickmeSelect(condition);
+				//추천 사진 랜덤 출력
+				Collections.shuffle(result);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+				
+			
+			return result;
+		}
+		//id로 condition 찾기
+		public String genderSelect(String id) {
+			String result = null;
+			ProcedureMapper mapper = session.getMapper(ProcedureMapper.class);
+			result = mapper.genderSelect(id);
+			
+			return result;
+		}
+		public String conditionSelect(String id) {
+			String result = null;
+			ProcedureMapper mapper = session.getMapper(ProcedureMapper.class);
+			result = mapper.conditionSelect(id);
 			
 			return result;
 		}

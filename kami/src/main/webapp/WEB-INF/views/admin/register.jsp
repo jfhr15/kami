@@ -13,9 +13,21 @@
 <head>
 	<script src="resources/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-
  	<script src="./resources/vendor/jquery-easing/jquery.easing.min.js"></script>
-
+	<script>
+/* $(function(){
+	var postcode = $('#sample6_postcode').val();
+	var Address = $('#sample6_address').val();
+	var detailAddress = $('#sample6_detailAddress').val();
+	var extraAddress = $('#sample6_extraAddress').val();
+		
+	var address = '';
+	    address += postcode+''+Address+''+detailAddress+''+extraAddress;
+	    
+	    alert(address);
+	    $('#address').val(address);  
+	}); */
+	</script>
 	<script src="./resources/js/login.js"></script>
 	<link href="resources/styles/reset.css" rel="stylesheet" />
 	<link href="resources/css/signup.css" rel="stylesheet" />
@@ -144,9 +156,9 @@
                 <table class="selectGenderTable">
 					<tr>
 						<td>남자</td>
-						<td class="td1"><input type="radio" name="gender" value="m" checked="checked" class="radio1"></td>
+						<td class="td1"><input type="radio" name="gender" value="남자" checked="checked" class="radio1"></td>
 						<td>여자</td>
-						<td class="td1"><input type="radio" name="gender" value="w" class="radio1"></td>
+						<td class="td1"><input type="radio" name="gender" value="여자" class="radio1"></td>
 					</tr>
 				</table>
 				<table>

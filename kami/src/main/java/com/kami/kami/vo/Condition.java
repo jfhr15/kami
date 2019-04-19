@@ -6,6 +6,7 @@ public class Condition {
 	private String conditionH;
 	private String conditionD;
 	private String conditionF;
+	private String gender;
 	
 	
 	
@@ -17,13 +18,15 @@ public class Condition {
 
 
 
-	public Condition(String conditionM, String conditionG, String conditionH, String conditionD, String conditionF) {
+	public Condition(String conditionM, String conditionG, String conditionH, String conditionD, String conditionF,
+			String gender) {
 		super();
 		this.conditionM = conditionM;
 		this.conditionG = conditionG;
 		this.conditionH = conditionH;
 		this.conditionD = conditionD;
 		this.conditionF = conditionF;
+		this.gender = gender;
 	}
 
 
@@ -99,11 +102,29 @@ public class Condition {
 
 
 
+	public String getGender() {
+		return gender;
+	}
+
+
+
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
+
+
+
 	@Override
 	public String toString() {
 		return conditionM + "/" + conditionG + "/" + conditionH
-				+ "/" + conditionD + "/" + conditionF ;
+				+ "/" + conditionD + "/" + conditionF;
 	}
+
+
+
+
 	
 	
 	

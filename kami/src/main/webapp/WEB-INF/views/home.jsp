@@ -1,6 +1,9 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib uri="http://www.springframework.org/tags" prefix="spring"%> 
+
+    
 <html>
 <head>
 	<title>Home</title>
@@ -11,12 +14,56 @@
 	
 	<script>
 	$(function() {
+		init();
+		
 		$("#mainForm").on('click',ViewMain);
 	});
 	
 	function ViewMain() {
 		location.reload();
 	}
+	
+	 function init() {
+	    	// Code here 
+	    	$.ajax({
+	    		type : 'POST'
+	    		,url : "pickmeSelect"
+	    		,success : function(resp){
+	    				output(resp);
+	    			}
+	    		});
+	    }
+	
+	 //출력코드
+	 function output(resp) {
+		 	// Code here
+		 	 var cont = "";
+		 		cont += "<ul>";
+		 	$.each(resp,function(index,item){
+		 		cont+="<li class='srcSize'>";
+		 		cont+="<a href='#'><img src='img/"+ item.savfile + "' alt='' /></a>";
+			 	cont+="</li>";
+		
+		 	});
+		 	 cont +="</ul>";
+		 	 cont +="<p class='prev_btn'>";
+		 	 cont +="<a href='#'>";
+		 	 cont +="<img src='resources/img/bestbook_btn_left.png' alt='이전으로 이동' />";
+		 	 cont +="</a>"
+		 	 cont +="</p>"
+		 	 cont +="<p class='next_btn'>";
+		 	 cont +="<a href='#'>";
+		 	 cont +="<img src='resources/img/bestbook_btn_right.png' alt='다음으로 이동' />";
+		 	 cont +="</a>"
+		 	 cont +="</p>"
+		 	alert(cont);
+		 	 
+		 	$("#best_bg").html(cont);
+		 
+		 }
+
+	 
+	 
 	</script>
 	
 	<link href="resources/styles/reset.css" rel="stylesheet" /> 
@@ -126,28 +173,6 @@
       New Arrival
    </h3>
    <div id="best_bg">
-      <ul>
-        <li><a href="#"><img src="resources/img/beautiful.jpg" alt="" /></a></li>
-        <li><a href="#"><img src="resources/img/beautiful2.jpg" alt="" /></a></li>
-        <li><a href="#"><img src="resources/img/beautiful3.jpg" alt="" /></a></li>
-        <li><a href="#"><img src="resources/img/beautiful4.jpg" alt="" /></a></li>
-        <li><a href="#"><img src="resources/img/beautiful5.jpg" alt="" /></a></li>
-        <li><a href="#"><img src="resources/img/beautiful6.jpg" alt="" /></a></li>
-        <li><a href="#"><img src="resources/img/beautiful7.jpg" alt="" /></a></li>
-      </ul>
-      <p class="prev_btn">
-         <a href="#">
-         <img src="resources/img/bestbook_btn_left.png" alt="이전으로 이동" />
-         </a>
-      </p>
-      <p class="next_btn">
-         <a href="#">
-         <img src="resources/img/bestbook_btn_right.png" alt="다음으로 이동" />
-         </a>
-         
-         
-         
-      </p>
    </div>
  </div> <!-- close of arrival_zone -->
  

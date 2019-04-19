@@ -6,8 +6,8 @@
 <head>
 	<script src="resources/jquery-3.3.1.min.js"></script>
 <!-- 	<link href="resources/css/sign.css" rel="stylesheet" /> -->
-
-	<link href="resources/styles/reset.css" rel="stylesheet" /> 
+	<link href="resources/css/menew.css" rel="text/css" />
+	<link href="resources/styles/reset.css" rel="text/css" /> 
 	<link rel="stylesheet" type="text/css" media="all" href="resources/styles/styles.css">
 	
 	 <!-- Custom fonts for this template-->

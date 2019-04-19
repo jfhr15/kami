@@ -12,3 +12,10 @@ th{width: 120px;}
 span{padding: 0 0 5px; line-height: 1.4em; font-size: 10px;}
 .container{position: relative; width: 750px; margin-right: auto; margin-left: auto; padding-left: 15px; padding-right: 15px;}\
 .btn_input{border-radius:3px;}
+.srcSize{   width: 300px;
+    		height: 300px;
+    		float: left;
+    		}
+
+
+

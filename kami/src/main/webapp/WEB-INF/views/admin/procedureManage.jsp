@@ -52,27 +52,17 @@ $(function(){
 	<tr>
 		<th>시술 종류</th>
 		<td>
-		<select id="pcd_nameKinds" name="pcd_nameKinds" >
+		<select id="pcd_setting" name="pcd_setting" >
 			<option value="커트" >커트</option>
 			<option value="펌" >펌</option>
 			<option value="염색" >염색</option>
+			<option value="클리닉" >클리닉</option>
+			<option value="스타일링" >스타일링</option>
 		</select>
 		</td>
 	</tr>
 	
-		<tr>
-		<th>성별 </th>
-		<td>
-		<select id="pcd_nameSex" name="pcd_nameSex" >
-			<option value="남자/미디엄" >남자/미디엄</option>
-			<option value="남자/숏" >남자/숏</option>
-			<option value="여자/롱" >여자/롱</option>
-			<option value="여자/미디엄" >여자/미디엄</option>
-			<option value="여자/단발" >여자/단발</option>
-			<option value="여자/숏" >여자/숏</option>
-		</select>
-		</td>
-	</tr>
+	
 	<tr>
 		<th>가격</th>	
 		<td>
