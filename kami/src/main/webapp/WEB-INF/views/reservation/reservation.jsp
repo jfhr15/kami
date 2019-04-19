@@ -246,25 +246,35 @@
 	<div id="viewReservation">
 		<div id="sDate">예약 시간 : 시간을 선택해주세요.</div>
 		<div id="designer">디자이너 : 디자이너를 선택해주세요.</div>
+		<div id="procedure">시술 : 시술을 선택해주세요.</div>
 		<input type="hidden" id="hStart">
 		<input type="hidden" id="emp_id">
-<!-- 		<table id="dTable"> -->
-<!-- 			<tr> -->
-<!-- 				<td class="dTableTd"><img class="tableImg" src="./resources/img/beautiful.jpg" onclick="inputEmp_id()">디자이너 OOO</td> -->
-<!-- 				<td class="dTableTd"><img class="tableImg" src="./resources/img/beautiful2.jpg">디자이너 OOO</td> -->
-<!-- 			</tr> -->
-<!-- 			<tr> -->
-<!-- 				<td class="dTableTd"><img class="tableImg" src="./resources/img/beautiful3.jpg">디자이너 OOO</td> -->
-<!-- 				<td class="dTableTd"><img class="tableImg" src="./resources/img/beautiful4.jpg">디자이너 OOO</td> -->
-<!-- 			</tr> -->
-<!-- 		</table> -->
-			<div id="dList">
-<!-- 			<table id="dTable"> -->
-<%-- 				<c:forEach var="idinfo" items="${eList}"> --%>
-<%-- 					<a id="${idinfo.id}" onclick="inputEmp_id()">디자이너 ${idinfo.name}</a><br> --%>
-<%-- 				</c:forEach> --%>
-<!-- 			</table> -->
-			</div>
+		
+		<div id="dList"></div>
+		
+	    <div class="btnA" id="btn_left"><img class="imgA" src="resources/img/visual_btn_left.png"></div>
+		<div id="banner_container" style="height:50px;overflow:hidden;">
+		    <div id="banner_wrapper">
+				<div class="testA" id="cut">커트</div>
+				<div class="testA" id="perm">펌</div>
+				<div class="testA" id="dyeing">염색</div>
+				<div class="testA" id="clinic">클리닉</div>
+				<div class="testA" id="dry">스타일링</div>
+		    </div>
+		</div>
+		<div class="btnA" id="btn_right"><img class="imgA" src="resources/img/visual_btn_right.png"></div>
+		<div id="i1">
+		</div>
+	
+		<div class="options">
+<!--         <ul class="testul"> -->
+<!--             <li class="testli"><input id="checkbox1" name="checkbox" type="checkbox"> <label class="testlabel" for="checkbox1">A</label></li> -->
+<!--             <li><input id="checkbox2" name="checkbox" type="checkbox"> <label class="testlabel" for="checkbox2">B</label></li> -->
+<!--             <li><input id="checkbox3" name="checkbox" type="checkbox"> <label class="testlabel" for="checkbox3">C</label></li> -->
+<!--         </ul> -->
+   		</div>
+   		
+		<div id="conte"></div>
 		<button type="button" id="saveBtn"
 		name="saveBtn">예약 하기</button>
 	</div>

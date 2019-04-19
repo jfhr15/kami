@@ -9,106 +9,77 @@ $(function(){
 	$("#employeeBtn").on("click", goInsertEmployee);
 	$("#memberBtn").on('click', goInsertMember);
 	$("#addbtn").on('click', execDaumPostcode);
-	
+});	
+
 	function address() {
 		var add1 = $("#sample6_address").val();
 		var add2 = $("#sample6_detailAddress").val();
 		var add3 = $("#sample6_extraAddress").val();
 		var add4 = $("#sample6_postcode").val();
-		$("#address").val(add1 + add2 + add3 + add4);
+		if(add2 == ""){
+			
+		} else{
+			$("#address").val(add1 + add2 + add3 + add4);
+		}
 	}
 	
 	function goInsertEmployee(){
-		alert("!");
 		idcheck();
-		alert("!!");
-		if($("#duplicatemessage").val() == null){
+		if($("#duplicatemessage").html() == "등록가능"){
 			length();
-			if($("#pwmessage1").val() == null){
+			if($("#pwmessage1").html() == ""){
 				pwcheck();
-				if($("#pwmessage2").val() == null){
+				if($("#pwmessage2").html() == ""){
 					hangl();
-					if($("#name_check").val() == null){
+					if($("#name_check").html() == ""){
 						birthdaycheck();
-						if($("#birth_check").val() == null){
+						if($("#birth_check").html() == ""){
 							echeck();
-							if($("#email_check").val() == null){
-								addresscheck();
+							if($("#email_check").html() == ""){
 								address();
-								if($("#address_check").val() == null){
+								addresscheck();
+								if($("#address_check").html() == ""){
 									phonecheck();
-									if($("#phone_check").val() == null){
+									if($("#phone_check").html() == ""){
 										$("#division").val(0);
 										$("#user").submit();
-									}else{
-										break;
 									}
-								}else{
-									break;
 								}
-							}else{
-								break;
 							}
-						}else{
-							break;
 						}
-					}else{
-						break;
 					}
-				}else{
-					break;
 				}
-			}else{
-				break;
 			}
-		}else{
-			break;
 		}
   	}
-  	
+	
 	function goInsertMember(){
 		idcheck();
-		if($("#duplicatemessage").val() == null){
+		if($("#duplicatemessage").html() == "등록가능"){
 			length();
-			if($("#pwmessage1").val() == null){
+			if($("#pwmessage1").html() == ""){
 				pwcheck();
-				if($("#pwmessage2").val() == null){
+				if($("#pwmessage2").html() == ""){
 					hangl();
-					if($("#name_check").val() == null){
+					if($("#name_check").html() == ""){
 						birthdaycheck();
-						if($("#birth_check").val() == null){
+						if($("#birth_check").html() == ""){
 							echeck();
-							if($("#email_check").val() == null){
-								addresscheck();
+							if($("#email_check").html() == ""){
 								address();
-								if($("#address_check").val() == null){
+								addresscheck();
+								if($("#address_check").html() == ""){
 									phonecheck();
-									if($("#phone_check").val() == null){
+									if($("#phone_check").html() == ""){
 										$("#division").val(1);
 										$("#user").submit();
-									}else{
-										break;
 									}
-								}else{
-									break;
 								}
-							}else{
-								break;
 							}
-						}else{
-							break;
 						}
-					}else{
-						break;
 					}
-				}else{
-					break;
 				}
-			}else{
-				break;
 			}
-		}else{
-			break;
 		}
   	}
 	
@@ -178,7 +149,7 @@ $(function(){
 	
 	function addresscheck(){
 		var address = $("#address").val();
-		if(address==null){
+		if(address==""){
 			$("#address_check").html("주소를 입력해주세요.");
 			return false;
 		} else{
@@ -198,10 +169,10 @@ $(function(){
 	
 	function birthdaycheck(){
 		var birthday = $("#birthday").val();
-		if(birthday == null){
-			$("#birthday").html("생년월일을 입력해주세요.");
+		if(birthday == ""){
+			$("#birth_check").html("생년월일을 입력해주세요.");
 		} else{
-			$("#birthday").html("");
+			$("#birth_check").html("");
 		}
 	}
 	
@@ -252,4 +223,3 @@ $(function(){
         }).open({
         });
     }
-});

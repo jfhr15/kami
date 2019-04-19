@@ -73,6 +73,11 @@ $(function() {
 		$("#saveBtn").on('click', insert);
 		$("#deleteBtn").on('click', del);
 		$("#updateBtn").on('click', update);
+		$("#cut").on('click',cut);
+		$("#perm").on('click',perm);
+		$("#dyeing").on('click',dyeing);
+		$("#clinic").on('click',clinic);
+		$("#dry").on('click',dry);
 	});
 
 	function scheduleChoice(num, id, distinct, color, text) {
@@ -254,4 +259,138 @@ $(function() {
 		$("#designer").html("디자이너 : " + name);
 	}
 	
-	
+	var BANNER_INDEX = 1;
+    // 배너의 위치 : 배너가 움직이려면 LEFT값을 변경해야 하는데 LEFT 값을 계산하려면 배너의 위치가 필요하다.
+    var BANNER_LEN = 0;
+    //배너의 넓이 : 배너의 넓이는 언제든지 변할 수 있으니 배너의 넓이를 정의하는 변수를 정의한다.
+    var BANNER_WIDTH = 102;
+    //배너의 개수 : 사용자의 요청에 따라 배너의 개수가 변할 수 있으니 배너의 개수를 정의하는 변수가 필요하다.
+    var SHOW_DURATION = 200;
+    //슬라이드 속도를 조절할수있다. 200/1000초로 기본 셋을 설정한다.
+  $(document).ready(function() {
+
+        bannerInit();
+
+        $("#btn_left").unbind();
+        $("#btn_left").bind("click", function() {
+            var nIndex = BANNER_INDEX - 1;
+            //0의 기점으로 기준점을 맞춰둔다. 
+            //nIndex는 기준점이 된다.
+
+            /*if (nIndex < 0) {
+                nIndex = BANNER_LEN - 1;
+            }*/
+            showBannerAt(nIndex);
+            //$("#banner_wrapper").stop().animate({left:-103}, 1000);
+        });
+        $("#btn_right").unbind();
+        $("#btn_right").bind("click", function() {
+            // 이동할 이전 배너 인덱스 값 구하기.
+            var nIndex = BANNER_INDEX + 1;
+            /* if (nIndex >= BANNER_LEN) {
+                 nIndex = 0;
+             }*/
+            //alert(BANNER_INDEX);
+            // n번째 배너 보이기.
+            showBannerAt(nIndex);
+            //$("#banner_wrapper").stop().animate({left:103}, 1000);
+        });
+    });
+    // nIndex에 해당하는 배너 보이기.
+    function showBannerAt(nIndex) {
+        //if(nIndex != BANNER_INDEX){ 
+        //배너의 위치가 기준점과 같지 않을 경우, 같을수가 없는 상황인데, 이는 버그를 최소화 하기 위하여 줄인다.
+        // alert(nIndex);
+        var nPosition = -BANNER_WIDTH * nIndex;
+        //슬라이드 시작
+        $("#banner_wrapper").stop();
+        $("#banner_wrapper").animate({
+            left: nPosition
+        }, SHOW_DURATION, function() {
+            //****************************************여기부터
+            // 이전 내용이 없는 경우 마지막 배너 인덱스 값으로 설정하기.
+            if (nIndex < 1) {
+                nIndex = BANNER_LEN;
+                nPosition = -BANNER_WIDTH * nIndex;
+                $("#banner_wrapper").css({
+                    "left": nPosition + "px"
+                });
+            }
+
+            // 다음 내용이 없는 경우, 첫 번째 배너 인덱스 값으로 설정하기.
+            if (nIndex > BANNER_LEN) {
+                nIndex = 1;
+                nPosition = -BANNER_WIDTH * nIndex;
+                $("#banner_wrapper").css({
+                    "left": nPosition + "px"
+                });
+            }
+            //현재 배너 인덱스 업데이트 시키기.
+            BANNER_INDEX = nIndex;
+        });
+        //}
+    }
+
+    function bannerInit() { //초기 setting
+        BANNER_LEN = $("#banner_wrapper .page").length;
+        $("#banner_wrapper").css({
+            "left": -BANNER_WIDTH
+        });
+    }
+
+function cut(){
+	var con = "";
+	con += '<ul class="testul">';
+	con += '<li class="testli"><input id="checkbox1" name="checkbox" type="checkbox"> <label class="testlabel" for="checkbox1">A</label></li>';
+	con += '<li><input id="checkbox2" name="checkbox" type="checkbox"> <label class="testlabel" for="checkbox2">B</label></li>';
+	con += '<li><input id="checkbox3" name="checkbox" type="checkbox"> <label class="testlabel" for="checkbox3">C</label></li>';
+	con += '</ul>';
+	$("#conte").html(con);
+	checkbox();
+}
+
+function perm(){
+	var con = "";
+	con += '<ul class="testul">';
+	con += '<li class="testli"><input id="checkbox1" name="checkbox" type="checkbox"> <label class="testlabel" for="checkbox1">1</label></li>';
+	con += '<li><input id="checkbox2" name="checkbox" type="checkbox"> <label class="testlabel" for="checkbox2">2</label></li>';
+	con += '<li><input id="checkbox3" name="checkbox" type="checkbox"> <label class="testlabel" for="checkbox3">3</label></li>';
+	con += '</ul>';
+	$("#conte").html(con);
+	checkbox();
+}
+
+function dyeing(){
+	var con = "";
+	con += '<ul class="testul">';
+	con += '<li class="testli"><input id="checkbox1" name="checkbox" type="checkbox" onclick="proce(this.id)"> <label class="testlabel" for="checkbox1">ㄱ</label></li>';
+	con += '<li><input id="checkbox2" name="checkbox" type="checkbox" onclick="proce(this.id)"> <label class="testlabel" for="checkbox2">ㄴ</label></li>';
+	con += '<li><input id="checkbox3" name="checkbox" type="checkbox" onclick="proce(this.id)"> <label class="testlabel" for="checkbox3">ㄷ</label></li>';
+	con += '</ul>';
+	$("#conte").html(con);
+	checkbox();
+}
+
+function clinic(){
+	$("#conte").html("test4");
+}
+
+function dry(){
+	$("#conte").html("test5");
+}
+
+function proce(id){
+	$("#procedure").html("시술 : " + id);
+}
+
+function checkbox() {
+    //라디오 요소처럼 동작시킬 체크박스 그룹 셀렉터
+    $('input[type="checkbox"][name="checkbox"]').click(function(){
+        //클릭 이벤트 발생한 요소가 체크 상태인 경우
+        if ($(this).prop('checked')) {
+            //체크박스 그룹의 요소 전체를 체크 해제후 클릭한 요소 체크 상태지정
+            $('input[type="checkbox"][name="checkbox"]').prop('checked', false);
+            $(this).prop('checked', true);
+        }
+    });
+}
