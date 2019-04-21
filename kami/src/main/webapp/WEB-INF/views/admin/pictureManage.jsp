@@ -124,7 +124,7 @@ $(function(){
 	</td><td>
 	<input type="checkbox" id="ck10" name="chk" value="슬릭백언더컷">슬릭백언더컷
 	</td><td>
-	<input type="checkbox" id="ck11" name="chk" value="버즈컷컷">버즈컷컷
+	<input type="checkbox" id="ck11" name="chk" value="버즈컷">버즈컷
 	</td><td>
 	<input type="checkbox" id="ck12" name="chk" value="페이드컷">페이드컷
 	</td>
@@ -369,10 +369,11 @@ $(function(){
 		<th>성별/머리길이 </th>
 		<td>
 		<select id="setting" name="setting" >
-			<option value="남자/미디엄" >남자/미디엄</option>
-			<option value="남자/숏" >남자/숏</option>
-			<option value="여자/롱" >여자/롱</option>
 			<option value="여자/미디엄" >여자/미디엄</option>
+			<option value="남자/숏" >남자/숏</option>
+			<option value="남자/미디엄" >남자/미디엄</option>
+			<option value="여자/롱" >여자/롱</option>
+			
 			<option value="여자/단발" >여자/단발</option>
 			<option value="여자/숏" >여자/숏</option>
 		</select>

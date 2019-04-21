@@ -178,7 +178,7 @@
    </h3>
    <div id="best_bg">
       <ul>
-        <li><a href="#"><img src="resources/img/beautiful.jpg" alt="" /></a></li>
+       
     	<c:forEach items="${picture}" var="picture">
     	 <li><a href="#"><img src="img/${picture.savfile}" alt="" /></a></li>
     	
