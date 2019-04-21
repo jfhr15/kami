@@ -207,7 +207,7 @@
 						</div>
 						<input type='hidden' id='id' name='id'>
 						<div class='modal-body' id='viewModalBody'></div>
-						<div class='modal-footer'>
+						<div class='modal-footer' id="modal-footer-btn">
 							<button type='button' class='btn btn-warning' id='approvalBtn'
 								name='approvalBtn'>승인</button>
 							<button type='button' class='btn btn-default'

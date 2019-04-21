@@ -67,8 +67,7 @@ $(function(){
 						}
 						if(calEvent.title == "휴무 신청 중"){
 							var tt = "";
-							tt += "<button type='button' class='btn btn-warning' id='deleteBtn' name='deleteBtn'>삭제</button>";
-							tt += "<button type='button' class='btn btn-warning' id='updateBtn' name='updateBtn'>수정</button>";
+							tt += "<button type='button' class='btn btn-warning' id='approvalBtn' name='approvalBtn'>승인</button>";
 							tt += "<button type='button' class='btn btn-default' data-dismiss='modal'>닫기</button>";
 							$("#modal-footer-btn").html(tt);
 						} else {
