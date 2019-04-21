@@ -47,22 +47,16 @@ $(function() {
 								$('#writeModal').modal('show')
 							},
 							eventClick : function(calEvent, jsEvent, view) {
+								var nai = "";
+								nai += '<h4 class="modal-content" id="viewModalLabel">';
+								nai += '<span id="eventDate"></span><br>';
+								nai += '</h4>';
+								$(".modal-header").html(nai);
 								$('#viewModalBody').text(calEvent.content);
 								$('#id').val(calEvent.id);
 								$('#eventDate').text(
 										calEvent.start
 												.format('YYYY년 MM월 DD일 HH:mm'));
-								if (calEvent.end != null
-										&& (calEvent.start
-												.format('YYYY년 MM월 DD일 HH:mm') != calEvent.end
-												.format('YYYY년 MM월 DD일 HH:mm'))) {
-									$('#eventDate')
-											.text(
-													$('#eventDate').text()
-															+ ' ~ '
-															+ calEvent.end
-																	.format('YYYY년 MM월 DD일 HH:mm'));
-								}
 								$('#viewModal').modal('show')
 							},
 							displayEventEnd : true,

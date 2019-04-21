@@ -4,7 +4,6 @@ del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, 
 h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, 
 dl, dt, dd, ol, ul, li, fieldset, form, label, legend {
 	vertical-align: baseline;
-	font-family: inherit;
 	font-weight: inherit;
 	font-style: inherit;
 	font-size: 100%;
@@ -50,7 +49,6 @@ input{
 	border:1px solid #aaa;
 }
 @font-face {
-   font-family: 'Noto Sans KR';
    font-style: normal;
    font-weight: 300;
    src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff2) format('woff2'),
@@ -58,7 +56,6 @@ input{
         url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.otf) format('opentype');
  }
 @font-face {
-   font-family: 'Noto Sans KR';
    font-style: normal;
    font-weight: 400;
    src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff2) format('woff2'),
@@ -66,7 +63,6 @@ input{
         url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.otf) format('opentype');
  }
 @font-face {
-   font-family: 'Noto Sans KR';
    font-style: normal;
    font-weight: 600;
    src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff2) format('woff2'),
@@ -74,7 +70,6 @@ input{
         url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.otf) format('opentype');
  }
 @font-face {
-   font-family: 'Noto Sans KR';
    font-style: normal;
    font-weight: 700;
    src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff2) format('woff2'),
@@ -111,7 +106,7 @@ h3              { font-size:1.2em;}
 h4              { font-size:1em;}
 input           { border:1px solid #aaa;}
 textarea        { border:1px solid #aaa;}
-#container {
+#contain {
 		width:1000px;
 		/* border:1px solid #bbb; */
 		margin:0px auto;
@@ -137,7 +132,6 @@ del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, sub, sup, tt, var,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, 
 dl, dt, dd, ol, ul, li, fieldset, form, label, legend {
  vertical-align: baseline;
- font-family: inherit;
  font-style: inherit;
  font-size: 100%;
  outline: 0;
@@ -169,7 +163,6 @@ a,span{display:inline-block}
 html,
 body {
 	font-size: 14px;
-	font-family: 'Noto Sans KR','돋움',Dotum,Arial,sans-serif;
 	letter-spacing: -0.3px;
 	letter-spacing: -0.02rem;
 	line-height: 1.2em;
@@ -178,7 +171,7 @@ body {
 	font-weight: 400;
 	overflow-x: hidden !important;
 }
-#container {
+#contain {
 	width: 100%;
 }
 #contents {
@@ -260,7 +253,7 @@ body {
 	.main_slide_item{width: 980px;}
 }
 @media all and (max-width:1440px){
-	.sub #container{width:1024px;}
+	.sub #contain{width:1024px;}
 	.sub #contents{width: 724px;padding-right: 20px;}
 	.list_url{width: 260px;height: 220px;}
 	#searchList li{height: 220px;}
@@ -269,7 +262,7 @@ body {
 	.entryhide #sidebar .side_img{height: 280px;}
 }
 @media all and (max-width:1024px){
-	.sub #container{width:768px;overflow: hidden;}
+	.sub #contain{width:768px;overflow: hidden;}
 	.sub #contents{width: 100%;padding-right: 0;}
 	.entryhide #sidebar,
 	.sub #sidebar{width: 100%;overflow: hidden}
@@ -277,3 +270,39 @@ body {
 .gnbtit{
 	font-weight:bold;
 }
+
+body { margin: 0; }
+.menu-bar {
+  display: inline-block;
+  width: 100%;
+}
+.menu { margin: 0; padding: 0; }
+.menu li {
+  float: left;
+  list-style:none;
+  position: relative;
+}
+.menu li:hover { }
+.menu li.expand { background: white; }
+.menu li.expand>a { }
+.menu a {
+  color: white;
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+.menu ul {
+  background: #eee;
+  border: 1px solid silver;
+  display: none;
+  padding: 0;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 180px;
+}
+.menu ul li { float: none; }
+.menu ul li.expand { background: #ddd; }
+.menu ul li.expand a { color: black; }
+.menu ul a { color: black; }
+.menu ul ul { left: 100%; top: 0; }

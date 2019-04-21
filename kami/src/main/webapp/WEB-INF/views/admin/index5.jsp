@@ -4,140 +4,123 @@
 
 <html>
 <head>
-<script src="resources/jquery-3.3.1.min.js"></script>
-<!-- 	<link href="resources/css/sign.css" rel="stylesheet" /> -->
 
-<link href="resources/styles/reset.css" rel="stylesheet" />
-<link rel="stylesheet" type="text/css" media="all"
-	href="resources/styles/styles.css">
+	<link rel="icon" href="http://www.templatemonster.com/favicon.ico">
+    <link rel="stylesheet" href="resources/cryptos-master/style.css">
 
-<!-- Custom fonts for this template-->
-<link
-	href="${pageContext.request.contextPath}/resources/vendor/fontawesome-free/css/all.min.css"
-	rel="stylesheet" type="text/css">
-<link
-	href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-	rel="stylesheet">
+	<!-- Custom fonts for this template-->
+	<link href="${pageContext.request.contextPath}/resources/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
-<!-- Custom styles for this template-->
-<link
-	href="${pageContext.request.contextPath}/resources/css/sb-admin-2.min.css"
-	rel="stylesheet">
-<link href="${pageContext.request.contextPath}/resources/css/chart.css"
-	rel="stylesheet">
+	<!-- Custom styles for this template-->
+	<link href="${pageContext.request.contextPath}/resources/css/sb-admin-2.min.css" rel="stylesheet">
+	<link href="${pageContext.request.contextPath}/resources/css/chart.css" rel="stylesheet">
+	<link rel='stylesheet' href='./resources/bootstrap/dist/css/bootstrap.min3.css' />
+	<link href="resources/css/career.css" rel="stylesheet" />
 
-<link rel="shortcut icon"
-	href="http://www.templatemonster.com/favicon.ico">
-<link rel="icon" href="http://www.templatemonster.com/favicon.ico">
-
-<link rel='stylesheet'
-	href='./resources/bootstrap/dist/css/bootstrap.min3.css' />
-
-<link href="resources/css/career.css" rel="stylesheet" />
-
-<!-- Bootstrap core JavaScript-->
-<script src="<c:url value = "/resources/vendor/jquery/jquery.min.js"/>"></script>
-<script
-	src="<c:url value = "/resources/vendor/bootstrap/js/bootstrap.bundle.min.js"/>"></script>
-
-<!-- Core plugin JavaScript-->
-<script src=" <c:url value = "/resources/js/sb-admin-2.min.js"/>"></script>
-
-<!-- Custom scripts for all pages-->
-<script src=" <c:url value = "/resources/js/sb-admin-2.min.js"/>"></script>
-
-<!-- Page level plugins -->
-<script
-	src=" <c:url value = "/resources/vendor/chart.js/Chart.min.js"/>"></script>
-
-<!-- Page level custom scripts -->
-<script type="text/javascript"
-	src="./resources/fullcalendar-3.10.0/lib/jquery.min.js"></script>
-<script type="text/javascript" src="resources/js/swipe.js"></script>
-<script type="text/javascript" src="resources/js/jquery.bxslider.min.js"></script>
-<script type="text/javascript" src="resources/js/main.js"></script>
-<script src='./resources/bootstrap/dist/js/bootstrap.min.js'></script>
-<script type="text/javascript" src="resources/js/career.js"></script>
-
-<title>MyPage</title>
+	<title>MyPage</title>
 
 </head>
 
 <body id="page-top">
-	<header>
-		<div class="header_wrap">
-			<div class="header_inner">
-				<div id="skipNavi">
-					<a href="#container">본문바로가기</a>
-				</div>
-				<dl class="topMenu">
-					<dt class="blind">탑메뉴</dt>
-					<c:if test="${sessionScope.loginId != null}">
-						<dd>
-							<a href="logout" id="loginForm">Logout</a>
-						</dd>
-						<c:if test="${sessionScope.empType != null}">
-							<c:if test="${sessionScope.empType == 0}">
-								<dd>
-									<a href="goManagement" id="loginForm">Management</a>
-								</dd>
-							</c:if>
-							<c:if test="${sessionScope.empType != 0}">
-								<dd>
-									<a href="goIndex" id="loginForm">MyPage</a>
-								</dd>
-							</c:if>
-						</c:if>
-					</c:if>
-					<c:if test="${sessionScope.loginId == null}">
-						<dd>
-							<a href="goLogin" id="loginForm">Login</a>
-						</dd>
-						<dd class="signup">
-							<a href="goSignup" id="signForm">SignUp</a>
-						</dd>
-					</c:if>
-				</dl>
-			</div>
+	<!-- ##### Preloader ##### -->
+    <div id="preloader">
+        <i class="circle-preloader"></i>
+    </div>
 
-			<h1>
-				<a href="goHome" id="mainForm"><img src="resources/logo.png"
-					alt="kamikami" /></a>
-			</h1>
+    <!-- ##### Header Area Start ##### -->
+    <header class="header-area">
 
-			<nav class="gnb">
-				<h2 class="blind">주메뉴</h2>
-				<ul>
-					<li><a href="goAbout"><h3 class="gnbtit">About</h3></a></li>
-					<li><a href="#"><h3 class="gnbtit">Hair</h3></a>
-						<ul>
-							<li><a href="#">New Arrival</a>
-								<ul>
-									<li><a href="goCut">Cut</a></li>
-									<li><a href="goPerm">Perm</a></li>
-									<li><a href="goColor">Color</a></li>
-								</ul></li>
-						</ul></li>
-					<c:choose>
-						<c:when test="${sessionScope.memType != null}">
-							<li><a href="goReservation"><h3 class="gnbtit">Reservation</h3></a></li>
-						</c:when>
-						<c:when test="${sessionScope.empType != null}">
-							<li><a href="goReservationList"><h3 class="gnbtit">Reservation</h3></a></li>
-						</c:when>
-						<c:otherwise>
-							<li><a href="goReservation"><h3 class="gnbtit">Reservation</h3></a></li>
-						</c:otherwise>
-					</c:choose>
-					
-					<li><a href="goProduct"><h3 class="gnbtit">Product</h3></a></li>
-					<li><a href="#"><h3 class="gnbtit">Community</h3></a></li>
-				</ul>
-			</nav>
-		</div>
-	</header>
+        <!-- Top Header Area -->
+        <div class="top-header">
+            <div class="container h-100">
+                <div class="row h-100">
+                    <div class="col-12 h-100">
+                        <div class="top-header-content h-100 d-flex align-items-center justify-content-between">
+                            <!-- Top Headline -->
+                            <div class="top-headline">
+                                <p>Welcome to <span>Kamikami</span></p>
+                            </div>
+                            <div class="login-faq-earn-money">
+                                <c:if test="${sessionScope.loginId != null}">
+ 									<a href="logout">Logout</a>
+ 									<c:if test="${sessionScope.empType != null}">
+	 									<c:if test="${sessionScope.empType == 0}">
+	 										<a href="goManagement">Management</a>
+	 									</c:if>
+	 									<c:if test="${sessionScope.empType != 0}">
+											<a href="goIndex">MyPage</a>
+										</c:if>
+									</c:if>
+								</c:if>
+								<c:if test="${sessionScope.loginId == null}">
+                              		<a href="goLogin">Login</a>
+                               		<a href="goSignup">Register</a>
+                                </c:if>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-	<!--header 끝-->
+        <!-- Navbar Area -->
+        <div class="cryptos-main-menu">
+            <div class="classy-nav-container breakpoint-off">
+                <div class="container">
+                    <!-- Menu -->
+                    <nav class="classy-navbar justify-content-between" id="cryptosNav">
+
+                        <!-- Logo -->
+                        <a class="nav-brand" href="goHome"><img src="resources/cryptos-master/img/core-img/logo.png" alt=""></a>
+
+                        <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        </div>
+
+                        <!-- Menu -->
+                        <div class="classy-menu">
+
+                            <!-- close btn -->
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                            </div>
+
+                            <!-- Nav Start -->
+                            <div class="classynav">
+                                <ul>
+                                    <li><a href="goHome">Home</a></li>
+                                    <li><a href="#">Hair</a>
+                                        <ul class="dropdown">
+                                            <li><a href="goCut">Cut</a></li>
+                                            <li><a href="goPerm">Perm</a></li>
+                                            <li><a href="goColor">Color</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="goProduct">Product</a></li>
+                                    <c:choose>
+					 					<c:when test="${sessionScope.memType != null}">
+					 						<li><a href="goReservation">Reservation</a></li>
+					 					</c:when>
+					 					<c:when test="${sessionScope.empType != null}">
+					 						<li><a href="goReservationList">Reservation</a></li>
+					 					</c:when>
+					 					<c:otherwise>
+					 						<li><a href="goReservation">Reservation</a></li>
+					 					</c:otherwise>
+					 				</c:choose>
+                                    <li><a href="goBoard">Community</a></li>
+                                </ul>
+                            </div>
+                            <!-- Nav End -->
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ##### Header Area End ##### -->
 
 
 	<!-- Page Wrapper -->
@@ -243,5 +226,18 @@
 	</div>
 	<!-- End of Page Wrapper -->
 
+	<!-- ##### All Javascript Script ##### -->
+    <script src="resources/cryptos-master/js/jquery/jquery-2.2.4.min.js"></script>
+    <script src="resources/cryptos-master/js/bootstrap/popper.min.js"></script>
+    <script src="resources/cryptos-master/js/bootstrap/bootstrap.min.js"></script>
+    <script src="resources/cryptos-master/js/plugins/plugins.js"></script>
+    <script src="resources/cryptos-master/js/active.js"></script>
+	
+	<script src="<c:url value = "/resources/vendor/bootstrap/js/bootstrap.bundle.min.js"/>"></script>
+	<script src=" <c:url value = "/resources/js/sb-admin-2.min.js"/>"></script>
+	<script src=" <c:url value = "/resources/vendor/chart.js/Chart.min.js"/>"></script>
+
+	<script src='./resources/bootstrap/dist/js/bootstrap.min.js'></script>
+	<script type="text/javascript" src="resources/js/career.js"></script>
 </body>
 </html>

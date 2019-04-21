@@ -6,10 +6,6 @@
 	margin-left: 6%;
 	text-align: auto;
 }
-.td1{
-/* 	padding-left: 10%; */
-/* 	padding-right: 10%; */
-}
 .radio1{
 	font-size: 17px;
     width: 17px;
@@ -38,12 +34,19 @@ table{
 	color:red;
 }
 #addbtn{
-	margin-top:5px;
+	margin-top:25px;
+	width: 77%;
 }
 .addresstable{
-	width:100%;
+	width:93%;
 }
-.container{
+.addresstable td{
+	padding-left:5%;
+}
+.addtable td{
+	padding-left:5%;
+}
+.contain{
 	background: #ddd;
 	margin-left: 30%;
 	margin-right: 22%;
@@ -63,9 +66,13 @@ table{
 	padding-top: 1%;
 }
 .td1{
-	width:30%;
+	padding-left: 5%;
+	width:25%;
 }
 .td2{
-	margin-left:5%;
-	width:65%;
+	padding-right: 7%;
+	width:63%;
+}
+.mb-4{
+	text-align: center;
 }

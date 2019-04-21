@@ -49,11 +49,11 @@
 	margin-left: 10%;
     margin-top: 8%;
 }
-.container{
+.contain{
 	text-align: center;
 	margin-left:30%; 
 	margin-right:30%;
-	margin-top:13%;
+	margin-top:8%;
 	background: #ddd;
 	background-color: rgba( 255, 255, 255, 0.85 );
 }
@@ -80,4 +80,7 @@ a{
 	background-image: url('../img/hairshop.jpg');
 	background-size: cover;
 	padding-top: 1%;
+}
+.smalls{
+	font-size: 100%;
 }

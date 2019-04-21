@@ -40,5 +40,6 @@
 		<mapper resource="Mapper/offscheduleMapper.xml" />
 		<mapper resource="Mapper/procedureMapper.xml" />
 		<mapper resource="Mapper/careerMapper.xml" />
+		<mapper resource="Mapper/boardMapper.xml" />
 	</mappers> 
 </configuration>

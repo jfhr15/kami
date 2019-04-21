@@ -42,22 +42,16 @@ $(function() {
 								$('#writeModal').modal('show')
 							},
 							eventClick : function(calEvent, jsEvent, view) {
+								var nai = "";
+								nai += '<h4 class="modal-content" id="viewModalLabel">';
+								nai += '<span id="eventDate"></span><br>';
+								nai += '</h4>';
+								$(".modal-header").html(nai);
 								$('#viewModalBody').text(calEvent.content);
 								$('#id').val(calEvent.id);
 								$('#eventDate').text(
 										calEvent.start
 												.format('YYYY년 MM월 DD일 HH:mm'));
-								if (calEvent.end != null
-										&& (calEvent.start
-												.format('YYYY년 MM월 DD일 HH:mm') != calEvent.end
-												.format('YYYY년 MM월 DD일 HH:mm'))) {
-									$('#eventDate')
-											.text(
-													$('#eventDate').text()
-															+ ' ~ '
-															+ calEvent.end
-																	.format('YYYY년 MM월 DD일 HH:mm'));
-								}
 								$('#viewModal').modal('show')
 							},
 							displayEventEnd : true,
@@ -73,11 +67,6 @@ $(function() {
 		$("#saveBtn").on('click', insert);
 		$("#deleteBtn").on('click', del);
 		$("#updateBtn").on('click', update);
-//		$("#cut").on('click',cut);
-//		$("#perm").on('click',perm);
-//		$("#dyeing").on('click',dyeing);
-//		$("#clinic").on('click',clinic);
-//		$("#dry").on('click',dry);
 	});
 
 	function scheduleChoice(num, id, distinct, color, text) {
@@ -137,12 +126,12 @@ $(function() {
 		$.each(cList, function(index, item) {
 			$('#calendar').fullCalendar('renderEvent', {
 				title : item.emp_Id,
-				content : "예약",
+				content : "디자이너 " + item.emp_id + "에게 예약",
 				start : item.rsv_date,
 				end : item.rsv_date + item.rsv_time,
 				allDay : false,
 				id : item.reservationseq,
-				groupId : item.mem_Id,
+				groupId : item.mem_id,
 				backgroundColor : c
 			});
 		})
@@ -195,8 +184,6 @@ $(function() {
 						type: 'get',
 						success: function(returndata){
 							var pSeq = $("#pcd").val();
-							alert(pSeq);
-							alert(returndata.reservationseq);
 							$.ajax({
 								url: 'insertPI',
 								data:{
@@ -234,7 +221,7 @@ $(function() {
 	function del() {
 		var reservationseq = $('#id').val();
 
-		if (confirm("삭제하시겠습니까?")) {
+		if (confirm("취소하시겠습니까?")) {
 			$.ajax({
 				url : 'deleteRes',
 				data : {
