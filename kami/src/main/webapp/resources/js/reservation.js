@@ -73,11 +73,11 @@ $(function() {
 		$("#saveBtn").on('click', insert);
 		$("#deleteBtn").on('click', del);
 		$("#updateBtn").on('click', update);
-		$("#cut").on('click',cut);
-		$("#perm").on('click',perm);
-		$("#dyeing").on('click',dyeing);
-		$("#clinic").on('click',clinic);
-		$("#dry").on('click',dry);
+//		$("#cut").on('click',cut);
+//		$("#perm").on('click',perm);
+//		$("#dyeing").on('click',dyeing);
+//		$("#clinic").on('click',clinic);
+//		$("#dry").on('click',dry);
 	});
 
 	function scheduleChoice(num, id, distinct, color, text) {
@@ -189,7 +189,27 @@ $(function() {
 				},
 				type : 'post',
 				success : function() {
-					window.location.reload();
+					$.ajax({
+						url: 'currentRes',
+						data:{},
+						type: 'get',
+						success: function(returndata){
+							var pSeq = $("#pcd").val();
+							alert(pSeq);
+							alert(returndata.reservationseq);
+							$.ajax({
+								url: 'insertPI',
+								data:{
+									procedureseq : pSeq,
+									reservationseq : returndata.reservationseq
+								},
+								type: 'post',
+								success: function(){
+									window.location.reload();
+								}
+							});
+						}
+					});
 				}
 			});
 		}else if (flag == 1) {
@@ -234,7 +254,7 @@ $(function() {
 		start += " " + $('#shour').val() + ":" + $('#smin').val();
 		$("#hStart").val(start);
 		$("#sDate").html("예약 시간 : " + start);
-		$("#designer").html("디자이너 : ");
+		$("#designer").html("디자이너 : 디자이너를 선택해주세요.");
 		$.ajax({
 			url: "dList",
 			data:{
@@ -257,6 +277,7 @@ $(function() {
 	function inputEmp_id(id, name){
 		$("#emp_id").val(id);
 		$("#designer").html("디자이너 : " + name);
+		$("#dList").html("");
 	}
 	
 	var BANNER_INDEX = 1;
@@ -338,49 +359,18 @@ $(function() {
         });
     }
 
-function cut(){
-	var con = "";
-	con += '<ul class="testul">';
-	con += '<li class="testli"><input id="checkbox1" name="checkbox" type="checkbox"> <label class="testlabel" for="checkbox1">A</label></li>';
-	con += '<li><input id="checkbox2" name="checkbox" type="checkbox"> <label class="testlabel" for="checkbox2">B</label></li>';
-	con += '<li><input id="checkbox3" name="checkbox" type="checkbox"> <label class="testlabel" for="checkbox3">C</label></li>';
-	con += '</ul>';
-	$("#conte").html(con);
-	checkbox();
-}
-
-function perm(){
-	var con = "";
-	con += '<ul class="testul">';
-	con += '<li class="testli"><input id="checkbox1" name="checkbox" type="checkbox"> <label class="testlabel" for="checkbox1">1</label></li>';
-	con += '<li><input id="checkbox2" name="checkbox" type="checkbox"> <label class="testlabel" for="checkbox2">2</label></li>';
-	con += '<li><input id="checkbox3" name="checkbox" type="checkbox"> <label class="testlabel" for="checkbox3">3</label></li>';
-	con += '</ul>';
-	$("#conte").html(con);
-	checkbox();
-}
-
-function dyeing(){
-	var con = "";
-	con += '<ul class="testul">';
-	con += '<li class="testli"><input id="checkbox1" name="checkbox" type="checkbox" onclick="proce(this.id)"> <label class="testlabel" for="checkbox1">ㄱ</label></li>';
-	con += '<li><input id="checkbox2" name="checkbox" type="checkbox" onclick="proce(this.id)"> <label class="testlabel" for="checkbox2">ㄴ</label></li>';
-	con += '<li><input id="checkbox3" name="checkbox" type="checkbox" onclick="proce(this.id)"> <label class="testlabel" for="checkbox3">ㄷ</label></li>';
-	con += '</ul>';
-	$("#conte").html(con);
-	checkbox();
-}
-
-function clinic(){
-	$("#conte").html("test4");
-}
-
-function dry(){
-	$("#conte").html("test5");
-}
-
 function proce(id){
-	$("#procedure").html("시술 : " + id);
+	$.ajax({
+		url: 'pOne',
+		data:{
+			procedureseq : id
+		},
+		type: 'post',
+		success: function(returndata){
+			$("#procedure").html("시술 : " + returndata.pcd_name);
+			$("#pcd").val(returndata.procedureseq);
+		}
+	});
 }
 
 function checkbox() {
@@ -393,4 +383,24 @@ function checkbox() {
             $(this).prop('checked', true);
         }
     });
+}
+
+function selectP(id){
+	$.ajax({
+		url: 'pList',
+		data:{
+			pcd_setting : id
+		},
+		type: 'post',
+		success: function(returndata){
+			var con = "";
+			con += '<ul class="testul">';
+			$.each(returndata, function(index, item){
+				con += '<li class="testli"><input id="' + item.procedureseq + '" name="checkbox" type="checkbox" onclick="proce(this.id)"> <label class="testlabel" for="' + item.procedureseq + '">' + item.pcd_name + '</label></li>';
+			});
+			con += '</ul>';
+			$("#conte").html(con);
+			checkbox();
+		}
+	});
 }

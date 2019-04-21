@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.kami.kami.dao.ReservationDAO;
 import com.kami.kami.vo.Idinfo;
+import com.kami.kami.vo.Procedure;
+import com.kami.kami.vo.Procedureinfomation;
 import com.kami.kami.vo.Reservation;
 
 @Controller
@@ -111,5 +113,33 @@ public class reservationController {
 		model.addAttribute("eList", dList);
 		
 		return dList;
+	}
+	
+	@RequestMapping(value = "/pList", method = RequestMethod.POST)
+	public @ResponseBody List<Procedure> pList(String pcd_setting) {
+		ArrayList<Procedure> dList = rDao.selectProcedure(pcd_setting);
+		
+		return dList;
+	}
+	
+	@RequestMapping(value = "/pOne", method = RequestMethod.POST)
+	public @ResponseBody Procedure pOne(int procedureseq) {
+		Procedure pOne = rDao.selectProcedureOne(procedureseq);
+		
+		return pOne;
+	}
+	
+	@RequestMapping(value = "/insertPI", method = RequestMethod.POST)
+	public @ResponseBody String insertPI(Procedureinfomation pi) {
+		rDao.insertPI(pi);
+		
+		return "SUCCESS";
+	}
+	
+	@RequestMapping(value = "/currentRes", method = RequestMethod.GET)
+	public @ResponseBody Reservation currentRes() {
+		Reservation res = rDao.currentRes();
+		
+		return res;
 	}
 }

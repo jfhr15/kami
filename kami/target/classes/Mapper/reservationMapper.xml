@@ -21,7 +21,7 @@
 			,'1'
 			,TO_DATE(#{rsv_date},'YYYY-MM-DD HH24:MI')
 			,TO_DATE(#{rsv_time},'HH24:MI')
-			,0
+			,10000
 		)
 	</insert>
 
@@ -107,6 +107,7 @@
 		select
 			procedureseq
 			,pcd_name
+			,pcd_setting
 			,pcd_time
 			,pcd_price
 			,pcd_savfile
@@ -114,6 +115,40 @@
 		from
 			procedure
 		where
-			
+			pcd_setting=#{pcd_setting}
+	</select>
+	
+	<select id="selectProcedureOne" resultType="Procedure" parameterType="Integer"> 
+		select
+			procedureseq
+			,pcd_name
+			,pcd_setting
+			,pcd_time
+			,pcd_price
+			,pcd_savfile
+			,pcd_orgfile
+		from
+			procedure
+		where
+			procedureseq=#{procedureseq}
+	</select>
+	
+	<insert id="insertPI" parameterType="Procedureinfomation">
+		insert into procedureinformation(
+			proinfoseq
+			,procedureseq
+			,reservationseq
+		) values(
+			proinfoseq.nextval
+			,#{procedureseq}
+			,#{reservationseq}
+		)
+	</insert>
+	
+	<select id="currentRes" resultType="Res">
+		select 
+			max(reservationseq) as reservationseq 
+		from 
+			reservation
 	</select>
 </mapper>

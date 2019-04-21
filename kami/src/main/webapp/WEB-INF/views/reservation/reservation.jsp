@@ -249,17 +249,18 @@
 		<div id="procedure">시술 : 시술을 선택해주세요.</div>
 		<input type="hidden" id="hStart">
 		<input type="hidden" id="emp_id">
+		<input type="hidden" id="pcd">
 		
 		<div id="dList"></div>
 		
 	    <div class="btnA" id="btn_left"><img class="imgA" src="resources/img/visual_btn_left.png"></div>
 		<div id="banner_container" style="height:50px;overflow:hidden;">
 		    <div id="banner_wrapper">
-				<div class="testA" id="cut">커트</div>
-				<div class="testA" id="perm">펌</div>
-				<div class="testA" id="dyeing">염색</div>
-				<div class="testA" id="clinic">클리닉</div>
-				<div class="testA" id="dry">스타일링</div>
+				<div class="testA" id="커트" onclick="selectP(this.id)">커트</div>
+				<div class="testA" id="펌" onclick="selectP(this.id)">펌</div>
+				<div class="testA" id="염색" onclick="selectP(this.id)">염색</div>
+				<div class="testA" id="클리닉" onclick="selectP(this.id)">클리닉</div>
+				<div class="testA" id="스타일링" onclick="selectP(this.id)">스타일링</div>
 		    </div>
 		</div>
 		<div class="btnA" id="btn_right"><img class="imgA" src="resources/img/visual_btn_right.png"></div>

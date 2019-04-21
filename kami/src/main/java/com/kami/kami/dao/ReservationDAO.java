@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.kami.kami.vo.Idinfo;
+import com.kami.kami.vo.Procedure;
+import com.kami.kami.vo.Procedureinfomation;
 import com.kami.kami.vo.Reservation;
 
 @Repository
@@ -98,5 +100,53 @@ public class ReservationDAO {
 			return null;
 		}
 		return result;
+	}
+	
+	public ArrayList<Procedure> selectProcedure(String pcd_setting){
+		ArrayList<Procedure> pList= null;
+		ReservationMapper mapper = session.getMapper(ReservationMapper.class);
+		try {
+			pList = mapper.selectProcedure(pcd_setting);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+		return pList;
+	}
+	
+	public Procedure selectProcedureOne(int procedureseq) {
+		Procedure procedure = null;
+		ReservationMapper mapper = session.getMapper(ReservationMapper.class);
+		try {
+			procedure = mapper.selectProcedureOne(procedureseq);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+		return procedure;
+	}
+	
+	public int insertPI(Procedureinfomation pi) {
+		int result = 0;
+		ReservationMapper mapper = session.getMapper(ReservationMapper.class);
+		try {
+			result = mapper.insertPI(pi);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return 0;
+		}
+		return result;
+	}
+	
+	public Reservation currentRes() {
+		Reservation res = null;
+		ReservationMapper mapper = session.getMapper(ReservationMapper.class);
+		try {
+			res = mapper.currentRes();
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+		return res;
 	}
 }
